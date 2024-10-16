@@ -13331,7 +13331,7 @@ AIC=-399.42   AICc=-399.31   BIC=-397.81</code></pre>
 <div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">ncol</span>(ts_data_df)) {</span>
 <span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>variable_name <span class="ot">&lt;-</span> <span class="fu">colnames</span>(ts_data_df)[i]</span>
 <span id="cb123-3"><a href="#cb123-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(ts_data_df, <span class="fu">aes</span>(<span class="at">x =</span> Date, <span class="at">y =</span> ts_data_df[[i]])) <span class="sc">+</span></span>
-<span id="cb123-4"><a href="#cb123-4" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb123-4"><a href="#cb123-4" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>,) <span class="sc">+</span></span>
 <span id="cb123-5"><a href="#cb123-5" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix -"</span>, variable_name),</span>
 <span id="cb123-6"><a href="#cb123-6" aria-hidden="true" tabindex="-1"></a><span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>) <span class="sc">+</span></span>
 <span id="cb123-7"><a href="#cb123-7" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_bw</span>() <span class="sc">+</span></span>
@@ -15866,7 +15866,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb125-838"><a href="#cb125-838" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">ncol</span>(ts_data_df)) {</span>
 <span id="cb125-839"><a href="#cb125-839" aria-hidden="true" tabindex="-1"></a>variable_name <span class="ot">&lt;-</span> <span class="fu">colnames</span>(ts_data_df)[i]</span>
 <span id="cb125-840"><a href="#cb125-840" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(ts_data_df, <span class="fu">aes</span>(<span class="at">x =</span> Date, <span class="at">y =</span> ts_data_df[[i]])) <span class="sc">+</span></span>
-<span id="cb125-841"><a href="#cb125-841" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb125-841"><a href="#cb125-841" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>,) <span class="sc">+</span></span>
 <span id="cb125-842"><a href="#cb125-842" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix -"</span>, variable_name),</span>
 <span id="cb125-843"><a href="#cb125-843" aria-hidden="true" tabindex="-1"></a><span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>) <span class="sc">+</span></span>
 <span id="cb125-844"><a href="#cb125-844" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_bw</span>() <span class="sc">+</span></span>
@@ -15876,29 +15876,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb125-848"><a href="#cb125-848" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p)</span>
 <span id="cb125-849"><a href="#cb125-849" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb125-850"><a href="#cb125-850" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb125-851"><a href="#cb125-851" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb125-852"><a href="#cb125-852" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb125-853"><a href="#cb125-853" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb125-854"><a href="#cb125-854" aria-hidden="true" tabindex="-1"></a><span class="fu">## Numérique</span></span>
-<span id="cb125-855"><a href="#cb125-855" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb125-858"><a href="#cb125-858" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb125-859"><a href="#cb125-859" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb125-860"><a href="#cb125-860" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb125-861"><a href="#cb125-861" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb125-862"><a href="#cb125-862" aria-hidden="true" tabindex="-1"></a>date_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">"2021-04-01"</span>), <span class="at">by =</span> <span class="st">"month"</span>, <span class="at">length.out =</span> <span class="fu">nrow</span>(all_data))</span>
-<span id="cb125-863"><a href="#cb125-863" aria-hidden="true" tabindex="-1"></a>formatted_dates <span class="ot">&lt;-</span> <span class="fu">format</span>(date_seq, <span class="st">"%Y-%m"</span>)</span>
-<span id="cb125-864"><a href="#cb125-864" aria-hidden="true" tabindex="-1"></a>all_data_combined <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">Date =</span> formatted_dates, all_data)</span>
-<span id="cb125-865"><a href="#cb125-865" aria-hidden="true" tabindex="-1"></a>col_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Date"</span>, <span class="fu">names</span>(all_data))</span>
-<span id="cb125-866"><a href="#cb125-866" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(all_data_combined) <span class="ot">&lt;-</span> col_names</span>
-<span id="cb125-867"><a href="#cb125-867" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(all_data_combined)</span>
-<span id="cb125-868"><a href="#cb125-868" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb125-869"><a href="#cb125-869" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb125-851"><a href="#cb125-851" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb125-852"><a href="#cb125-852" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb125-853"><a href="#cb125-853" aria-hidden="true" tabindex="-1"></a><span class="fu">## Numérique</span></span>
+<span id="cb125-854"><a href="#cb125-854" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb125-857"><a href="#cb125-857" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb125-858"><a href="#cb125-858" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb125-859"><a href="#cb125-859" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb125-860"><a href="#cb125-860" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb125-861"><a href="#cb125-861" aria-hidden="true" tabindex="-1"></a>date_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">"2021-04-01"</span>), <span class="at">by =</span> <span class="st">"month"</span>, <span class="at">length.out =</span> <span class="fu">nrow</span>(all_data))</span>
+<span id="cb125-862"><a href="#cb125-862" aria-hidden="true" tabindex="-1"></a>formatted_dates <span class="ot">&lt;-</span> <span class="fu">format</span>(date_seq, <span class="st">"%Y-%m"</span>)</span>
+<span id="cb125-863"><a href="#cb125-863" aria-hidden="true" tabindex="-1"></a>all_data_combined <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">Date =</span> formatted_dates, all_data)</span>
+<span id="cb125-864"><a href="#cb125-864" aria-hidden="true" tabindex="-1"></a>col_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Date"</span>, <span class="fu">names</span>(all_data))</span>
+<span id="cb125-865"><a href="#cb125-865" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(all_data_combined) <span class="ot">&lt;-</span> col_names</span>
+<span id="cb125-866"><a href="#cb125-866" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(all_data_combined)</span>
+<span id="cb125-867"><a href="#cb125-867" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb125-868"><a href="#cb125-868" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb125-869"><a href="#cb125-869" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb125-870"><a href="#cb125-870" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb125-871"><a href="#cb125-871" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb125-872"><a href="#cb125-872" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb125-873"><a href="#cb125-873" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb125-874"><a href="#cb125-874" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb125-875"><a href="#cb125-875" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

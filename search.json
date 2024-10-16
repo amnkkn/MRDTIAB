@@ -235,7 +235,7 @@
     "href": "index.html#ghraph-un-par-un",
     "title": "Résultats de Prévision avec l’ACP et l’intégration de ARIMA",
     "section": "Ghraph un par un",
-    "text": "Ghraph un par un\n\n\nCode\nfor (i in 2:ncol(ts_data_df)) {\nvariable_name &lt;- colnames(ts_data_df)[i]\np &lt;- ggplot(ts_data_df, aes(x = Date, y = ts_data_df[[i]])) +\ngeom_line(color = \"blue\") +\nlabs(title = paste(\"Evolution des prix -\", variable_name),\nx = \"Date\", y = \"Valeur\") +\ntheme_bw() +\ntheme(axis.text.x = element_text(angle = 90, hjust = 1)) +\ntheme(legend.position = \"none\") +\nscale_x_date(date_labels = \"%b %Y\", date_breaks = \"2 months\",expand = c(0, 0))\nprint(p)\n}"
+    "text": "Ghraph un par un\n\n\nCode\nfor (i in 2:ncol(ts_data_df)) {\nvariable_name &lt;- colnames(ts_data_df)[i]\np &lt;- ggplot(ts_data_df, aes(x = Date, y = ts_data_df[[i]])) +\ngeom_line(color = \"blue\",) +\nlabs(title = paste(\"Evolution des prix -\", variable_name),\nx = \"Date\", y = \"Valeur\") +\ntheme_bw() +\ntheme(axis.text.x = element_text(angle = 90, hjust = 1)) +\ntheme(legend.position = \"none\") +\nscale_x_date(date_labels = \"%b %Y\", date_breaks = \"2 months\",expand = c(0, 0))\nprint(p)\n}"
   },
   {
     "objectID": "index.html#numérique",
