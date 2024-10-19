@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Mr . Dtiebo">
+<meta name="dcterms.date" content="2024-01-01">
+
+<title>MRDTIEBO - ARIMA vs ACP</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">MRDTIEBO</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">les20AR</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../les12B.html" rel="" target="">
+ <span class="menu-text">les12B</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../arimavsacp.html" rel="" target="">
+ <span class="menu-text">ArimaVSACP</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../exp.html" rel="" target="">
+ <span class="menu-text">Exp</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#arima" id="toc-arima" class="nav-link active" data-scroll-target="#arima">Arima</a></li>
+  <li><a href="#acp" id="toc-acp" class="nav-link" data-scroll-target="#acp">acp</a></li>
+  <li><a href="#arima-vs-acp" id="toc-arima-vs-acp" class="nav-link" data-scroll-target="#arima-vs-acp">Arima vs Acp</a></li>
+  <li><a href="#arima-vs-acp---plots" id="toc-arima-vs-acp---plots" class="nav-link" data-scroll-target="#arima-vs-acp---plots">Arima vs Acp - Plots</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">ARIMA vs ACP</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mr . Dtiebo </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 1, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<div style="page-break-after: always;"></div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<section id="arima" class="level1">
+<h1>Arima</h1>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(arima)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   24 obs. of  21 variables:
+ $ date : chr  "2024_05" "2024_06" "2024_07" "2024_08" ...
+ $ ARR1 : num  13079 13096 13112 13129 13146 ...
+ $ ARR2 : num  12035 12041 12048 12055 12061 ...
+ $ ARR3 : num  11963 11969 11976 11983 11989 ...
+ $ ARR4 : num  13156 13172 13189 13206 13223 ...
+ $ ARR5 : num  11889 11933 11918 11882 11857 ...
+ $ ARR6 : num  15327 15345 15362 15379 15396 ...
+ $ ARR7 : num  14445 14457 14469 14481 14493 ...
+ $ ARR8 : num  12850 12846 12877 12785 12776 ...
+ $ ARR9 : num  10824 10831 10842 10849 10864 ...
+ $ ARR10: num  9391 9357 9322 9288 9253 ...
+ $ ARR11: num  9837 9811 9785 9759 9732 ...
+ $ ARR12: num  8957 8930 8902 8874 8847 ...
+ $ ARR13: num  8481 8441 8400 8359 8319 ...
+ $ ARR14: num  9327 9270 9245 9237 9208 ...
+ $ ARR15: num  9571 9532 9493 9454 9415 ...
+ $ ARR16: num  11127 11092 11069 11045 11021 ...
+ $ ARR17: num  10158 10134 10105 10075 10044 ...
+ $ ARR18: num  8884 8852 8814 8774 8734 ...
+ $ ARR19: num  8075 8052 8003 7956 7907 ...
+ $ ARR20: num  8438 8400 8306 8271 8259 ...</code></pre>
+</div>
+</div>
+</section>
+<section id="acp" class="level1">
+<h1>acp</h1>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(acp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   24 obs. of  21 variables:
+ $ date : chr  "2024_05" "2024_06" "2024_07" "2024_08" ...
+ $ ARR1 : num  12978 12967 12859 12827 12818 ...
+ $ ARR2 : num  12027 12058 12082 12102 12109 ...
+ $ ARR3 : num  11955 11986 12010 12029 12036 ...
+ $ ARR4 : num  13055 13044 12935 12904 12895 ...
+ $ ARR5 : num  11879 11871 11897 11888 11873 ...
+ $ ARR6 : num  15392 15438 15463 15468 15467 ...
+ $ ARR7 : num  14515 14509 14565 14585 14595 ...
+ $ ARR8 : num  12815 12884 12874 12890 12891 ...
+ $ ARR9 : num  10831 10823 10820 10828 10832 ...
+ $ ARR10: num  9426 9423 9416 9410 9407 ...
+ $ ARR11: num  9735 9771 9772 9745 9699 ...
+ $ ARR12: num  8897 8879 8862 8842 8830 ...
+ $ ARR13: num  8518 8465 8423 8445 8475 ...
+ $ ARR14: num  9477 9470 9439 9429 9440 ...
+ $ ARR15: num  9640 9655 9661 9630 9608 ...
+ $ ARR16: num  11146 11126 11135 11146 11154 ...
+ $ ARR17: num  10158 10153 10125 10118 10110 ...
+ $ ARR18: num  8930 8890 8896 8869 8865 ...
+ $ ARR19: num  8117 8113 8072 8061 8055 ...
+ $ ARR20: num  8331 8298 8302 8307 8306 ...</code></pre>
+</div>
+</div>
+</section>
+<section id="arima-vs-acp" class="level1">
+<h1>Arima vs Acp</h1>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_arima"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_acp"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(merged_data_ordered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 1%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">ARR1_arima</th>
+<th style="text-align: right;">ARR1_acp</th>
+<th style="text-align: right;">ARR2_arima</th>
+<th style="text-align: right;">ARR2_acp</th>
+<th style="text-align: right;">ARR3_arima</th>
+<th style="text-align: right;">ARR3_acp</th>
+<th style="text-align: right;">ARR4_arima</th>
+<th style="text-align: right;">ARR4_acp</th>
+<th style="text-align: right;">ARR5_arima</th>
+<th style="text-align: right;">ARR5_acp</th>
+<th style="text-align: right;">ARR6_arima</th>
+<th style="text-align: right;">ARR6_acp</th>
+<th style="text-align: right;">ARR7_arima</th>
+<th style="text-align: right;">ARR7_acp</th>
+<th style="text-align: right;">ARR8_arima</th>
+<th style="text-align: right;">ARR8_acp</th>
+<th style="text-align: right;">ARR9_arima</th>
+<th style="text-align: right;">ARR9_acp</th>
+<th style="text-align: right;">ARR10_arima</th>
+<th style="text-align: right;">ARR10_acp</th>
+<th style="text-align: right;">ARR11_arima</th>
+<th style="text-align: right;">ARR11_acp</th>
+<th style="text-align: right;">ARR12_arima</th>
+<th style="text-align: right;">ARR12_acp</th>
+<th style="text-align: right;">ARR13_arima</th>
+<th style="text-align: right;">ARR13_acp</th>
+<th style="text-align: right;">ARR14_arima</th>
+<th style="text-align: right;">ARR14_acp</th>
+<th style="text-align: right;">ARR15_arima</th>
+<th style="text-align: right;">ARR15_acp</th>
+<th style="text-align: right;">ARR16_arima</th>
+<th style="text-align: right;">ARR16_acp</th>
+<th style="text-align: right;">ARR17_arima</th>
+<th style="text-align: right;">ARR17_acp</th>
+<th style="text-align: right;">ARR18_arima</th>
+<th style="text-align: right;">ARR18_acp</th>
+<th style="text-align: right;">ARR19_arima</th>
+<th style="text-align: right;">ARR19_acp</th>
+<th style="text-align: right;">ARR20_arima</th>
+<th style="text-align: right;">ARR20_acp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2024_05</td>
+<td style="text-align: right;">13078.90</td>
+<td style="text-align: right;">12977.68</td>
+<td style="text-align: right;">12034.68</td>
+<td style="text-align: right;">12027.01</td>
+<td style="text-align: right;">11962.67</td>
+<td style="text-align: right;">11954.84</td>
+<td style="text-align: right;">13155.77</td>
+<td style="text-align: right;">13054.84</td>
+<td style="text-align: right;">11889.20</td>
+<td style="text-align: right;">11879.28</td>
+<td style="text-align: right;">15327.29</td>
+<td style="text-align: right;">15391.58</td>
+<td style="text-align: right;">14445.08</td>
+<td style="text-align: right;">14514.83</td>
+<td style="text-align: right;">12850.23</td>
+<td style="text-align: right;">12814.80</td>
+<td style="text-align: right;">10824.47</td>
+<td style="text-align: right;">10830.76</td>
+<td style="text-align: right;">9391.45</td>
+<td style="text-align: right;">9426.239</td>
+<td style="text-align: right;">9836.90</td>
+<td style="text-align: right;">9734.553</td>
+<td style="text-align: right;">8957.37</td>
+<td style="text-align: right;">8897.291</td>
+<td style="text-align: right;">8481.32</td>
+<td style="text-align: right;">8517.924</td>
+<td style="text-align: right;">9327.31</td>
+<td style="text-align: right;">9477.357</td>
+<td style="text-align: right;">9571.26</td>
+<td style="text-align: right;">9640.385</td>
+<td style="text-align: right;">11126.95</td>
+<td style="text-align: right;">11145.72</td>
+<td style="text-align: right;">10157.94</td>
+<td style="text-align: right;">10158.06</td>
+<td style="text-align: right;">8884.39</td>
+<td style="text-align: right;">8929.971</td>
+<td style="text-align: right;">8074.83</td>
+<td style="text-align: right;">8117.379</td>
+<td style="text-align: right;">8438.23</td>
+<td style="text-align: right;">8331.189</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024_06</td>
+<td style="text-align: right;">13095.60</td>
+<td style="text-align: right;">12967.41</td>
+<td style="text-align: right;">12041.37</td>
+<td style="text-align: right;">12058.37</td>
+<td style="text-align: right;">11969.33</td>
+<td style="text-align: right;">11985.99</td>
+<td style="text-align: right;">13172.48</td>
+<td style="text-align: right;">13044.45</td>
+<td style="text-align: right;">11932.62</td>
+<td style="text-align: right;">11870.81</td>
+<td style="text-align: right;">15344.57</td>
+<td style="text-align: right;">15438.27</td>
+<td style="text-align: right;">14457.16</td>
+<td style="text-align: right;">14508.51</td>
+<td style="text-align: right;">12845.92</td>
+<td style="text-align: right;">12883.61</td>
+<td style="text-align: right;">10830.82</td>
+<td style="text-align: right;">10822.51</td>
+<td style="text-align: right;">9356.91</td>
+<td style="text-align: right;">9423.053</td>
+<td style="text-align: right;">9810.79</td>
+<td style="text-align: right;">9771.233</td>
+<td style="text-align: right;">8929.73</td>
+<td style="text-align: right;">8879.482</td>
+<td style="text-align: right;">8440.65</td>
+<td style="text-align: right;">8465.086</td>
+<td style="text-align: right;">9269.95</td>
+<td style="text-align: right;">9470.471</td>
+<td style="text-align: right;">9532.02</td>
+<td style="text-align: right;">9654.530</td>
+<td style="text-align: right;">11092.37</td>
+<td style="text-align: right;">11125.51</td>
+<td style="text-align: right;">10134.08</td>
+<td style="text-align: right;">10153.41</td>
+<td style="text-align: right;">8851.95</td>
+<td style="text-align: right;">8890.490</td>
+<td style="text-align: right;">8052.02</td>
+<td style="text-align: right;">8112.915</td>
+<td style="text-align: right;">8399.86</td>
+<td style="text-align: right;">8297.731</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024_07</td>
+<td style="text-align: right;">13112.30</td>
+<td style="text-align: right;">12858.85</td>
+<td style="text-align: right;">12048.05</td>
+<td style="text-align: right;">12082.29</td>
+<td style="text-align: right;">11976.00</td>
+<td style="text-align: right;">12009.55</td>
+<td style="text-align: right;">13189.19</td>
+<td style="text-align: right;">12935.31</td>
+<td style="text-align: right;">11918.21</td>
+<td style="text-align: right;">11896.56</td>
+<td style="text-align: right;">15361.86</td>
+<td style="text-align: right;">15463.42</td>
+<td style="text-align: right;">14469.24</td>
+<td style="text-align: right;">14564.98</td>
+<td style="text-align: right;">12877.04</td>
+<td style="text-align: right;">12874.18</td>
+<td style="text-align: right;">10841.62</td>
+<td style="text-align: right;">10819.62</td>
+<td style="text-align: right;">9322.36</td>
+<td style="text-align: right;">9416.397</td>
+<td style="text-align: right;">9784.69</td>
+<td style="text-align: right;">9771.967</td>
+<td style="text-align: right;">8902.10</td>
+<td style="text-align: right;">8861.947</td>
+<td style="text-align: right;">8399.97</td>
+<td style="text-align: right;">8423.186</td>
+<td style="text-align: right;">9245.02</td>
+<td style="text-align: right;">9439.422</td>
+<td style="text-align: right;">9492.96</td>
+<td style="text-align: right;">9661.441</td>
+<td style="text-align: right;">11068.58</td>
+<td style="text-align: right;">11134.66</td>
+<td style="text-align: right;">10105.24</td>
+<td style="text-align: right;">10124.94</td>
+<td style="text-align: right;">8813.80</td>
+<td style="text-align: right;">8895.708</td>
+<td style="text-align: right;">8003.00</td>
+<td style="text-align: right;">8072.314</td>
+<td style="text-align: right;">8306.22</td>
+<td style="text-align: right;">8302.194</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024_08</td>
+<td style="text-align: right;">13129.01</td>
+<td style="text-align: right;">12827.04</td>
+<td style="text-align: right;">12054.73</td>
+<td style="text-align: right;">12101.66</td>
+<td style="text-align: right;">11982.67</td>
+<td style="text-align: right;">12028.64</td>
+<td style="text-align: right;">13205.89</td>
+<td style="text-align: right;">12904.04</td>
+<td style="text-align: right;">11882.37</td>
+<td style="text-align: right;">11888.28</td>
+<td style="text-align: right;">15379.14</td>
+<td style="text-align: right;">15468.41</td>
+<td style="text-align: right;">14481.32</td>
+<td style="text-align: right;">14585.15</td>
+<td style="text-align: right;">12785.39</td>
+<td style="text-align: right;">12890.03</td>
+<td style="text-align: right;">10848.92</td>
+<td style="text-align: right;">10827.67</td>
+<td style="text-align: right;">9287.81</td>
+<td style="text-align: right;">9409.554</td>
+<td style="text-align: right;">9758.58</td>
+<td style="text-align: right;">9744.547</td>
+<td style="text-align: right;">8874.46</td>
+<td style="text-align: right;">8842.343</td>
+<td style="text-align: right;">8359.29</td>
+<td style="text-align: right;">8444.568</td>
+<td style="text-align: right;">9237.00</td>
+<td style="text-align: right;">9429.484</td>
+<td style="text-align: right;">9453.98</td>
+<td style="text-align: right;">9629.712</td>
+<td style="text-align: right;">11044.79</td>
+<td style="text-align: right;">11146.49</td>
+<td style="text-align: right;">10074.72</td>
+<td style="text-align: right;">10118.23</td>
+<td style="text-align: right;">8773.99</td>
+<td style="text-align: right;">8869.384</td>
+<td style="text-align: right;">7956.00</td>
+<td style="text-align: right;">8061.451</td>
+<td style="text-align: right;">8271.42</td>
+<td style="text-align: right;">8306.833</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024_09</td>
+<td style="text-align: right;">13145.71</td>
+<td style="text-align: right;">12817.67</td>
+<td style="text-align: right;">12061.41</td>
+<td style="text-align: right;">12108.93</td>
+<td style="text-align: right;">11989.33</td>
+<td style="text-align: right;">12035.76</td>
+<td style="text-align: right;">13222.60</td>
+<td style="text-align: right;">12895.37</td>
+<td style="text-align: right;">11857.12</td>
+<td style="text-align: right;">11873.18</td>
+<td style="text-align: right;">15396.43</td>
+<td style="text-align: right;">15466.68</td>
+<td style="text-align: right;">14493.40</td>
+<td style="text-align: right;">14595.37</td>
+<td style="text-align: right;">12776.29</td>
+<td style="text-align: right;">12891.23</td>
+<td style="text-align: right;">10864.15</td>
+<td style="text-align: right;">10831.56</td>
+<td style="text-align: right;">9253.26</td>
+<td style="text-align: right;">9406.605</td>
+<td style="text-align: right;">9732.48</td>
+<td style="text-align: right;">9698.686</td>
+<td style="text-align: right;">8846.83</td>
+<td style="text-align: right;">8829.724</td>
+<td style="text-align: right;">8318.61</td>
+<td style="text-align: right;">8475.286</td>
+<td style="text-align: right;">9208.19</td>
+<td style="text-align: right;">9439.738</td>
+<td style="text-align: right;">9415.03</td>
+<td style="text-align: right;">9608.158</td>
+<td style="text-align: right;">11021.00</td>
+<td style="text-align: right;">11153.51</td>
+<td style="text-align: right;">10043.65</td>
+<td style="text-align: right;">10109.58</td>
+<td style="text-align: right;">8733.71</td>
+<td style="text-align: right;">8865.342</td>
+<td style="text-align: right;">7906.91</td>
+<td style="text-align: right;">8055.151</td>
+<td style="text-align: right;">8259.32</td>
+<td style="text-align: right;">8306.210</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024_10</td>
+<td style="text-align: right;">13162.41</td>
+<td style="text-align: right;">12818.34</td>
+<td style="text-align: right;">12068.10</td>
+<td style="text-align: right;">12109.05</td>
+<td style="text-align: right;">11996.00</td>
+<td style="text-align: right;">12035.99</td>
+<td style="text-align: right;">13239.30</td>
+<td style="text-align: right;">12895.78</td>
+<td style="text-align: right;">11817.85</td>
+<td style="text-align: right;">11871.87</td>
+<td style="text-align: right;">15413.71</td>
+<td style="text-align: right;">15463.27</td>
+<td style="text-align: right;">14505.48</td>
+<td style="text-align: right;">14605.59</td>
+<td style="text-align: right;">12684.60</td>
+<td style="text-align: right;">12867.18</td>
+<td style="text-align: right;">10909.54</td>
+<td style="text-align: right;">10831.93</td>
+<td style="text-align: right;">9218.72</td>
+<td style="text-align: right;">9398.763</td>
+<td style="text-align: right;">9706.37</td>
+<td style="text-align: right;">9701.968</td>
+<td style="text-align: right;">8819.19</td>
+<td style="text-align: right;">8829.984</td>
+<td style="text-align: right;">8277.94</td>
+<td style="text-align: right;">8474.961</td>
+<td style="text-align: right;">9131.43</td>
+<td style="text-align: right;">9435.186</td>
+<td style="text-align: right;">9376.09</td>
+<td style="text-align: right;">9604.052</td>
+<td style="text-align: right;">10997.22</td>
+<td style="text-align: right;">11150.73</td>
+<td style="text-align: right;">10012.39</td>
+<td style="text-align: right;">10106.93</td>
+<td style="text-align: right;">8693.29</td>
+<td style="text-align: right;">8864.074</td>
+<td style="text-align: right;">7869.98</td>
+<td style="text-align: right;">8054.754</td>
+<td style="text-align: right;">8273.56</td>
+<td style="text-align: right;">8292.925</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024_11</td>
+<td style="text-align: right;">13179.11</td>
+<td style="text-align: right;">12824.28</td>
+<td style="text-align: right;">12074.78</td>
+<td style="text-align: right;">12105.47</td>
+<td style="text-align: right;">12002.67</td>
+<td style="text-align: right;">12032.55</td>
+<td style="text-align: right;">13256.01</td>
+<td style="text-align: right;">12901.04</td>
+<td style="text-align: right;">11812.75</td>
+<td style="text-align: right;">11871.47</td>
+<td style="text-align: right;">15431.00</td>
+<td style="text-align: right;">15458.70</td>
+<td style="text-align: right;">14517.56</td>
+<td style="text-align: right;">14616.47</td>
+<td style="text-align: right;">12705.26</td>
+<td style="text-align: right;">12828.28</td>
+<td style="text-align: right;">10918.75</td>
+<td style="text-align: right;">10832.54</td>
+<td style="text-align: right;">9184.17</td>
+<td style="text-align: right;">9388.984</td>
+<td style="text-align: right;">9680.27</td>
+<td style="text-align: right;">9727.380</td>
+<td style="text-align: right;">8791.56</td>
+<td style="text-align: right;">8833.858</td>
+<td style="text-align: right;">8237.26</td>
+<td style="text-align: right;">8444.920</td>
+<td style="text-align: right;">9058.83</td>
+<td style="text-align: right;">9416.249</td>
+<td style="text-align: right;">9337.16</td>
+<td style="text-align: right;">9626.743</td>
+<td style="text-align: right;">10973.43</td>
+<td style="text-align: right;">11145.09</td>
+<td style="text-align: right;">9981.06</td>
+<td style="text-align: right;">10100.09</td>
+<td style="text-align: right;">8652.83</td>
+<td style="text-align: right;">8871.943</td>
+<td style="text-align: right;">7833.10</td>
+<td style="text-align: right;">8049.498</td>
+<td style="text-align: right;">8257.81</td>
+<td style="text-align: right;">8281.520</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024_12</td>
+<td style="text-align: right;">13195.82</td>
+<td style="text-align: right;">12831.20</td>
+<td style="text-align: right;">12081.46</td>
+<td style="text-align: right;">12100.04</td>
+<td style="text-align: right;">12009.33</td>
+<td style="text-align: right;">12027.24</td>
+<td style="text-align: right;">13272.72</td>
+<td style="text-align: right;">12907.63</td>
+<td style="text-align: right;">11823.88</td>
+<td style="text-align: right;">11874.74</td>
+<td style="text-align: right;">15448.29</td>
+<td style="text-align: right;">15452.44</td>
+<td style="text-align: right;">14529.63</td>
+<td style="text-align: right;">14624.41</td>
+<td style="text-align: right;">12655.27</td>
+<td style="text-align: right;">12785.72</td>
+<td style="text-align: right;">10919.70</td>
+<td style="text-align: right;">10832.45</td>
+<td style="text-align: right;">9149.62</td>
+<td style="text-align: right;">9380.988</td>
+<td style="text-align: right;">9654.17</td>
+<td style="text-align: right;">9740.554</td>
+<td style="text-align: right;">8763.92</td>
+<td style="text-align: right;">8832.758</td>
+<td style="text-align: right;">8196.58</td>
+<td style="text-align: right;">8437.295</td>
+<td style="text-align: right;">8984.02</td>
+<td style="text-align: right;">9409.061</td>
+<td style="text-align: right;">9298.23</td>
+<td style="text-align: right;">9631.294</td>
+<td style="text-align: right;">10949.64</td>
+<td style="text-align: right;">11137.92</td>
+<td style="text-align: right;">9949.71</td>
+<td style="text-align: right;">10097.96</td>
+<td style="text-align: right;">8612.36</td>
+<td style="text-align: right;">8873.055</td>
+<td style="text-align: right;">7800.48</td>
+<td style="text-align: right;">8050.430</td>
+<td style="text-align: right;">8234.62</td>
+<td style="text-align: right;">8278.600</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025_01</td>
+<td style="text-align: right;">13212.52</td>
+<td style="text-align: right;">12837.01</td>
+<td style="text-align: right;">12088.14</td>
+<td style="text-align: right;">12094.48</td>
+<td style="text-align: right;">12016.00</td>
+<td style="text-align: right;">12021.60</td>
+<td style="text-align: right;">13289.42</td>
+<td style="text-align: right;">12913.94</td>
+<td style="text-align: right;">11839.15</td>
+<td style="text-align: right;">11868.93</td>
+<td style="text-align: right;">15465.57</td>
+<td style="text-align: right;">15445.03</td>
+<td style="text-align: right;">14541.71</td>
+<td style="text-align: right;">14628.40</td>
+<td style="text-align: right;">12747.41</td>
+<td style="text-align: right;">12752.28</td>
+<td style="text-align: right;">10928.91</td>
+<td style="text-align: right;">10834.33</td>
+<td style="text-align: right;">9115.08</td>
+<td style="text-align: right;">9378.818</td>
+<td style="text-align: right;">9628.06</td>
+<td style="text-align: right;">9714.789</td>
+<td style="text-align: right;">8736.29</td>
+<td style="text-align: right;">8822.629</td>
+<td style="text-align: right;">8155.91</td>
+<td style="text-align: right;">8455.838</td>
+<td style="text-align: right;">8925.00</td>
+<td style="text-align: right;">9418.796</td>
+<td style="text-align: right;">9259.30</td>
+<td style="text-align: right;">9625.091</td>
+<td style="text-align: right;">10925.85</td>
+<td style="text-align: right;">11135.43</td>
+<td style="text-align: right;">9918.36</td>
+<td style="text-align: right;">10092.23</td>
+<td style="text-align: right;">8571.88</td>
+<td style="text-align: right;">8876.265</td>
+<td style="text-align: right;">7762.90</td>
+<td style="text-align: right;">8049.572</td>
+<td style="text-align: right;">8198.50</td>
+<td style="text-align: right;">8292.697</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025_02</td>
+<td style="text-align: right;">13229.22</td>
+<td style="text-align: right;">12840.27</td>
+<td style="text-align: right;">12094.83</td>
+<td style="text-align: right;">12090.63</td>
+<td style="text-align: right;">12022.67</td>
+<td style="text-align: right;">12017.70</td>
+<td style="text-align: right;">13306.13</td>
+<td style="text-align: right;">12917.61</td>
+<td style="text-align: right;">11859.20</td>
+<td style="text-align: right;">11867.36</td>
+<td style="text-align: right;">15482.86</td>
+<td style="text-align: right;">15439.99</td>
+<td style="text-align: right;">14553.79</td>
+<td style="text-align: right;">14630.31</td>
+<td style="text-align: right;">12734.56</td>
+<td style="text-align: right;">12729.57</td>
+<td style="text-align: right;">10942.24</td>
+<td style="text-align: right;">10834.09</td>
+<td style="text-align: right;">9080.53</td>
+<td style="text-align: right;">9376.511</td>
+<td style="text-align: right;">9601.96</td>
+<td style="text-align: right;">9695.327</td>
+<td style="text-align: right;">8708.65</td>
+<td style="text-align: right;">8814.078</td>
+<td style="text-align: right;">8115.23</td>
+<td style="text-align: right;">8474.873</td>
+<td style="text-align: right;">8859.33</td>
+<td style="text-align: right;">9427.522</td>
+<td style="text-align: right;">9220.36</td>
+<td style="text-align: right;">9609.571</td>
+<td style="text-align: right;">10902.06</td>
+<td style="text-align: right;">11132.18</td>
+<td style="text-align: right;">9887.00</td>
+<td style="text-align: right;">10090.10</td>
+<td style="text-align: right;">8531.40</td>
+<td style="text-align: right;">8871.716</td>
+<td style="text-align: right;">7725.85</td>
+<td style="text-align: right;">8050.922</td>
+<td style="text-align: right;">8177.76</td>
+<td style="text-align: right;">8303.135</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025_03</td>
+<td style="text-align: right;">13245.92</td>
+<td style="text-align: right;">12841.25</td>
+<td style="text-align: right;">12101.51</td>
+<td style="text-align: right;">12089.33</td>
+<td style="text-align: right;">12029.33</td>
+<td style="text-align: right;">12016.43</td>
+<td style="text-align: right;">13322.84</td>
+<td style="text-align: right;">12918.44</td>
+<td style="text-align: right;">11840.63</td>
+<td style="text-align: right;">11863.96</td>
+<td style="text-align: right;">15500.14</td>
+<td style="text-align: right;">15438.87</td>
+<td style="text-align: right;">14565.87</td>
+<td style="text-align: right;">14632.72</td>
+<td style="text-align: right;">12747.80</td>
+<td style="text-align: right;">12720.19</td>
+<td style="text-align: right;">10950.17</td>
+<td style="text-align: right;">10832.97</td>
+<td style="text-align: right;">9045.98</td>
+<td style="text-align: right;">9372.109</td>
+<td style="text-align: right;">9575.85</td>
+<td style="text-align: right;">9696.771</td>
+<td style="text-align: right;">8681.02</td>
+<td style="text-align: right;">8812.428</td>
+<td style="text-align: right;">8074.55</td>
+<td style="text-align: right;">8463.874</td>
+<td style="text-align: right;">8829.13</td>
+<td style="text-align: right;">9420.371</td>
+<td style="text-align: right;">9181.43</td>
+<td style="text-align: right;">9615.196</td>
+<td style="text-align: right;">10878.27</td>
+<td style="text-align: right;">11130.31</td>
+<td style="text-align: right;">9855.64</td>
+<td style="text-align: right;">10084.86</td>
+<td style="text-align: right;">8490.93</td>
+<td style="text-align: right;">8873.044</td>
+<td style="text-align: right;">7685.59</td>
+<td style="text-align: right;">8046.012</td>
+<td style="text-align: right;">8158.83</td>
+<td style="text-align: right;">8298.203</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025_04</td>
+<td style="text-align: right;">13262.63</td>
+<td style="text-align: right;">12839.76</td>
+<td style="text-align: right;">12108.19</td>
+<td style="text-align: right;">12090.00</td>
+<td style="text-align: right;">12036.00</td>
+<td style="text-align: right;">12017.25</td>
+<td style="text-align: right;">13339.54</td>
+<td style="text-align: right;">12916.35</td>
+<td style="text-align: right;">11824.79</td>
+<td style="text-align: right;">11865.37</td>
+<td style="text-align: right;">15517.43</td>
+<td style="text-align: right;">15440.88</td>
+<td style="text-align: right;">14577.95</td>
+<td style="text-align: right;">14634.50</td>
+<td style="text-align: right;">12698.09</td>
+<td style="text-align: right;">12721.16</td>
+<td style="text-align: right;">10949.22</td>
+<td style="text-align: right;">10829.36</td>
+<td style="text-align: right;">9011.43</td>
+<td style="text-align: right;">9365.298</td>
+<td style="text-align: right;">9549.75</td>
+<td style="text-align: right;">9716.035</td>
+<td style="text-align: right;">8653.39</td>
+<td style="text-align: right;">8815.342</td>
+<td style="text-align: right;">8033.87</td>
+<td style="text-align: right;">8443.069</td>
+<td style="text-align: right;">8782.03</td>
+<td style="text-align: right;">9406.141</td>
+<td style="text-align: right;">9142.50</td>
+<td style="text-align: right;">9620.487</td>
+<td style="text-align: right;">10854.48</td>
+<td style="text-align: right;">11127.26</td>
+<td style="text-align: right;">9824.28</td>
+<td style="text-align: right;">10083.61</td>
+<td style="text-align: right;">8450.45</td>
+<td style="text-align: right;">8870.140</td>
+<td style="text-align: right;">7647.30</td>
+<td style="text-align: right;">8042.913</td>
+<td style="text-align: right;">8146.42</td>
+<td style="text-align: right;">8277.632</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025_05</td>
+<td style="text-align: right;">13279.33</td>
+<td style="text-align: right;">12836.63</td>
+<td style="text-align: right;">12114.87</td>
+<td style="text-align: right;">12091.58</td>
+<td style="text-align: right;">12042.67</td>
+<td style="text-align: right;">12018.86</td>
+<td style="text-align: right;">13356.25</td>
+<td style="text-align: right;">12913.09</td>
+<td style="text-align: right;">11822.87</td>
+<td style="text-align: right;">11860.94</td>
+<td style="text-align: right;">15534.71</td>
+<td style="text-align: right;">15443.30</td>
+<td style="text-align: right;">14590.03</td>
+<td style="text-align: right;">14633.65</td>
+<td style="text-align: right;">12687.52</td>
+<td style="text-align: right;">12731.97</td>
+<td style="text-align: right;">10945.90</td>
+<td style="text-align: right;">10826.79</td>
+<td style="text-align: right;">8976.89</td>
+<td style="text-align: right;">9362.188</td>
+<td style="text-align: right;">9523.64</td>
+<td style="text-align: right;">9713.383</td>
+<td style="text-align: right;">8625.75</td>
+<td style="text-align: right;">8812.386</td>
+<td style="text-align: right;">7993.20</td>
+<td style="text-align: right;">8433.754</td>
+<td style="text-align: right;">8730.30</td>
+<td style="text-align: right;">9399.303</td>
+<td style="text-align: right;">9103.57</td>
+<td style="text-align: right;">9621.933</td>
+<td style="text-align: right;">10830.70</td>
+<td style="text-align: right;">11127.76</td>
+<td style="text-align: right;">9792.93</td>
+<td style="text-align: right;">10079.27</td>
+<td style="text-align: right;">8409.97</td>
+<td style="text-align: right;">8868.236</td>
+<td style="text-align: right;">7608.14</td>
+<td style="text-align: right;">8036.897</td>
+<td style="text-align: right;">8126.08</td>
+<td style="text-align: right;">8268.048</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025_06</td>
+<td style="text-align: right;">13296.03</td>
+<td style="text-align: right;">12832.42</td>
+<td style="text-align: right;">12121.56</td>
+<td style="text-align: right;">12093.37</td>
+<td style="text-align: right;">12049.33</td>
+<td style="text-align: right;">12020.56</td>
+<td style="text-align: right;">13372.95</td>
+<td style="text-align: right;">12909.24</td>
+<td style="text-align: right;">11807.00</td>
+<td style="text-align: right;">11858.88</td>
+<td style="text-align: right;">15552.00</td>
+<td style="text-align: right;">15445.46</td>
+<td style="text-align: right;">14602.11</td>
+<td style="text-align: right;">14629.93</td>
+<td style="text-align: right;">12692.59</td>
+<td style="text-align: right;">12745.74</td>
+<td style="text-align: right;">10943.88</td>
+<td style="text-align: right;">10823.60</td>
+<td style="text-align: right;">8942.34</td>
+<td style="text-align: right;">9361.794</td>
+<td style="text-align: right;">9497.54</td>
+<td style="text-align: right;">9696.259</td>
+<td style="text-align: right;">8598.12</td>
+<td style="text-align: right;">8803.257</td>
+<td style="text-align: right;">7952.52</td>
+<td style="text-align: right;">8443.436</td>
+<td style="text-align: right;">8678.11</td>
+<td style="text-align: right;">9401.542</td>
+<td style="text-align: right;">9064.64</td>
+<td style="text-align: right;">9604.548</td>
+<td style="text-align: right;">10806.91</td>
+<td style="text-align: right;">11128.14</td>
+<td style="text-align: right;">9761.57</td>
+<td style="text-align: right;">10077.21</td>
+<td style="text-align: right;">8369.49</td>
+<td style="text-align: right;">8856.779</td>
+<td style="text-align: right;">7570.88</td>
+<td style="text-align: right;">8033.660</td>
+<td style="text-align: right;">8105.78</td>
+<td style="text-align: right;">8273.637</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025_07</td>
+<td style="text-align: right;">13312.73</td>
+<td style="text-align: right;">12828.68</td>
+<td style="text-align: right;">12128.24</td>
+<td style="text-align: right;">12095.10</td>
+<td style="text-align: right;">12056.00</td>
+<td style="text-align: right;">12022.15</td>
+<td style="text-align: right;">13389.66</td>
+<td style="text-align: right;">12905.87</td>
+<td style="text-align: right;">11807.71</td>
+<td style="text-align: right;">11854.25</td>
+<td style="text-align: right;">15569.29</td>
+<td style="text-align: right;">15447.51</td>
+<td style="text-align: right;">14614.19</td>
+<td style="text-align: right;">14626.58</td>
+<td style="text-align: right;">12710.37</td>
+<td style="text-align: right;">12758.80</td>
+<td style="text-align: right;">10940.46</td>
+<td style="text-align: right;">10821.26</td>
+<td style="text-align: right;">8907.79</td>
+<td style="text-align: right;">9361.794</td>
+<td style="text-align: right;">9471.43</td>
+<td style="text-align: right;">9678.310</td>
+<td style="text-align: right;">8570.48</td>
+<td style="text-align: right;">8793.596</td>
+<td style="text-align: right;">7911.84</td>
+<td style="text-align: right;">8447.019</td>
+<td style="text-align: right;">8634.91</td>
+<td style="text-align: right;">9401.132</td>
+<td style="text-align: right;">9025.71</td>
+<td style="text-align: right;">9595.204</td>
+<td style="text-align: right;">10783.12</td>
+<td style="text-align: right;">11129.47</td>
+<td style="text-align: right;">9730.21</td>
+<td style="text-align: right;">10072.18</td>
+<td style="text-align: right;">8329.02</td>
+<td style="text-align: right;">8849.188</td>
+<td style="text-align: right;">7532.71</td>
+<td style="text-align: right;">8027.249</td>
+<td style="text-align: right;">8082.10</td>
+<td style="text-align: right;">8282.271</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025_08</td>
+<td style="text-align: right;">13329.43</td>
+<td style="text-align: right;">12825.92</td>
+<td style="text-align: right;">12134.92</td>
+<td style="text-align: right;">12096.38</td>
+<td style="text-align: right;">12062.67</td>
+<td style="text-align: right;">12023.48</td>
+<td style="text-align: right;">13406.37</td>
+<td style="text-align: right;">12902.88</td>
+<td style="text-align: right;">11814.89</td>
+<td style="text-align: right;">11854.53</td>
+<td style="text-align: right;">15586.57</td>
+<td style="text-align: right;">15449.88</td>
+<td style="text-align: right;">14626.27</td>
+<td style="text-align: right;">14625.71</td>
+<td style="text-align: right;">12716.28</td>
+<td style="text-align: right;">12765.91</td>
+<td style="text-align: right;">10938.14</td>
+<td style="text-align: right;">10817.68</td>
+<td style="text-align: right;">8873.24</td>
+<td style="text-align: right;">9357.503</td>
+<td style="text-align: right;">9445.33</td>
+<td style="text-align: right;">9683.339</td>
+<td style="text-align: right;">8542.85</td>
+<td style="text-align: right;">8790.408</td>
+<td style="text-align: right;">7871.16</td>
+<td style="text-align: right;">8437.750</td>
+<td style="text-align: right;">8596.39</td>
+<td style="text-align: right;">9392.635</td>
+<td style="text-align: right;">8986.77</td>
+<td style="text-align: right;">9592.653</td>
+<td style="text-align: right;">10759.33</td>
+<td style="text-align: right;">11127.92</td>
+<td style="text-align: right;">9698.85</td>
+<td style="text-align: right;">10070.65</td>
+<td style="text-align: right;">8288.54</td>
+<td style="text-align: right;">8842.840</td>
+<td style="text-align: right;">7495.35</td>
+<td style="text-align: right;">8023.737</td>
+<td style="text-align: right;">8062.54</td>
+<td style="text-align: right;">8272.383</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025_09</td>
+<td style="text-align: right;">13346.14</td>
+<td style="text-align: right;">12824.56</td>
+<td style="text-align: right;">12141.60</td>
+<td style="text-align: right;">12096.83</td>
+<td style="text-align: right;">12069.33</td>
+<td style="text-align: right;">12024.05</td>
+<td style="text-align: right;">13423.07</td>
+<td style="text-align: right;">12901.10</td>
+<td style="text-align: right;">11819.65</td>
+<td style="text-align: right;">11851.70</td>
+<td style="text-align: right;">15603.86</td>
+<td style="text-align: right;">15451.35</td>
+<td style="text-align: right;">14638.35</td>
+<td style="text-align: right;">14626.84</td>
+<td style="text-align: right;">12712.14</td>
+<td style="text-align: right;">12768.20</td>
+<td style="text-align: right;">10933.30</td>
+<td style="text-align: right;">10815.22</td>
+<td style="text-align: right;">8838.70</td>
+<td style="text-align: right;">9352.038</td>
+<td style="text-align: right;">9419.23</td>
+<td style="text-align: right;">9690.945</td>
+<td style="text-align: right;">8515.21</td>
+<td style="text-align: right;">8789.789</td>
+<td style="text-align: right;">7830.49</td>
+<td style="text-align: right;">8421.927</td>
+<td style="text-align: right;">8552.11</td>
+<td style="text-align: right;">9381.973</td>
+<td style="text-align: right;">8947.84</td>
+<td style="text-align: right;">9601.080</td>
+<td style="text-align: right;">10735.54</td>
+<td style="text-align: right;">11126.88</td>
+<td style="text-align: right;">9667.49</td>
+<td style="text-align: right;">10067.15</td>
+<td style="text-align: right;">8248.06</td>
+<td style="text-align: right;">8844.310</td>
+<td style="text-align: right;">7456.98</td>
+<td style="text-align: right;">8018.829</td>
+<td style="text-align: right;">8042.49</td>
+<td style="text-align: right;">8254.850</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025_10</td>
+<td style="text-align: right;">13362.84</td>
+<td style="text-align: right;">12823.95</td>
+<td style="text-align: right;">12148.29</td>
+<td style="text-align: right;">12096.33</td>
+<td style="text-align: right;">12076.00</td>
+<td style="text-align: right;">12023.61</td>
+<td style="text-align: right;">13439.78</td>
+<td style="text-align: right;">12900.37</td>
+<td style="text-align: right;">11828.66</td>
+<td style="text-align: right;">11850.87</td>
+<td style="text-align: right;">15621.14</td>
+<td style="text-align: right;">15451.29</td>
+<td style="text-align: right;">14650.43</td>
+<td style="text-align: right;">14627.47</td>
+<td style="text-align: right;">12704.77</td>
+<td style="text-align: right;">12765.19</td>
+<td style="text-align: right;">10918.89</td>
+<td style="text-align: right;">10812.82</td>
+<td style="text-align: right;">8804.15</td>
+<td style="text-align: right;">9347.706</td>
+<td style="text-align: right;">9393.12</td>
+<td style="text-align: right;">9690.639</td>
+<td style="text-align: right;">8487.58</td>
+<td style="text-align: right;">8786.692</td>
+<td style="text-align: right;">7789.81</td>
+<td style="text-align: right;">8419.186</td>
+<td style="text-align: right;">8494.55</td>
+<td style="text-align: right;">9378.113</td>
+<td style="text-align: right;">8908.91</td>
+<td style="text-align: right;">9597.130</td>
+<td style="text-align: right;">10711.75</td>
+<td style="text-align: right;">11124.75</td>
+<td style="text-align: right;">9636.13</td>
+<td style="text-align: right;">10065.39</td>
+<td style="text-align: right;">8207.58</td>
+<td style="text-align: right;">8840.589</td>
+<td style="text-align: right;">7419.11</td>
+<td style="text-align: right;">8016.956</td>
+<td style="text-align: right;">8024.23</td>
+<td style="text-align: right;">8246.744</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025_11</td>
+<td style="text-align: right;">13379.54</td>
+<td style="text-align: right;">12824.05</td>
+<td style="text-align: right;">12154.97</td>
+<td style="text-align: right;">12095.20</td>
+<td style="text-align: right;">12082.67</td>
+<td style="text-align: right;">12022.38</td>
+<td style="text-align: right;">13456.49</td>
+<td style="text-align: right;">12900.80</td>
+<td style="text-align: right;">11828.62</td>
+<td style="text-align: right;">11846.62</td>
+<td style="text-align: right;">15638.43</td>
+<td style="text-align: right;">15449.78</td>
+<td style="text-align: right;">14662.51</td>
+<td style="text-align: right;">14627.31</td>
+<td style="text-align: right;">12702.34</td>
+<td style="text-align: right;">12759.67</td>
+<td style="text-align: right;">10915.97</td>
+<td style="text-align: right;">10811.92</td>
+<td style="text-align: right;">8769.60</td>
+<td style="text-align: right;">9346.382</td>
+<td style="text-align: right;">9367.02</td>
+<td style="text-align: right;">9674.456</td>
+<td style="text-align: right;">8459.94</td>
+<td style="text-align: right;">8779.165</td>
+<td style="text-align: right;">7749.13</td>
+<td style="text-align: right;">8424.524</td>
+<td style="text-align: right;">8438.14</td>
+<td style="text-align: right;">9379.788</td>
+<td style="text-align: right;">8869.98</td>
+<td style="text-align: right;">9589.736</td>
+<td style="text-align: right;">10687.96</td>
+<td style="text-align: right;">11123.99</td>
+<td style="text-align: right;">9604.77</td>
+<td style="text-align: right;">10060.20</td>
+<td style="text-align: right;">8167.11</td>
+<td style="text-align: right;">8836.729</td>
+<td style="text-align: right;">7380.67</td>
+<td style="text-align: right;">8012.753</td>
+<td style="text-align: right;">8003.82</td>
+<td style="text-align: right;">8256.311</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025_12</td>
+<td style="text-align: right;">13396.24</td>
+<td style="text-align: right;">12824.42</td>
+<td style="text-align: right;">12161.65</td>
+<td style="text-align: right;">12093.87</td>
+<td style="text-align: right;">12089.33</td>
+<td style="text-align: right;">12021.00</td>
+<td style="text-align: right;">13473.19</td>
+<td style="text-align: right;">12901.37</td>
+<td style="text-align: right;">11824.40</td>
+<td style="text-align: right;">11845.65</td>
+<td style="text-align: right;">15655.71</td>
+<td style="text-align: right;">15448.28</td>
+<td style="text-align: right;">14674.59</td>
+<td style="text-align: right;">14627.61</td>
+<td style="text-align: right;">12704.65</td>
+<td style="text-align: right;">12751.47</td>
+<td style="text-align: right;">10915.67</td>
+<td style="text-align: right;">10810.27</td>
+<td style="text-align: right;">8735.05</td>
+<td style="text-align: right;">9343.860</td>
+<td style="text-align: right;">9340.91</td>
+<td style="text-align: right;">9665.804</td>
+<td style="text-align: right;">8432.31</td>
+<td style="text-align: right;">8773.262</td>
+<td style="text-align: right;">7708.46</td>
+<td style="text-align: right;">8428.281</td>
+<td style="text-align: right;">8381.11</td>
+<td style="text-align: right;">9379.769</td>
+<td style="text-align: right;">8831.05</td>
+<td style="text-align: right;">9580.005</td>
+<td style="text-align: right;">10664.18</td>
+<td style="text-align: right;">11121.62</td>
+<td style="text-align: right;">9573.42</td>
+<td style="text-align: right;">10057.12</td>
+<td style="text-align: right;">8126.63</td>
+<td style="text-align: right;">8830.216</td>
+<td style="text-align: right;">7342.75</td>
+<td style="text-align: right;">8010.528</td>
+<td style="text-align: right;">7983.88</td>
+<td style="text-align: right;">8262.948</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026_01</td>
+<td style="text-align: right;">13412.95</td>
+<td style="text-align: right;">12825.09</td>
+<td style="text-align: right;">12168.33</td>
+<td style="text-align: right;">12092.67</td>
+<td style="text-align: right;">12096.00</td>
+<td style="text-align: right;">12019.84</td>
+<td style="text-align: right;">13489.90</td>
+<td style="text-align: right;">12901.88</td>
+<td style="text-align: right;">11819.27</td>
+<td style="text-align: right;">11842.71</td>
+<td style="text-align: right;">15673.00</td>
+<td style="text-align: right;">15447.33</td>
+<td style="text-align: right;">14686.67</td>
+<td style="text-align: right;">14629.56</td>
+<td style="text-align: right;">12707.84</td>
+<td style="text-align: right;">12743.55</td>
+<td style="text-align: right;">10912.75</td>
+<td style="text-align: right;">10808.89</td>
+<td style="text-align: right;">8700.51</td>
+<td style="text-align: right;">9339.338</td>
+<td style="text-align: right;">9314.81</td>
+<td style="text-align: right;">9666.429</td>
+<td style="text-align: right;">8404.67</td>
+<td style="text-align: right;">8771.231</td>
+<td style="text-align: right;">7667.78</td>
+<td style="text-align: right;">8419.933</td>
+<td style="text-align: right;">8328.46</td>
+<td style="text-align: right;">9373.880</td>
+<td style="text-align: right;">8792.12</td>
+<td style="text-align: right;">9583.525</td>
+<td style="text-align: right;">10640.39</td>
+<td style="text-align: right;">11119.73</td>
+<td style="text-align: right;">9542.06</td>
+<td style="text-align: right;">10052.91</td>
+<td style="text-align: right;">8086.15</td>
+<td style="text-align: right;">8830.882</td>
+<td style="text-align: right;">7304.51</td>
+<td style="text-align: right;">8006.642</td>
+<td style="text-align: right;">7962.98</td>
+<td style="text-align: right;">8255.997</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026_02</td>
+<td style="text-align: right;">13429.65</td>
+<td style="text-align: right;">12825.41</td>
+<td style="text-align: right;">12175.02</td>
+<td style="text-align: right;">12091.66</td>
+<td style="text-align: right;">12102.67</td>
+<td style="text-align: right;">12018.97</td>
+<td style="text-align: right;">13506.61</td>
+<td style="text-align: right;">12901.83</td>
+<td style="text-align: right;">11813.00</td>
+<td style="text-align: right;">11842.20</td>
+<td style="text-align: right;">15690.29</td>
+<td style="text-align: right;">15446.93</td>
+<td style="text-align: right;">14698.75</td>
+<td style="text-align: right;">14631.75</td>
+<td style="text-align: right;">12708.73</td>
+<td style="text-align: right;">12736.40</td>
+<td style="text-align: right;">10908.52</td>
+<td style="text-align: right;">10806.60</td>
+<td style="text-align: right;">8665.96</td>
+<td style="text-align: right;">9333.365</td>
+<td style="text-align: right;">9288.70</td>
+<td style="text-align: right;">9673.961</td>
+<td style="text-align: right;">8377.04</td>
+<td style="text-align: right;">8771.043</td>
+<td style="text-align: right;">7627.10</td>
+<td style="text-align: right;">8410.593</td>
+<td style="text-align: right;">8273.96</td>
+<td style="text-align: right;">9366.677</td>
+<td style="text-align: right;">8753.18</td>
+<td style="text-align: right;">9585.734</td>
+<td style="text-align: right;">10616.60</td>
+<td style="text-align: right;">11116.87</td>
+<td style="text-align: right;">9510.70</td>
+<td style="text-align: right;">10051.25</td>
+<td style="text-align: right;">8045.67</td>
+<td style="text-align: right;">8830.327</td>
+<td style="text-align: right;">7266.63</td>
+<td style="text-align: right;">8004.948</td>
+<td style="text-align: right;">7943.22</td>
+<td style="text-align: right;">8240.612</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026_02</td>
+<td style="text-align: right;">13429.65</td>
+<td style="text-align: right;">12825.25</td>
+<td style="text-align: right;">12175.02</td>
+<td style="text-align: right;">12090.92</td>
+<td style="text-align: right;">12102.67</td>
+<td style="text-align: right;">12018.24</td>
+<td style="text-align: right;">13506.61</td>
+<td style="text-align: right;">12901.65</td>
+<td style="text-align: right;">11813.00</td>
+<td style="text-align: right;">11838.81</td>
+<td style="text-align: right;">15690.29</td>
+<td style="text-align: right;">15446.39</td>
+<td style="text-align: right;">14698.75</td>
+<td style="text-align: right;">14632.58</td>
+<td style="text-align: right;">12708.73</td>
+<td style="text-align: right;">12732.36</td>
+<td style="text-align: right;">10908.52</td>
+<td style="text-align: right;">10805.08</td>
+<td style="text-align: right;">8665.96</td>
+<td style="text-align: right;">9329.828</td>
+<td style="text-align: right;">9288.70</td>
+<td style="text-align: right;">9669.196</td>
+<td style="text-align: right;">8377.04</td>
+<td style="text-align: right;">8767.081</td>
+<td style="text-align: right;">7627.10</td>
+<td style="text-align: right;">8406.903</td>
+<td style="text-align: right;">8273.96</td>
+<td style="text-align: right;">9363.141</td>
+<td style="text-align: right;">8753.18</td>
+<td style="text-align: right;">9585.492</td>
+<td style="text-align: right;">10616.60</td>
+<td style="text-align: right;">11115.66</td>
+<td style="text-align: right;">9510.70</td>
+<td style="text-align: right;">10047.17</td>
+<td style="text-align: right;">8045.67</td>
+<td style="text-align: right;">8829.352</td>
+<td style="text-align: right;">7266.63</td>
+<td style="text-align: right;">8001.056</td>
+<td style="text-align: right;">7943.22</td>
+<td style="text-align: right;">8236.588</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026_02</td>
+<td style="text-align: right;">13446.35</td>
+<td style="text-align: right;">12825.41</td>
+<td style="text-align: right;">12181.70</td>
+<td style="text-align: right;">12091.66</td>
+<td style="text-align: right;">12109.33</td>
+<td style="text-align: right;">12018.97</td>
+<td style="text-align: right;">13523.31</td>
+<td style="text-align: right;">12901.83</td>
+<td style="text-align: right;">11817.45</td>
+<td style="text-align: right;">11842.20</td>
+<td style="text-align: right;">15707.57</td>
+<td style="text-align: right;">15446.93</td>
+<td style="text-align: right;">14710.83</td>
+<td style="text-align: right;">14631.75</td>
+<td style="text-align: right;">12707.55</td>
+<td style="text-align: right;">12736.40</td>
+<td style="text-align: right;">10906.00</td>
+<td style="text-align: right;">10806.60</td>
+<td style="text-align: right;">8631.41</td>
+<td style="text-align: right;">9333.365</td>
+<td style="text-align: right;">9262.60</td>
+<td style="text-align: right;">9673.961</td>
+<td style="text-align: right;">8349.41</td>
+<td style="text-align: right;">8771.043</td>
+<td style="text-align: right;">7586.42</td>
+<td style="text-align: right;">8410.593</td>
+<td style="text-align: right;">8229.30</td>
+<td style="text-align: right;">9366.677</td>
+<td style="text-align: right;">8714.25</td>
+<td style="text-align: right;">9585.734</td>
+<td style="text-align: right;">10592.81</td>
+<td style="text-align: right;">11116.87</td>
+<td style="text-align: right;">9479.34</td>
+<td style="text-align: right;">10051.25</td>
+<td style="text-align: right;">8005.20</td>
+<td style="text-align: right;">8830.327</td>
+<td style="text-align: right;">7228.48</td>
+<td style="text-align: right;">8004.948</td>
+<td style="text-align: right;">7923.09</td>
+<td style="text-align: right;">8240.612</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026_02</td>
+<td style="text-align: right;">13446.35</td>
+<td style="text-align: right;">12825.25</td>
+<td style="text-align: right;">12181.70</td>
+<td style="text-align: right;">12090.92</td>
+<td style="text-align: right;">12109.33</td>
+<td style="text-align: right;">12018.24</td>
+<td style="text-align: right;">13523.31</td>
+<td style="text-align: right;">12901.65</td>
+<td style="text-align: right;">11817.45</td>
+<td style="text-align: right;">11838.81</td>
+<td style="text-align: right;">15707.57</td>
+<td style="text-align: right;">15446.39</td>
+<td style="text-align: right;">14710.83</td>
+<td style="text-align: right;">14632.58</td>
+<td style="text-align: right;">12707.55</td>
+<td style="text-align: right;">12732.36</td>
+<td style="text-align: right;">10906.00</td>
+<td style="text-align: right;">10805.08</td>
+<td style="text-align: right;">8631.41</td>
+<td style="text-align: right;">9329.828</td>
+<td style="text-align: right;">9262.60</td>
+<td style="text-align: right;">9669.196</td>
+<td style="text-align: right;">8349.41</td>
+<td style="text-align: right;">8767.081</td>
+<td style="text-align: right;">7586.42</td>
+<td style="text-align: right;">8406.903</td>
+<td style="text-align: right;">8229.30</td>
+<td style="text-align: right;">9363.141</td>
+<td style="text-align: right;">8714.25</td>
+<td style="text-align: right;">9585.492</td>
+<td style="text-align: right;">10592.81</td>
+<td style="text-align: right;">11115.66</td>
+<td style="text-align: right;">9479.34</td>
+<td style="text-align: right;">10047.17</td>
+<td style="text-align: right;">8005.20</td>
+<td style="text-align: right;">8829.352</td>
+<td style="text-align: right;">7228.48</td>
+<td style="text-align: right;">8001.056</td>
+<td style="text-align: right;">7923.09</td>
+<td style="text-align: right;">8236.588</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026_03</td>
+<td style="text-align: right;">13463.05</td>
+<td style="text-align: right;">12824.41</td>
+<td style="text-align: right;">12188.38</td>
+<td style="text-align: right;">12090.47</td>
+<td style="text-align: right;">12116.00</td>
+<td style="text-align: right;">12017.72</td>
+<td style="text-align: right;">13540.02</td>
+<td style="text-align: right;">12901.03</td>
+<td style="text-align: right;">11821.28</td>
+<td style="text-align: right;">11837.43</td>
+<td style="text-align: right;">15724.86</td>
+<td style="text-align: right;">15445.96</td>
+<td style="text-align: right;">14722.90</td>
+<td style="text-align: right;">14631.82</td>
+<td style="text-align: right;">12706.17</td>
+<td style="text-align: right;">12730.17</td>
+<td style="text-align: right;">10906.30</td>
+<td style="text-align: right;">10803.03</td>
+<td style="text-align: right;">8596.87</td>
+<td style="text-align: right;">9327.773</td>
+<td style="text-align: right;">9236.50</td>
+<td style="text-align: right;">9658.978</td>
+<td style="text-align: right;">8321.77</td>
+<td style="text-align: right;">8760.220</td>
+<td style="text-align: right;">7545.75</td>
+<td style="text-align: right;">8410.965</td>
+<td style="text-align: right;">8179.96</td>
+<td style="text-align: right;">9362.972</td>
+<td style="text-align: right;">8675.32</td>
+<td style="text-align: right;">9575.142</td>
+<td style="text-align: right;">10569.02</td>
+<td style="text-align: right;">11114.11</td>
+<td style="text-align: right;">9447.98</td>
+<td style="text-align: right;">10044.14</td>
+<td style="text-align: right;">7964.72</td>
+<td style="text-align: right;">8822.025</td>
+<td style="text-align: right;">7190.53</td>
+<td style="text-align: right;">7998.198</td>
+<td style="text-align: right;">7903.50</td>
+<td style="text-align: right;">8242.579</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="arima-vs-acp---plots" class="level1">
+<h1>Arima vs Acp - Plots</h1>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  arr_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  arr_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[arr_arima]], merged_data_ordered[[arr_acp]]),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - ARR"</span>, i),</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(p)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-4.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-5.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-6.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-7.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-8.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-9.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-10.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-11.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-12.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-13.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-14.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-15.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-16.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-17.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-18.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-19.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-20.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb10" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> " ARIMA vs ACP "</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Mr . Dtiebo"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024"</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">  prettydoc::html_pretty:</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: architect</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">warning =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>\newpage</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="fu"># Arima</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima.csv"</span>)</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(arima)</span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="fu"># acp</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp.csv"</span>)</span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(acp)</span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="fu"># Arima vs Acp</span></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_arima"</span>)</span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_acp"</span>)</span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>))</span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(merged_data_ordered)</span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a><span class="fu"># Arima vs Acp - Plots </span></span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a>  arr_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>)</span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a>  arr_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>)</span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[arr_arima]], merged_data_ordered[[arr_acp]]),</span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - ARR"</span>, i),</span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
+<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(p)</span>
+<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+</body></html>
