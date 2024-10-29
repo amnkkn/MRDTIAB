@@ -96,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -117,15 +118,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">les20AR</span></a>
+ <span class="menu-text">Les 20 AR</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./les12B.html" rel="" target="">
- <span class="menu-text">les12B</span></a>
+ <span class="menu-text">Les 12 B</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./arimavsacp.html" rel="" target="" aria-current="page">
- <span class="menu-text">ArimaVSACP</span></a>
+ <span class="menu-text">ARIMA vs ACP</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./exp.html" rel="" target="">
@@ -151,11 +152,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#les-20arr" id="toc-les-20arr" class="nav-link active" data-scroll-target="#les-20arr">les 20ARR</a></li>
+  <li><a href="#les-20arr" id="toc-les-20arr" class="nav-link active" data-scroll-target="#les-20arr">Les 20ARR</a>
+  <ul class="collapse">
   <li><a href="#arima" id="toc-arima" class="nav-link" data-scroll-target="#arima">Arima</a></li>
   <li><a href="#acp" id="toc-acp" class="nav-link" data-scroll-target="#acp">acp</a></li>
   <li><a href="#arima-vs-acp" id="toc-arima-vs-acp" class="nav-link" data-scroll-target="#arima-vs-acp">Arima vs Acp</a></li>
   <li><a href="#arima-vs-acp---plots" id="toc-arima-vs-acp---plots" class="nav-link" data-scroll-target="#arima-vs-acp---plots">Arima vs Acp - Plots</a></li>
+  </ul></li>
+  <li><a href="#les-12b" id="toc-les-12b" class="nav-link" data-scroll-target="#les-12b">Les 12B</a>
+  <ul class="collapse">
+  <li><a href="#arima-1" id="toc-arima-1" class="nav-link" data-scroll-target="#arima-1">Arima</a></li>
+  <li><a href="#acp-1" id="toc-acp-1" class="nav-link" data-scroll-target="#acp-1">acp</a></li>
+  <li><a href="#arima-vs-acp-1" id="toc-arima-vs-acp-1" class="nav-link" data-scroll-target="#arima-vs-acp-1">Arima vs Acp</a></li>
+  <li><a href="#arima-vs-acp---plots-1" id="toc-arima-vs-acp---plots-1" class="nav-link" data-scroll-target="#arima-vs-acp---plots-1">Arima vs Acp - Plots</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -197,14 +207,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TSstudio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <section id="les-20arr" class="level1">
-<h1>les 20ARR</h1>
-</section>
-<section id="arima" class="level1">
-<h1>Arima</h1>
+<h1>Les 20ARR</h1>
+<section id="arima" class="level2">
+<h2 class="anchored" data-anchor-id="arima">Arima</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -242,8 +252,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="acp" class="level1">
-<h1>acp</h1>
+<section id="acp" class="level2">
+<h2 class="anchored" data-anchor-id="acp">acp</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -281,8 +291,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="arima-vs-acp" class="level1">
-<h1>Arima vs Acp</h1>
+<section id="arima-vs-acp" class="level2">
+<h2 class="anchored" data-anchor-id="arima-vs-acp">Arima vs Acp</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -1510,95 +1520,937 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="arima-vs-acp---plots" class="level1">
-<h1>Arima vs Acp - Plots</h1>
+<section id="arima-vs-acp---plots" class="level2">
+<h2 class="anchored" data-anchor-id="arima-vs-acp---plots">Arima vs Acp - Plots</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  arr_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  arr_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[arr_arima]], merged_data_ordered[[arr_acp]]),</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - ARR"</span>, i),</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(p)</span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmlwidgets)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  arr_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  arr_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  ts_arima <span class="ot">&lt;-</span> <span class="fu">ts</span>(merged_data_ordered[[arr_arima]], <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">2024</span>, <span class="dv">5</span>), <span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  ts_acp <span class="ot">&lt;-</span> <span class="fu">ts</span>(merged_data_ordered[[arr_acp]], <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">2024</span>, <span class="dv">5</span>), <span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  ts_combined <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">ARIMA =</span> ts_arima, <span class="at">ACP =</span> ts_acp)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ts_plot</span>(ts_combined,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - ARR"</span>, i),</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">Xtitle =</span> <span class="st">"Date"</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">slider =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">Ytitle =</span> <span class="st">"Valeur"</span>,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>),</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">line.mode =</span> <span class="st">"lines+markers"</span>,</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">"single"</span>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  p</span>
 <span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  arr_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  arr_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[arr_arima]], merged_data_ordered[[arr_acp]]),</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - ARR"</span>, i),</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(p)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-3.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-3.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-4.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-4.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-5.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-5.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-6.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-6.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-7.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-7.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-8.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-8.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-9.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-9.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-10.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-10.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-11.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-11.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-12.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-12.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-13.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-13.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-14.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-14.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-15.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-15.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-16.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-16.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-17.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-17.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-18.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-18.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-19.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-19.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="arimavsacp_files/figure-html/unnamed-chunk-7-20.png" class="img-fluid" width="672"></p>
+<p><img src="arimavsacp_files/figure-html/unnamed-chunk-8-20.png" class="img-fluid" width="672"></p>
 </div>
+</div>
+</section>
+</section>
+<section id="les-12b" class="level1">
+<h1>Les 12B</h1>
+<section id="arima-1" class="level2">
+<h2 class="anchored" data-anchor-id="arima-1">Arima</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima12B.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(arima)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   24 obs. of  13 variables:
+ $ date: chr  "2024_01" "2024_02" "2024_03" "2024_04" ...
+ $ B1  : num  10399 10529 10619 10732 10756 ...
+ $ B2  : num  8820 8846 8949 9014 9030 ...
+ $ B3  : num  7510 7577 7619 7681 7745 ...
+ $ B4  : num  6160 6130 6135 6145 6185 ...
+ $ B5  : num  8533 8629 8717 8789 8837 ...
+ $ B6  : num  6615 6713 6833 6873 6894 ...
+ $ B7  : num  5563 5643 5739 5778 5813 ...
+ $ B8  : num  3585 3586 3591 3586 3595 ...
+ $ B9  : num  3623 3626 3629 3640 3646 ...
+ $ B10 : num  6087 6051 5996 6027 6064 ...
+ $ B11 : num  6359 6396 6422 6411 6437 ...
+ $ B12 : num  5196 5206 5182 5205 5239 ...</code></pre>
+</div>
+</div>
+</section>
+<section id="acp-1" class="level2">
+<h2 class="anchored" data-anchor-id="acp-1">acp</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp12B.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(acp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   24 obs. of  13 variables:
+ $ date: chr  "2024_01" "2024_02" "2024_03" "2024_04" ...
+ $ B1  : num  12978 12967 12859 12827 12818 ...
+ $ B2  : num  12027 12058 12082 12102 12109 ...
+ $ B3  : num  11955 11986 12010 12029 12036 ...
+ $ B4  : num  13055 13044 12935 12904 12895 ...
+ $ B5  : num  11879 11871 11897 11888 11873 ...
+ $ B6  : num  15392 15438 15463 15468 15467 ...
+ $ B7  : num  14515 14509 14565 14585 14595 ...
+ $ B8  : num  12815 12884 12874 12890 12891 ...
+ $ B9  : num  10831 10823 10820 10828 10832 ...
+ $ B10 : num  9426 9423 9416 9410 9407 ...
+ $ B11 : num  9735 9771 9772 9745 9699 ...
+ $ B12 : num  8897 8879 8862 8842 8830 ...</code></pre>
+</div>
+</div>
+</section>
+<section id="arima-vs-acp-1" class="level2">
+<h2 class="anchored" data-anchor-id="arima-vs-acp-1">Arima vs Acp</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>], <span class="st">"_arima"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>], <span class="st">"_acp"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>) {</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_acp"</span>))</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(merged_data_ordered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 4%">
+<col style="width: 3%">
+<col style="width: 4%">
+<col style="width: 3%">
+<col style="width: 4%">
+<col style="width: 3%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">B1_arima</th>
+<th style="text-align: right;">B1_acp</th>
+<th style="text-align: right;">B2_arima</th>
+<th style="text-align: right;">B2_acp</th>
+<th style="text-align: right;">B3_arima</th>
+<th style="text-align: right;">B3_acp</th>
+<th style="text-align: right;">B4_arima</th>
+<th style="text-align: right;">B4_acp</th>
+<th style="text-align: right;">B5_arima</th>
+<th style="text-align: right;">B5_acp</th>
+<th style="text-align: right;">B6_arima</th>
+<th style="text-align: right;">B6_acp</th>
+<th style="text-align: right;">B7_arima</th>
+<th style="text-align: right;">B7_acp</th>
+<th style="text-align: right;">B8_arima</th>
+<th style="text-align: right;">B8_acp</th>
+<th style="text-align: right;">B9_arima</th>
+<th style="text-align: right;">B9_acp</th>
+<th style="text-align: right;">B10_arima</th>
+<th style="text-align: right;">B10_acp</th>
+<th style="text-align: right;">B11_arima</th>
+<th style="text-align: right;">B11_acp</th>
+<th style="text-align: right;">B12_arima</th>
+<th style="text-align: right;">B12_acp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2024_01</td>
+<td style="text-align: right;">10398.67</td>
+<td style="text-align: right;">12977.68</td>
+<td style="text-align: right;">8820.47</td>
+<td style="text-align: right;">12027.01</td>
+<td style="text-align: right;">7510.21</td>
+<td style="text-align: right;">11954.84</td>
+<td style="text-align: right;">6160.20</td>
+<td style="text-align: right;">13054.84</td>
+<td style="text-align: right;">8533.27</td>
+<td style="text-align: right;">11879.28</td>
+<td style="text-align: right;">6615.14</td>
+<td style="text-align: right;">15391.58</td>
+<td style="text-align: right;">5563.48</td>
+<td style="text-align: right;">14514.83</td>
+<td style="text-align: right;">3585.03</td>
+<td style="text-align: right;">12814.80</td>
+<td style="text-align: right;">3623.41</td>
+<td style="text-align: right;">10830.76</td>
+<td style="text-align: right;">6086.82</td>
+<td style="text-align: right;">9426.239</td>
+<td style="text-align: right;">6359.20</td>
+<td style="text-align: right;">9734.553</td>
+<td style="text-align: right;">5196.13</td>
+<td style="text-align: right;">8897.291</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024_02</td>
+<td style="text-align: right;">10528.53</td>
+<td style="text-align: right;">12967.41</td>
+<td style="text-align: right;">8845.91</td>
+<td style="text-align: right;">12058.37</td>
+<td style="text-align: right;">7576.93</td>
+<td style="text-align: right;">11985.99</td>
+<td style="text-align: right;">6130.29</td>
+<td style="text-align: right;">13044.45</td>
+<td style="text-align: right;">8629.40</td>
+<td style="text-align: right;">11870.81</td>
+<td style="text-align: right;">6712.53</td>
+<td style="text-align: right;">15438.27</td>
+<td style="text-align: right;">5642.92</td>
+<td style="text-align: right;">14508.51</td>
+<td style="text-align: right;">3586.27</td>
+<td style="text-align: right;">12883.61</td>
+<td style="text-align: right;">3625.53</td>
+<td style="text-align: right;">10822.51</td>
+<td style="text-align: right;">6050.61</td>
+<td style="text-align: right;">9423.053</td>
+<td style="text-align: right;">6396.47</td>
+<td style="text-align: right;">9771.233</td>
+<td style="text-align: right;">5206.19</td>
+<td style="text-align: right;">8879.482</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024_03</td>
+<td style="text-align: right;">10619.20</td>
+<td style="text-align: right;">12858.85</td>
+<td style="text-align: right;">8949.02</td>
+<td style="text-align: right;">12082.29</td>
+<td style="text-align: right;">7618.57</td>
+<td style="text-align: right;">12009.55</td>
+<td style="text-align: right;">6134.75</td>
+<td style="text-align: right;">12935.31</td>
+<td style="text-align: right;">8716.95</td>
+<td style="text-align: right;">11896.56</td>
+<td style="text-align: right;">6833.20</td>
+<td style="text-align: right;">15463.42</td>
+<td style="text-align: right;">5739.14</td>
+<td style="text-align: right;">14564.98</td>
+<td style="text-align: right;">3591.10</td>
+<td style="text-align: right;">12874.18</td>
+<td style="text-align: right;">3629.33</td>
+<td style="text-align: right;">10819.62</td>
+<td style="text-align: right;">5996.28</td>
+<td style="text-align: right;">9416.397</td>
+<td style="text-align: right;">6422.11</td>
+<td style="text-align: right;">9771.967</td>
+<td style="text-align: right;">5182.14</td>
+<td style="text-align: right;">8861.947</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024_04</td>
+<td style="text-align: right;">10732.47</td>
+<td style="text-align: right;">12827.04</td>
+<td style="text-align: right;">9014.25</td>
+<td style="text-align: right;">12101.66</td>
+<td style="text-align: right;">7680.87</td>
+<td style="text-align: right;">12028.64</td>
+<td style="text-align: right;">6145.49</td>
+<td style="text-align: right;">12904.04</td>
+<td style="text-align: right;">8789.25</td>
+<td style="text-align: right;">11888.28</td>
+<td style="text-align: right;">6872.98</td>
+<td style="text-align: right;">15468.41</td>
+<td style="text-align: right;">5777.80</td>
+<td style="text-align: right;">14585.15</td>
+<td style="text-align: right;">3585.78</td>
+<td style="text-align: right;">12890.03</td>
+<td style="text-align: right;">3640.03</td>
+<td style="text-align: right;">10827.67</td>
+<td style="text-align: right;">6027.29</td>
+<td style="text-align: right;">9409.554</td>
+<td style="text-align: right;">6410.81</td>
+<td style="text-align: right;">9744.547</td>
+<td style="text-align: right;">5204.89</td>
+<td style="text-align: right;">8842.343</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024_05</td>
+<td style="text-align: right;">10755.82</td>
+<td style="text-align: right;">12817.67</td>
+<td style="text-align: right;">9030.00</td>
+<td style="text-align: right;">12108.93</td>
+<td style="text-align: right;">7744.58</td>
+<td style="text-align: right;">12035.76</td>
+<td style="text-align: right;">6184.74</td>
+<td style="text-align: right;">12895.37</td>
+<td style="text-align: right;">8837.24</td>
+<td style="text-align: right;">11873.18</td>
+<td style="text-align: right;">6894.29</td>
+<td style="text-align: right;">15466.68</td>
+<td style="text-align: right;">5813.07</td>
+<td style="text-align: right;">14595.37</td>
+<td style="text-align: right;">3594.87</td>
+<td style="text-align: right;">12891.23</td>
+<td style="text-align: right;">3645.73</td>
+<td style="text-align: right;">10831.56</td>
+<td style="text-align: right;">6063.97</td>
+<td style="text-align: right;">9406.605</td>
+<td style="text-align: right;">6437.15</td>
+<td style="text-align: right;">9698.686</td>
+<td style="text-align: right;">5238.78</td>
+<td style="text-align: right;">8829.724</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024_06</td>
+<td style="text-align: right;">10776.36</td>
+<td style="text-align: right;">12818.34</td>
+<td style="text-align: right;">9045.45</td>
+<td style="text-align: right;">12109.05</td>
+<td style="text-align: right;">7801.02</td>
+<td style="text-align: right;">12035.99</td>
+<td style="text-align: right;">6237.47</td>
+<td style="text-align: right;">12895.78</td>
+<td style="text-align: right;">8880.48</td>
+<td style="text-align: right;">11871.87</td>
+<td style="text-align: right;">6908.54</td>
+<td style="text-align: right;">15463.27</td>
+<td style="text-align: right;">5835.17</td>
+<td style="text-align: right;">14605.59</td>
+<td style="text-align: right;">3607.14</td>
+<td style="text-align: right;">12867.18</td>
+<td style="text-align: right;">3650.83</td>
+<td style="text-align: right;">10831.93</td>
+<td style="text-align: right;">6103.00</td>
+<td style="text-align: right;">9398.763</td>
+<td style="text-align: right;">6473.83</td>
+<td style="text-align: right;">9701.968</td>
+<td style="text-align: right;">5268.95</td>
+<td style="text-align: right;">8829.984</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024_07</td>
+<td style="text-align: right;">10822.24</td>
+<td style="text-align: right;">12824.28</td>
+<td style="text-align: right;">9103.67</td>
+<td style="text-align: right;">12105.47</td>
+<td style="text-align: right;">7810.64</td>
+<td style="text-align: right;">12032.55</td>
+<td style="text-align: right;">6286.90</td>
+<td style="text-align: right;">12901.04</td>
+<td style="text-align: right;">8928.15</td>
+<td style="text-align: right;">11871.47</td>
+<td style="text-align: right;">6945.67</td>
+<td style="text-align: right;">15458.70</td>
+<td style="text-align: right;">5872.00</td>
+<td style="text-align: right;">14616.47</td>
+<td style="text-align: right;">3628.47</td>
+<td style="text-align: right;">12828.28</td>
+<td style="text-align: right;">3652.63</td>
+<td style="text-align: right;">10832.54</td>
+<td style="text-align: right;">6103.94</td>
+<td style="text-align: right;">9388.984</td>
+<td style="text-align: right;">6535.58</td>
+<td style="text-align: right;">9727.380</td>
+<td style="text-align: right;">5277.16</td>
+<td style="text-align: right;">8833.858</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024_08</td>
+<td style="text-align: right;">10922.89</td>
+<td style="text-align: right;">12831.20</td>
+<td style="text-align: right;">9182.44</td>
+<td style="text-align: right;">12100.04</td>
+<td style="text-align: right;">7812.73</td>
+<td style="text-align: right;">12027.24</td>
+<td style="text-align: right;">6328.97</td>
+<td style="text-align: right;">12907.63</td>
+<td style="text-align: right;">8981.19</td>
+<td style="text-align: right;">11874.74</td>
+<td style="text-align: right;">6979.48</td>
+<td style="text-align: right;">15452.44</td>
+<td style="text-align: right;">5900.07</td>
+<td style="text-align: right;">14624.41</td>
+<td style="text-align: right;">3638.45</td>
+<td style="text-align: right;">12785.72</td>
+<td style="text-align: right;">3659.81</td>
+<td style="text-align: right;">10832.45</td>
+<td style="text-align: right;">6127.51</td>
+<td style="text-align: right;">9380.988</td>
+<td style="text-align: right;">6556.67</td>
+<td style="text-align: right;">9740.554</td>
+<td style="text-align: right;">5292.74</td>
+<td style="text-align: right;">8832.758</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024_09</td>
+<td style="text-align: right;">11003.53</td>
+<td style="text-align: right;">12837.01</td>
+<td style="text-align: right;">9240.65</td>
+<td style="text-align: right;">12094.48</td>
+<td style="text-align: right;">7839.63</td>
+<td style="text-align: right;">12021.60</td>
+<td style="text-align: right;">6363.36</td>
+<td style="text-align: right;">12913.94</td>
+<td style="text-align: right;">9035.00</td>
+<td style="text-align: right;">11868.93</td>
+<td style="text-align: right;">7012.80</td>
+<td style="text-align: right;">15445.03</td>
+<td style="text-align: right;">5934.70</td>
+<td style="text-align: right;">14628.40</td>
+<td style="text-align: right;">3649.26</td>
+<td style="text-align: right;">12752.28</td>
+<td style="text-align: right;">3667.09</td>
+<td style="text-align: right;">10834.33</td>
+<td style="text-align: right;">6154.31</td>
+<td style="text-align: right;">9378.818</td>
+<td style="text-align: right;">6572.08</td>
+<td style="text-align: right;">9714.789</td>
+<td style="text-align: right;">5313.03</td>
+<td style="text-align: right;">8822.629</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024_10</td>
+<td style="text-align: right;">11054.28</td>
+<td style="text-align: right;">12840.27</td>
+<td style="text-align: right;">9264.01</td>
+<td style="text-align: right;">12090.63</td>
+<td style="text-align: right;">7906.54</td>
+<td style="text-align: right;">12017.70</td>
+<td style="text-align: right;">6394.95</td>
+<td style="text-align: right;">12917.61</td>
+<td style="text-align: right;">9087.59</td>
+<td style="text-align: right;">11867.36</td>
+<td style="text-align: right;">7037.31</td>
+<td style="text-align: right;">15439.99</td>
+<td style="text-align: right;">5968.78</td>
+<td style="text-align: right;">14630.31</td>
+<td style="text-align: right;">3658.59</td>
+<td style="text-align: right;">12729.57</td>
+<td style="text-align: right;">3675.23</td>
+<td style="text-align: right;">10834.09</td>
+<td style="text-align: right;">6195.50</td>
+<td style="text-align: right;">9376.511</td>
+<td style="text-align: right;">6577.67</td>
+<td style="text-align: right;">9695.327</td>
+<td style="text-align: right;">5342.82</td>
+<td style="text-align: right;">8814.078</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024_11</td>
+<td style="text-align: right;">11082.24</td>
+<td style="text-align: right;">12841.25</td>
+<td style="text-align: right;">9286.52</td>
+<td style="text-align: right;">12089.33</td>
+<td style="text-align: right;">7968.24</td>
+<td style="text-align: right;">12016.43</td>
+<td style="text-align: right;">6422.38</td>
+<td style="text-align: right;">12918.44</td>
+<td style="text-align: right;">9140.22</td>
+<td style="text-align: right;">11863.96</td>
+<td style="text-align: right;">7075.03</td>
+<td style="text-align: right;">15438.87</td>
+<td style="text-align: right;">6013.38</td>
+<td style="text-align: right;">14632.72</td>
+<td style="text-align: right;">3677.26</td>
+<td style="text-align: right;">12720.19</td>
+<td style="text-align: right;">3679.44</td>
+<td style="text-align: right;">10832.97</td>
+<td style="text-align: right;">6211.92</td>
+<td style="text-align: right;">9372.109</td>
+<td style="text-align: right;">6610.25</td>
+<td style="text-align: right;">9696.771</td>
+<td style="text-align: right;">5363.59</td>
+<td style="text-align: right;">8812.428</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024_12</td>
+<td style="text-align: right;">11144.64</td>
+<td style="text-align: right;">12839.76</td>
+<td style="text-align: right;">9335.41</td>
+<td style="text-align: right;">12090.00</td>
+<td style="text-align: right;">8003.17</td>
+<td style="text-align: right;">12017.25</td>
+<td style="text-align: right;">6449.20</td>
+<td style="text-align: right;">12916.35</td>
+<td style="text-align: right;">9194.57</td>
+<td style="text-align: right;">11865.37</td>
+<td style="text-align: right;">7115.73</td>
+<td style="text-align: right;">15440.88</td>
+<td style="text-align: right;">6053.76</td>
+<td style="text-align: right;">14634.50</td>
+<td style="text-align: right;">3692.51</td>
+<td style="text-align: right;">12721.16</td>
+<td style="text-align: right;">3684.94</td>
+<td style="text-align: right;">10829.36</td>
+<td style="text-align: right;">6229.42</td>
+<td style="text-align: right;">9365.298</td>
+<td style="text-align: right;">6635.12</td>
+<td style="text-align: right;">9716.035</td>
+<td style="text-align: right;">5383.37</td>
+<td style="text-align: right;">8815.342</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025_01</td>
+<td style="text-align: right;">11227.34</td>
+<td style="text-align: right;">12836.63</td>
+<td style="text-align: right;">9403.72</td>
+<td style="text-align: right;">12091.58</td>
+<td style="text-align: right;">8016.58</td>
+<td style="text-align: right;">12018.86</td>
+<td style="text-align: right;">6477.54</td>
+<td style="text-align: right;">12913.09</td>
+<td style="text-align: right;">9249.60</td>
+<td style="text-align: right;">11860.94</td>
+<td style="text-align: right;">7159.44</td>
+<td style="text-align: right;">15443.30</td>
+<td style="text-align: right;">6092.49</td>
+<td style="text-align: right;">14633.65</td>
+<td style="text-align: right;">3706.86</td>
+<td style="text-align: right;">12731.97</td>
+<td style="text-align: right;">3690.61</td>
+<td style="text-align: right;">10826.79</td>
+<td style="text-align: right;">6243.32</td>
+<td style="text-align: right;">9362.188</td>
+<td style="text-align: right;">6660.79</td>
+<td style="text-align: right;">9713.383</td>
+<td style="text-align: right;">5400.07</td>
+<td style="text-align: right;">8812.386</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025_02</td>
+<td style="text-align: right;">11307.10</td>
+<td style="text-align: right;">12832.42</td>
+<td style="text-align: right;">9459.14</td>
+<td style="text-align: right;">12093.37</td>
+<td style="text-align: right;">8046.23</td>
+<td style="text-align: right;">12020.56</td>
+<td style="text-align: right;">6511.99</td>
+<td style="text-align: right;">12909.24</td>
+<td style="text-align: right;">9302.93</td>
+<td style="text-align: right;">11858.88</td>
+<td style="text-align: right;">7190.70</td>
+<td style="text-align: right;">15445.46</td>
+<td style="text-align: right;">6124.66</td>
+<td style="text-align: right;">14629.93</td>
+<td style="text-align: right;">3716.05</td>
+<td style="text-align: right;">12745.74</td>
+<td style="text-align: right;">3698.27</td>
+<td style="text-align: right;">10823.60</td>
+<td style="text-align: right;">6274.58</td>
+<td style="text-align: right;">9361.794</td>
+<td style="text-align: right;">6673.56</td>
+<td style="text-align: right;">9696.259</td>
+<td style="text-align: right;">5423.46</td>
+<td style="text-align: right;">8803.257</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025_03</td>
+<td style="text-align: right;">11352.14</td>
+<td style="text-align: right;">12828.68</td>
+<td style="text-align: right;">9492.33</td>
+<td style="text-align: right;">12095.10</td>
+<td style="text-align: right;">8096.28</td>
+<td style="text-align: right;">12022.15</td>
+<td style="text-align: right;">6549.63</td>
+<td style="text-align: right;">12905.87</td>
+<td style="text-align: right;">9354.06</td>
+<td style="text-align: right;">11854.25</td>
+<td style="text-align: right;">7220.51</td>
+<td style="text-align: right;">15447.51</td>
+<td style="text-align: right;">6160.71</td>
+<td style="text-align: right;">14626.58</td>
+<td style="text-align: right;">3729.87</td>
+<td style="text-align: right;">12758.80</td>
+<td style="text-align: right;">3703.89</td>
+<td style="text-align: right;">10821.26</td>
+<td style="text-align: right;">6299.99</td>
+<td style="text-align: right;">9361.794</td>
+<td style="text-align: right;">6701.05</td>
+<td style="text-align: right;">9678.310</td>
+<td style="text-align: right;">5444.96</td>
+<td style="text-align: right;">8793.596</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025_04</td>
+<td style="text-align: right;">11392.62</td>
+<td style="text-align: right;">12825.92</td>
+<td style="text-align: right;">9521.71</td>
+<td style="text-align: right;">12096.38</td>
+<td style="text-align: right;">8150.33</td>
+<td style="text-align: right;">12023.48</td>
+<td style="text-align: right;">6587.24</td>
+<td style="text-align: right;">12902.88</td>
+<td style="text-align: right;">9404.98</td>
+<td style="text-align: right;">11854.53</td>
+<td style="text-align: right;">7249.85</td>
+<td style="text-align: right;">15449.88</td>
+<td style="text-align: right;">6197.12</td>
+<td style="text-align: right;">14625.71</td>
+<td style="text-align: right;">3744.05</td>
+<td style="text-align: right;">12765.91</td>
+<td style="text-align: right;">3709.37</td>
+<td style="text-align: right;">10817.68</td>
+<td style="text-align: right;">6325.58</td>
+<td style="text-align: right;">9357.503</td>
+<td style="text-align: right;">6729.22</td>
+<td style="text-align: right;">9683.339</td>
+<td style="text-align: right;">5466.77</td>
+<td style="text-align: right;">8790.408</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025_05</td>
+<td style="text-align: right;">11449.41</td>
+<td style="text-align: right;">12824.56</td>
+<td style="text-align: right;">9569.67</td>
+<td style="text-align: right;">12096.83</td>
+<td style="text-align: right;">8183.79</td>
+<td style="text-align: right;">12024.05</td>
+<td style="text-align: right;">6620.59</td>
+<td style="text-align: right;">12901.10</td>
+<td style="text-align: right;">9457.70</td>
+<td style="text-align: right;">11851.70</td>
+<td style="text-align: right;">7287.87</td>
+<td style="text-align: right;">15451.35</td>
+<td style="text-align: right;">6235.90</td>
+<td style="text-align: right;">14626.84</td>
+<td style="text-align: right;">3759.84</td>
+<td style="text-align: right;">12768.20</td>
+<td style="text-align: right;">3714.27</td>
+<td style="text-align: right;">10815.22</td>
+<td style="text-align: right;">6341.50</td>
+<td style="text-align: right;">9352.038</td>
+<td style="text-align: right;">6761.27</td>
+<td style="text-align: right;">9690.945</td>
+<td style="text-align: right;">5484.36</td>
+<td style="text-align: right;">8789.789</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025_06</td>
+<td style="text-align: right;">11530.01</td>
+<td style="text-align: right;">12823.95</td>
+<td style="text-align: right;">9630.68</td>
+<td style="text-align: right;">12096.33</td>
+<td style="text-align: right;">8206.35</td>
+<td style="text-align: right;">12023.61</td>
+<td style="text-align: right;">6651.89</td>
+<td style="text-align: right;">12900.37</td>
+<td style="text-align: right;">9511.86</td>
+<td style="text-align: right;">11850.87</td>
+<td style="text-align: right;">7325.11</td>
+<td style="text-align: right;">15451.29</td>
+<td style="text-align: right;">6271.31</td>
+<td style="text-align: right;">14627.47</td>
+<td style="text-align: right;">3771.53</td>
+<td style="text-align: right;">12765.19</td>
+<td style="text-align: right;">3720.97</td>
+<td style="text-align: right;">10812.82</td>
+<td style="text-align: right;">6364.54</td>
+<td style="text-align: right;">9347.706</td>
+<td style="text-align: right;">6780.10</td>
+<td style="text-align: right;">9690.639</td>
+<td style="text-align: right;">5504.70</td>
+<td style="text-align: right;">8786.692</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025_07</td>
+<td style="text-align: right;">11601.15</td>
+<td style="text-align: right;">12824.05</td>
+<td style="text-align: right;">9684.50</td>
+<td style="text-align: right;">12095.20</td>
+<td style="text-align: right;">8236.25</td>
+<td style="text-align: right;">12022.38</td>
+<td style="text-align: right;">6683.25</td>
+<td style="text-align: right;">12900.80</td>
+<td style="text-align: right;">9565.60</td>
+<td style="text-align: right;">11846.62</td>
+<td style="text-align: right;">7361.74</td>
+<td style="text-align: right;">15449.78</td>
+<td style="text-align: right;">6307.87</td>
+<td style="text-align: right;">14627.31</td>
+<td style="text-align: right;">3784.19</td>
+<td style="text-align: right;">12759.67</td>
+<td style="text-align: right;">3727.29</td>
+<td style="text-align: right;">10811.92</td>
+<td style="text-align: right;">6387.07</td>
+<td style="text-align: right;">9346.382</td>
+<td style="text-align: right;">6801.24</td>
+<td style="text-align: right;">9674.456</td>
+<td style="text-align: right;">5525.22</td>
+<td style="text-align: right;">8779.165</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025_08</td>
+<td style="text-align: right;">11654.24</td>
+<td style="text-align: right;">12824.42</td>
+<td style="text-align: right;">9721.43</td>
+<td style="text-align: right;">12093.87</td>
+<td style="text-align: right;">8284.24</td>
+<td style="text-align: right;">12021.00</td>
+<td style="text-align: right;">6716.88</td>
+<td style="text-align: right;">12901.37</td>
+<td style="text-align: right;">9617.98</td>
+<td style="text-align: right;">11845.65</td>
+<td style="text-align: right;">7393.24</td>
+<td style="text-align: right;">15448.28</td>
+<td style="text-align: right;">6344.35</td>
+<td style="text-align: right;">14627.61</td>
+<td style="text-align: right;">3796.99</td>
+<td style="text-align: right;">12751.47</td>
+<td style="text-align: right;">3733.54</td>
+<td style="text-align: right;">10810.27</td>
+<td style="text-align: right;">6414.12</td>
+<td style="text-align: right;">9343.860</td>
+<td style="text-align: right;">6822.70</td>
+<td style="text-align: right;">9665.804</td>
+<td style="text-align: right;">5548.13</td>
+<td style="text-align: right;">8773.262</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025_09</td>
+<td style="text-align: right;">11697.98</td>
+<td style="text-align: right;">12825.09</td>
+<td style="text-align: right;">9755.30</td>
+<td style="text-align: right;">12092.67</td>
+<td style="text-align: right;">8333.69</td>
+<td style="text-align: right;">12019.84</td>
+<td style="text-align: right;">6750.71</td>
+<td style="text-align: right;">12901.88</td>
+<td style="text-align: right;">9669.96</td>
+<td style="text-align: right;">11842.71</td>
+<td style="text-align: right;">7427.06</td>
+<td style="text-align: right;">15447.33</td>
+<td style="text-align: right;">6383.16</td>
+<td style="text-align: right;">14629.56</td>
+<td style="text-align: right;">3812.37</td>
+<td style="text-align: right;">12743.55</td>
+<td style="text-align: right;">3738.67</td>
+<td style="text-align: right;">10808.89</td>
+<td style="text-align: right;">6435.21</td>
+<td style="text-align: right;">9339.338</td>
+<td style="text-align: right;">6852.17</td>
+<td style="text-align: right;">9666.429</td>
+<td style="text-align: right;">5568.62</td>
+<td style="text-align: right;">8771.231</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025_10</td>
+<td style="text-align: right;">11758.47</td>
+<td style="text-align: right;">12825.41</td>
+<td style="text-align: right;">9801.21</td>
+<td style="text-align: right;">12091.66</td>
+<td style="text-align: right;">8371.24</td>
+<td style="text-align: right;">12018.97</td>
+<td style="text-align: right;">6783.84</td>
+<td style="text-align: right;">12901.83</td>
+<td style="text-align: right;">9722.82</td>
+<td style="text-align: right;">11842.20</td>
+<td style="text-align: right;">7461.87</td>
+<td style="text-align: right;">15446.93</td>
+<td style="text-align: right;">6420.08</td>
+<td style="text-align: right;">14631.75</td>
+<td style="text-align: right;">3825.87</td>
+<td style="text-align: right;">12736.40</td>
+<td style="text-align: right;">3744.59</td>
+<td style="text-align: right;">10806.60</td>
+<td style="text-align: right;">6457.82</td>
+<td style="text-align: right;">9333.365</td>
+<td style="text-align: right;">6876.48</td>
+<td style="text-align: right;">9673.961</td>
+<td style="text-align: right;">5589.23</td>
+<td style="text-align: right;">8771.043</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025_11</td>
+<td style="text-align: right;">11831.12</td>
+<td style="text-align: right;">12825.25</td>
+<td style="text-align: right;">9857.87</td>
+<td style="text-align: right;">12090.92</td>
+<td style="text-align: right;">8397.40</td>
+<td style="text-align: right;">12018.24</td>
+<td style="text-align: right;">6815.94</td>
+<td style="text-align: right;">12901.65</td>
+<td style="text-align: right;">9776.48</td>
+<td style="text-align: right;">11838.81</td>
+<td style="text-align: right;">7499.30</td>
+<td style="text-align: right;">15446.39</td>
+<td style="text-align: right;">6456.56</td>
+<td style="text-align: right;">14632.58</td>
+<td style="text-align: right;">3838.93</td>
+<td style="text-align: right;">12732.36</td>
+<td style="text-align: right;">3750.69</td>
+<td style="text-align: right;">10805.08</td>
+<td style="text-align: right;">6478.51</td>
+<td style="text-align: right;">9329.828</td>
+<td style="text-align: right;">6899.76</td>
+<td style="text-align: right;">9669.196</td>
+<td style="text-align: right;">5608.63</td>
+<td style="text-align: right;">8767.081</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025_12</td>
+<td style="text-align: right;">11901.38</td>
+<td style="text-align: right;">12824.41</td>
+<td style="text-align: right;">9909.92</td>
+<td style="text-align: right;">12090.47</td>
+<td style="text-align: right;">8429.19</td>
+<td style="text-align: right;">12017.72</td>
+<td style="text-align: right;">6849.01</td>
+<td style="text-align: right;">12901.03</td>
+<td style="text-align: right;">9829.76</td>
+<td style="text-align: right;">11837.43</td>
+<td style="text-align: right;">7533.78</td>
+<td style="text-align: right;">15445.96</td>
+<td style="text-align: right;">6491.91</td>
+<td style="text-align: right;">14631.82</td>
+<td style="text-align: right;">3850.91</td>
+<td style="text-align: right;">12730.17</td>
+<td style="text-align: right;">3757.23</td>
+<td style="text-align: right;">10803.03</td>
+<td style="text-align: right;">6503.39</td>
+<td style="text-align: right;">9327.773</td>
+<td style="text-align: right;">6919.88</td>
+<td style="text-align: right;">9658.978</td>
+<td style="text-align: right;">5629.85</td>
+<td style="text-align: right;">8760.220</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="arima-vs-acp---plots-1" class="level2">
+<h2 class="anchored" data-anchor-id="arima-vs-acp---plots-1">Arima vs Acp - Plots</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>) {</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  B_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_arima"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  B_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_acp"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[B_arima]], merged_data_ordered[[B_acp]]),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - B"</span>, i),</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    p</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 
 
 <!-- -->
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1900,92 +2752,177 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb10" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "ACP vs Arima "</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Mr. Dtiebo"</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "Octobre 19, 2024"</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">  prettydoc::html_pretty:</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: architect</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">warning =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>\newpage</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="fu"># les 20ARR</span></span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="fu"># Arima</span></span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima.csv"</span>)</span>
-<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(arima)</span>
-<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="fu"># acp</span></span>
-<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp.csv"</span>)</span>
-<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(acp)</span>
-<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a><span class="fu"># Arima vs Acp</span></span>
-<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_arima"</span>)</span>
-<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_acp"</span>)</span>
-<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
-<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
-<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
-<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>))</span>
-<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
-<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(merged_data_ordered)</span>
-<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a><span class="fu"># Arima vs Acp - Plots </span></span>
-<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
-<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a>  arr_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>)</span>
-<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a>  arr_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>)</span>
-<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
-<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[arr_arima]], merged_data_ordered[[arr_acp]]),</span>
-<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
-<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
-<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - ARR"</span>, i),</span>
-<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
-<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
-<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(p)</span>
-<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode" id="cb19" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "ACP vs Arima "</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Mr. Dtiebo"</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "Octobre 19, 2024"</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">  prettydoc::html_pretty:</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: architect</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">warning =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>\newpage</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TSstudio)</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a><span class="fu"># Les 20ARR</span></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Arima</span></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima.csv"</span>)</span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(arima)</span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## acp</span></span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp.csv"</span>)</span>
+<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(acp)</span>
+<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## Arima vs Acp</span></span>
+<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_arima"</span>)</span>
+<span id="cb19-66"><a href="#cb19-66" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_acp"</span>)</span>
+<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
+<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
+<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
+<span id="cb19-70"><a href="#cb19-70" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>))</span>
+<span id="cb19-71"><a href="#cb19-71" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-72"><a href="#cb19-72" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
+<span id="cb19-73"><a href="#cb19-73" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(merged_data_ordered)</span>
+<span id="cb19-74"><a href="#cb19-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-75"><a href="#cb19-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-76"><a href="#cb19-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-77"><a href="#cb19-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Arima vs Acp - Plots </span></span>
+<span id="cb19-78"><a href="#cb19-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-79"><a href="#cb19-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{r }</span></span>
+<span id="cb19-80"><a href="#cb19-80" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmlwidgets)</span>
+<span id="cb19-81"><a href="#cb19-81" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
+<span id="cb19-82"><a href="#cb19-82" aria-hidden="true" tabindex="-1"></a>  arr_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>)</span>
+<span id="cb19-83"><a href="#cb19-83" aria-hidden="true" tabindex="-1"></a>  arr_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>)</span>
+<span id="cb19-84"><a href="#cb19-84" aria-hidden="true" tabindex="-1"></a>  ts_arima <span class="ot">&lt;-</span> <span class="fu">ts</span>(merged_data_ordered[[arr_arima]], <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">2024</span>, <span class="dv">5</span>), <span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb19-85"><a href="#cb19-85" aria-hidden="true" tabindex="-1"></a>  ts_acp <span class="ot">&lt;-</span> <span class="fu">ts</span>(merged_data_ordered[[arr_acp]], <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">2024</span>, <span class="dv">5</span>), <span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb19-86"><a href="#cb19-86" aria-hidden="true" tabindex="-1"></a>  ts_combined <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">ARIMA =</span> ts_arima, <span class="at">ACP =</span> ts_acp)</span>
+<span id="cb19-87"><a href="#cb19-87" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ts_plot</span>(ts_combined,</span>
+<span id="cb19-88"><a href="#cb19-88" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - ARR"</span>, i),</span>
+<span id="cb19-89"><a href="#cb19-89" aria-hidden="true" tabindex="-1"></a>          <span class="at">Xtitle =</span> <span class="st">"Date"</span>,</span>
+<span id="cb19-90"><a href="#cb19-90" aria-hidden="true" tabindex="-1"></a>          <span class="at">slider =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb19-91"><a href="#cb19-91" aria-hidden="true" tabindex="-1"></a>          <span class="at">Ytitle =</span> <span class="st">"Valeur"</span>,</span>
+<span id="cb19-92"><a href="#cb19-92" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>),</span>
+<span id="cb19-93"><a href="#cb19-93" aria-hidden="true" tabindex="-1"></a>          <span class="at">line.mode =</span> <span class="st">"lines+markers"</span>,</span>
+<span id="cb19-94"><a href="#cb19-94" aria-hidden="true" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">"single"</span>)</span>
+<span id="cb19-95"><a href="#cb19-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-96"><a href="#cb19-96" aria-hidden="true" tabindex="-1"></a>  p</span>
+<span id="cb19-97"><a href="#cb19-97" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-98"><a href="#cb19-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-99"><a href="#cb19-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-100"><a href="#cb19-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-101"><a href="#cb19-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-104"><a href="#cb19-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-105"><a href="#cb19-105" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
+<span id="cb19-106"><a href="#cb19-106" aria-hidden="true" tabindex="-1"></a>  arr_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>)</span>
+<span id="cb19-107"><a href="#cb19-107" aria-hidden="true" tabindex="-1"></a>  arr_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>)</span>
+<span id="cb19-108"><a href="#cb19-108" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb19-109"><a href="#cb19-109" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
+<span id="cb19-110"><a href="#cb19-110" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[arr_arima]], merged_data_ordered[[arr_acp]]),</span>
+<span id="cb19-111"><a href="#cb19-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
+<span id="cb19-112"><a href="#cb19-112" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb19-113"><a href="#cb19-113" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
+<span id="cb19-114"><a href="#cb19-114" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb19-115"><a href="#cb19-115" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - ARR"</span>, i),</span>
+<span id="cb19-116"><a href="#cb19-116" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
+<span id="cb19-117"><a href="#cb19-117" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb19-118"><a href="#cb19-118" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb19-119"><a href="#cb19-119" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb19-120"><a href="#cb19-120" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
+<span id="cb19-121"><a href="#cb19-121" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(p)</span>
+<span id="cb19-122"><a href="#cb19-122" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-123"><a href="#cb19-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-124"><a href="#cb19-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-125"><a href="#cb19-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-126"><a href="#cb19-126" aria-hidden="true" tabindex="-1"></a><span class="fu"># Les 12B</span></span>
+<span id="cb19-127"><a href="#cb19-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-128"><a href="#cb19-128" aria-hidden="true" tabindex="-1"></a><span class="fu">## Arima</span></span>
+<span id="cb19-129"><a href="#cb19-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-132"><a href="#cb19-132" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-133"><a href="#cb19-133" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima12B.csv"</span>)</span>
+<span id="cb19-134"><a href="#cb19-134" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-135"><a href="#cb19-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-138"><a href="#cb19-138" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-139"><a href="#cb19-139" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(arima)</span>
+<span id="cb19-140"><a href="#cb19-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-141"><a href="#cb19-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-142"><a href="#cb19-142" aria-hidden="true" tabindex="-1"></a><span class="fu">## acp</span></span>
+<span id="cb19-143"><a href="#cb19-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-146"><a href="#cb19-146" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-147"><a href="#cb19-147" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp12B.csv"</span>)</span>
+<span id="cb19-148"><a href="#cb19-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-149"><a href="#cb19-149" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-150"><a href="#cb19-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-153"><a href="#cb19-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-154"><a href="#cb19-154" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(acp)</span>
+<span id="cb19-155"><a href="#cb19-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-156"><a href="#cb19-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-157"><a href="#cb19-157" aria-hidden="true" tabindex="-1"></a><span class="fu">## Arima vs Acp</span></span>
+<span id="cb19-158"><a href="#cb19-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-161"><a href="#cb19-161" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-162"><a href="#cb19-162" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>], <span class="st">"_arima"</span>)</span>
+<span id="cb19-163"><a href="#cb19-163" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>], <span class="st">"_acp"</span>)</span>
+<span id="cb19-164"><a href="#cb19-164" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
+<span id="cb19-165"><a href="#cb19-165" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
+<span id="cb19-166"><a href="#cb19-166" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>) {</span>
+<span id="cb19-167"><a href="#cb19-167" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_acp"</span>))</span>
+<span id="cb19-168"><a href="#cb19-168" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-169"><a href="#cb19-169" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
+<span id="cb19-170"><a href="#cb19-170" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(merged_data_ordered)</span>
+<span id="cb19-171"><a href="#cb19-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-172"><a href="#cb19-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-173"><a href="#cb19-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-174"><a href="#cb19-174" aria-hidden="true" tabindex="-1"></a><span class="fu">## Arima vs Acp - Plots </span></span>
+<span id="cb19-175"><a href="#cb19-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-178"><a href="#cb19-178" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-179"><a href="#cb19-179" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>) {</span>
+<span id="cb19-180"><a href="#cb19-180" aria-hidden="true" tabindex="-1"></a>  B_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_arima"</span>)</span>
+<span id="cb19-181"><a href="#cb19-181" aria-hidden="true" tabindex="-1"></a>  B_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_acp"</span>)</span>
+<span id="cb19-182"><a href="#cb19-182" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb19-183"><a href="#cb19-183" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
+<span id="cb19-184"><a href="#cb19-184" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[B_arima]], merged_data_ordered[[B_acp]]),</span>
+<span id="cb19-185"><a href="#cb19-185" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
+<span id="cb19-186"><a href="#cb19-186" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb19-187"><a href="#cb19-187" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
+<span id="cb19-188"><a href="#cb19-188" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb19-189"><a href="#cb19-189" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - B"</span>, i),</span>
+<span id="cb19-190"><a href="#cb19-190" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
+<span id="cb19-191"><a href="#cb19-191" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb19-192"><a href="#cb19-192" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb19-193"><a href="#cb19-193" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb19-194"><a href="#cb19-194" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
+<span id="cb19-195"><a href="#cb19-195" aria-hidden="true" tabindex="-1"></a>    p</span>
+<span id="cb19-196"><a href="#cb19-196" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-197"><a href="#cb19-197" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
