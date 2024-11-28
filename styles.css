@@ -5,10 +5,10 @@
 }
 
 .navbar .nav-link {
-    font-size: 1.25 rem; 
+    font-size: 1.1 rem; 
 }
 
 .navbar .nav-link.active {
-    color: darkblue !important; 
+    color: white !important; 
     font-weight: bold;    
 }
