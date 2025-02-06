@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Mr.&nbsp;Dtiebo">
-<meta name="dcterms.date" content="2025-02-02">
+<meta name="dcterms.date" content="2025-02-06">
 
 <title> MRDTIEBO - Résumé</title>
 <style>
@@ -161,9 +161,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#les-12b" id="toc-les-12b" class="nav-link active" data-scroll-target="#les-12b">Les 12B</a></li>
+  <li><a href="#les-20arr" id="toc-les-20arr" class="nav-link active" data-scroll-target="#les-20arr">Les 20ARR</a></li>
+  <li><a href="#les-12b" id="toc-les-12b" class="nav-link" data-scroll-target="#les-12b">Les 12B</a></li>
   <li><a href="#les-8g" id="toc-les-8g" class="nav-link" data-scroll-target="#les-8g">Les 8G</a></li>
-  <li><a href="#les-20arr" id="toc-les-20arr" class="nav-link" data-scroll-target="#les-20arr">Les 20ARR</a></li>
   </ul>
 </nav>
     </div>
@@ -189,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 2, 2025</p>
+      <p class="date">February 6, 2025</p>
     </div>
   </div>
   
@@ -207,48 +207,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="les-12b" class="level1">
-<h1>Les 12B</h1>
+<section id="les-20arr" class="level1">
+<h1>Les 20ARR</h1>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima12B.csv"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp12B.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>], <span class="st">"_arima"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>], <span class="st">"_acp"</span>)</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_arima"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_acp"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>) {</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_acp"</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>))</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>) {</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  B_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_arima"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  B_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_acp"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  arr_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  arr_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>)</span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">rep</span>(<span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>), <span class="dv">2</span>),</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[B_arima]], merged_data_ordered[[B_acp]]),</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[arr_arima]], merged_data_ordered[[arr_acp]]),</span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix -B"</span>, i),</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Date"</span>, </span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Valeur"</span>, </span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"Method"</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(p)</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - ARR"</span>, i),</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(p)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="resume_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
@@ -286,46 +282,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <p><img src="resume_files/figure-html/unnamed-chunk-3-12.png" class="img-fluid" width="672"></p>
 </div>
+<div class="cell-output-display">
+<p><img src="resume_files/figure-html/unnamed-chunk-3-13.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="resume_files/figure-html/unnamed-chunk-3-14.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="resume_files/figure-html/unnamed-chunk-3-15.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="resume_files/figure-html/unnamed-chunk-3-16.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="resume_files/figure-html/unnamed-chunk-3-17.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="resume_files/figure-html/unnamed-chunk-3-18.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="resume_files/figure-html/unnamed-chunk-3-19.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="resume_files/figure-html/unnamed-chunk-3-20.png" class="img-fluid" width="672"></p>
+</div>
 </div>
 </section>
-<section id="les-8g" class="level1">
-<h1>Les 8G</h1>
+<section id="les-12b" class="level1">
+<h1>Les 12B</h1>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima8G.csv"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp8G.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima12B.csv"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp12B.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>], <span class="st">"_arima"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>], <span class="st">"_acp"</span>)</span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>], <span class="st">"_arima"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>], <span class="st">"_acp"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_acp"</span>))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>) {</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_acp"</span>))</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  G_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_arima"</span>)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  G_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_acp"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>) {</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  B_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_arima"</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  B_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_acp"</span>)</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[G_arima]], merged_data_ordered[[G_acp]]),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">rep</span>(<span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>), <span class="dv">2</span>),</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[B_arima]], merged_data_ordered[[B_acp]]),</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - G"</span>, i),</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(p)</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix -B"</span>, i),</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Date"</span>, </span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Valeur"</span>, </span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"Method"</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(p)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="resume_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
@@ -351,39 +375,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <p><img src="resume_files/figure-html/unnamed-chunk-5-8.png" class="img-fluid" width="672"></p>
 </div>
+<div class="cell-output-display">
+<p><img src="resume_files/figure-html/unnamed-chunk-5-9.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="resume_files/figure-html/unnamed-chunk-5-10.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="resume_files/figure-html/unnamed-chunk-5-11.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="resume_files/figure-html/unnamed-chunk-5-12.png" class="img-fluid" width="672"></p>
+</div>
 </div>
 </section>
-<section id="les-20arr" class="level1">
-<h1>Les 20ARR</h1>
+<section id="les-8g" class="level1">
+<h1>Les 8G</h1>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima.csv"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima8G.csv"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp8G.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_arima"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_acp"</span>)</span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>], <span class="st">"_arima"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>], <span class="st">"_acp"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_acp"</span>))</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  arr_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  arr_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  G_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_arima"</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  G_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_acp"</span>)</span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[arr_arima]], merged_data_ordered[[arr_acp]]),</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[G_arima]], merged_data_ordered[[G_acp]]),</span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - ARR"</span>, i),</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - G"</span>, i),</span>
 <span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
@@ -415,42 +451,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output-display">
 <p><img src="resume_files/figure-html/unnamed-chunk-7-8.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="resume_files/figure-html/unnamed-chunk-7-9.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="resume_files/figure-html/unnamed-chunk-7-10.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="resume_files/figure-html/unnamed-chunk-7-11.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="resume_files/figure-html/unnamed-chunk-7-12.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="resume_files/figure-html/unnamed-chunk-7-13.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="resume_files/figure-html/unnamed-chunk-7-14.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="resume_files/figure-html/unnamed-chunk-7-15.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="resume_files/figure-html/unnamed-chunk-7-16.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="resume_files/figure-html/unnamed-chunk-7-17.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="resume_files/figure-html/unnamed-chunk-7-18.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="resume_files/figure-html/unnamed-chunk-7-19.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="resume_files/figure-html/unnamed-chunk-7-20.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
@@ -761,7 +761,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <div class="sourceCode" id="cb8" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Résumé  "</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Mr. Dtiebo"</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "February 2, 2025"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "February 6, 2025"</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">  prettydoc::html_pretty:</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: architect</span></span>
@@ -781,121 +781,123 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="fu"># Les 12B</span></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima12B.csv"</span>)</span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp12B.csv"</span>)</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>], <span class="st">"_arima"</span>)</span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>], <span class="st">"_acp"</span>)</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>) {</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_acp"</span>))</span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>) {</span>
-<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>  B_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_arima"</span>)</span>
-<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>  B_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_acp"</span>)</span>
-<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">rep</span>(<span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>), <span class="dv">2</span>),</span>
-<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[B_arima]], merged_data_ordered[[B_acp]]),</span>
-<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
-<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
-<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix -B"</span>, i),</span>
-<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Date"</span>, </span>
-<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Valeur"</span>, </span>
-<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"Method"</span></span>
-<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
-<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(p)</span>
-<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="fu"># Les 20ARR</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima.csv"</span>)</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp.csv"</span>)</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_arima"</span>)</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_acp"</span>)</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>))</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>  arr_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>)</span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>  arr_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>)</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[arr_arima]], merged_data_ordered[[arr_acp]]),</span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - ARR"</span>, i),</span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(p)</span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a><span class="fu"># Les 12B</span></span>
 <span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a><span class="fu"># Les 8G</span></span>
-<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima8G.csv"</span>)</span>
-<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp8G.csv"</span>)</span>
-<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>], <span class="st">"_arima"</span>)</span>
-<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>], <span class="st">"_acp"</span>)</span>
-<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
-<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
-<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
-<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_acp"</span>))</span>
-<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
-<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
-<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a>  G_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_arima"</span>)</span>
-<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a>  G_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_acp"</span>)</span>
-<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
-<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[G_arima]], merged_data_ordered[[G_acp]]),</span>
-<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
-<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
-<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - G"</span>, i),</span>
-<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima12B.csv"</span>)</span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp12B.csv"</span>)</span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>], <span class="st">"_arima"</span>)</span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>], <span class="st">"_acp"</span>)</span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>) {</span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_acp"</span>))</span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>) {</span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a>  B_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_arima"</span>)</span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a>  B_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"B"</span>, i, <span class="st">"_acp"</span>)</span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">rep</span>(<span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>), <span class="dv">2</span>),</span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[B_arima]], merged_data_ordered[[B_acp]]),</span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
+<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix -B"</span>, i),</span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Date"</span>, </span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Valeur"</span>, </span>
+<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"Method"</span></span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
 <span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
 <span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
 <span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
-<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(p)</span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(p)</span>
 <span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a><span class="fu"># Les 20ARR</span></span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-118"><a href="#cb8-118" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima.csv"</span>)</span>
-<span id="cb8-119"><a href="#cb8-119" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp.csv"</span>)</span>
-<span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_arima"</span>)</span>
-<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">21</span>], <span class="st">"_acp"</span>)</span>
-<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
-<span id="cb8-128"><a href="#cb8-128" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
-<span id="cb8-129"><a href="#cb8-129" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
-<span id="cb8-130"><a href="#cb8-130" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>))</span>
-<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-132"><a href="#cb8-132" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
-<span id="cb8-133"><a href="#cb8-133" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
-<span id="cb8-134"><a href="#cb8-134" aria-hidden="true" tabindex="-1"></a>  arr_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_arima"</span>)</span>
-<span id="cb8-135"><a href="#cb8-135" aria-hidden="true" tabindex="-1"></a>  arr_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"ARR"</span>, i, <span class="st">"_acp"</span>)</span>
-<span id="cb8-136"><a href="#cb8-136" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb8-137"><a href="#cb8-137" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
-<span id="cb8-138"><a href="#cb8-138" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[arr_arima]], merged_data_ordered[[arr_acp]]),</span>
-<span id="cb8-139"><a href="#cb8-139" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
-<span id="cb8-140"><a href="#cb8-140" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-141"><a href="#cb8-141" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
-<span id="cb8-142"><a href="#cb8-142" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb8-143"><a href="#cb8-143" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - ARR"</span>, i),</span>
-<span id="cb8-144"><a href="#cb8-144" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
-<span id="cb8-145"><a href="#cb8-145" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb8-146"><a href="#cb8-146" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb8-147"><a href="#cb8-147" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb8-148"><a href="#cb8-148" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
-<span id="cb8-149"><a href="#cb8-149" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(p)</span>
-<span id="cb8-150"><a href="#cb8-150" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-151"><a href="#cb8-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-152"><a href="#cb8-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a><span class="fu"># Les 8G</span></span>
+<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a>arima<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"arima8G.csv"</span>)</span>
+<span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a>acp<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">"acp8G.csv"</span>)</span>
+<span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-128"><a href="#cb8-128" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(arima)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>], <span class="st">"_arima"</span>)</span>
+<span id="cb8-129"><a href="#cb8-129" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">colnames</span>(acp)[<span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>], <span class="st">"_acp"</span>)</span>
+<span id="cb8-130"><a href="#cb8-130" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(arima, acp, <span class="at">by =</span> <span class="st">"date"</span>)</span>
+<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a>ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>)</span>
+<span id="cb8-132"><a href="#cb8-132" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
+<span id="cb8-133"><a href="#cb8-133" aria-hidden="true" tabindex="-1"></a>  ordered_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(ordered_columns, <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_arima"</span>), <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_acp"</span>))</span>
+<span id="cb8-134"><a href="#cb8-134" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-135"><a href="#cb8-135" aria-hidden="true" tabindex="-1"></a>merged_data_ordered <span class="ot">&lt;-</span> merged_data[, ordered_columns]</span>
+<span id="cb8-136"><a href="#cb8-136" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
+<span id="cb8-137"><a href="#cb8-137" aria-hidden="true" tabindex="-1"></a>  G_arima <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_arima"</span>)</span>
+<span id="cb8-138"><a href="#cb8-138" aria-hidden="true" tabindex="-1"></a>  G_acp <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"G"</span>, i, <span class="st">"_acp"</span>)</span>
+<span id="cb8-139"><a href="#cb8-139" aria-hidden="true" tabindex="-1"></a>    df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb8-140"><a href="#cb8-140" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(merged_data_ordered<span class="sc">$</span>date, <span class="st">"-01"</span>), <span class="at">format =</span> <span class="st">"%Y_%m-%d"</span>),</span>
+<span id="cb8-141"><a href="#cb8-141" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(merged_data_ordered[[G_arima]], merged_data_ordered[[G_acp]]),</span>
+<span id="cb8-142"><a href="#cb8-142" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"ARIMA"</span>, <span class="st">"ACP"</span>), <span class="at">each =</span> <span class="fu">nrow</span>(merged_data_ordered))</span>
+<span id="cb8-143"><a href="#cb8-143" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-144"><a href="#cb8-144" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value, <span class="at">color =</span> method, <span class="at">group =</span> method)) <span class="sc">+</span></span>
+<span id="cb8-145"><a href="#cb8-145" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb8-146"><a href="#cb8-146" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des prix - G"</span>, i),</span>
+<span id="cb8-147"><a href="#cb8-147" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Valeur"</span>, <span class="at">color =</span> <span class="st">"Method"</span>) <span class="sc">+</span></span>
+<span id="cb8-148"><a href="#cb8-148" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb8-149"><a href="#cb8-149" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb8-150"><a href="#cb8-150" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb8-151"><a href="#cb8-151" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
+<span id="cb8-152"><a href="#cb8-152" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(p)</span>
+<span id="cb8-153"><a href="#cb8-153" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-154"><a href="#cb8-154" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
