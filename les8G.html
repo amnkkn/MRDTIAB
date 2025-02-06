@@ -136,6 +136,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">ARIMA vs ACP</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./resume.html" rel="" target="">
+ <span class="menu-text">Résumé</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./exp.html" rel="" target="">
  <span class="menu-text">Exp</span></a>
   </li>  
@@ -8755,429 +8759,430 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb73-198"><a href="#cb73-198" aria-hidden="true" tabindex="-1"></a>    <span class="at">border =</span> <span class="st">"black"</span></span>
 <span id="cb73-199"><a href="#cb73-199" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb73-200"><a href="#cb73-200" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-201"><a href="#cb73-201" aria-hidden="true" tabindex="-1"></a><span class="fu">### Biplot des attributs (variables)</span></span>
-<span id="cb73-202"><a href="#cb73-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-205"><a href="#cb73-205" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-206"><a href="#cb73-206" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_pca_var</span>(pca_result, <span class="at">col.var =</span> <span class="st">"black"</span>, <span class="at">title =</span> <span class="st">"Biplot des attributs"</span>)</span>
-<span id="cb73-207"><a href="#cb73-207" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-208"><a href="#cb73-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-209"><a href="#cb73-209" aria-hidden="true" tabindex="-1"></a><span class="fu">### Graphique des individus</span></span>
-<span id="cb73-210"><a href="#cb73-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-213"><a href="#cb73-213" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-214"><a href="#cb73-214" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_pca_ind</span>(pca_result, <span class="at">col.ind =</span> <span class="st">"cos2"</span>, </span>
-<span id="cb73-215"><a href="#cb73-215" aria-hidden="true" tabindex="-1"></a>             <span class="at">gradient.cols =</span> <span class="fu">c</span>(<span class="st">"#00AFBB"</span>, <span class="st">"#E7B800"</span>, <span class="st">"#FC4E07"</span>), </span>
-<span id="cb73-216"><a href="#cb73-216" aria-hidden="true" tabindex="-1"></a>             <span class="at">repel =</span> <span class="cn">TRUE</span>, <span class="at">title =</span> <span class="st">"Graphique des individus"</span>)</span>
-<span id="cb73-217"><a href="#cb73-217" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-218"><a href="#cb73-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-219"><a href="#cb73-219" aria-hidden="true" tabindex="-1"></a><span class="fu">## Les coordonnées des variables pour toutes les composantes principales</span></span>
-<span id="cb73-220"><a href="#cb73-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-201"><a href="#cb73-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-202"><a href="#cb73-202" aria-hidden="true" tabindex="-1"></a><span class="fu">### Biplot des attributs (variables)</span></span>
+<span id="cb73-203"><a href="#cb73-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-206"><a href="#cb73-206" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-207"><a href="#cb73-207" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_pca_var</span>(pca_result, <span class="at">col.var =</span> <span class="st">"black"</span>, <span class="at">title =</span> <span class="st">"Biplot des attributs"</span>)</span>
+<span id="cb73-208"><a href="#cb73-208" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-209"><a href="#cb73-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-210"><a href="#cb73-210" aria-hidden="true" tabindex="-1"></a><span class="fu">### Graphique des individus</span></span>
+<span id="cb73-211"><a href="#cb73-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-214"><a href="#cb73-214" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-215"><a href="#cb73-215" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_pca_ind</span>(pca_result, <span class="at">col.ind =</span> <span class="st">"cos2"</span>, </span>
+<span id="cb73-216"><a href="#cb73-216" aria-hidden="true" tabindex="-1"></a>             <span class="at">gradient.cols =</span> <span class="fu">c</span>(<span class="st">"#00AFBB"</span>, <span class="st">"#E7B800"</span>, <span class="st">"#FC4E07"</span>), </span>
+<span id="cb73-217"><a href="#cb73-217" aria-hidden="true" tabindex="-1"></a>             <span class="at">repel =</span> <span class="cn">TRUE</span>, <span class="at">title =</span> <span class="st">"Graphique des individus"</span>)</span>
+<span id="cb73-218"><a href="#cb73-218" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-219"><a href="#cb73-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-220"><a href="#cb73-220" aria-hidden="true" tabindex="-1"></a><span class="fu">## Les coordonnées des variables pour toutes les composantes principales</span></span>
 <span id="cb73-221"><a href="#cb73-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-224"><a href="#cb73-224" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-225"><a href="#cb73-225" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(pca_result<span class="sc">$</span>var<span class="sc">$</span>coord)</span>
-<span id="cb73-226"><a href="#cb73-226" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-227"><a href="#cb73-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-228"><a href="#cb73-228" aria-hidden="true" tabindex="-1"></a><span class="fu">## Les coordonnées des individues pour toutes les composantes principales</span></span>
-<span id="cb73-229"><a href="#cb73-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-232"><a href="#cb73-232" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-233"><a href="#cb73-233" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(pca_result<span class="sc">$</span>ind<span class="sc">$</span>coord)</span>
-<span id="cb73-234"><a href="#cb73-234" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-235"><a href="#cb73-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-236"><a href="#cb73-236" aria-hidden="true" tabindex="-1"></a><span class="fu"># Reconstruction de la base de donné de l'Acp</span></span>
-<span id="cb73-237"><a href="#cb73-237" aria-hidden="true" tabindex="-1"></a><span class="fu">## Explication mathématique de la fonction</span></span>
-<span id="cb73-238"><a href="#cb73-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-239"><a href="#cb73-239" aria-hidden="true" tabindex="-1"></a>**Coordonnées des individus dans les composantes principales :**</span>
-<span id="cb73-240"><a href="#cb73-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-241"><a href="#cb73-241" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb73-242"><a href="#cb73-242" aria-hidden="true" tabindex="-1"></a>\mathbf{Z} = \mathbf{X} \mathbf{P}</span>
-<span id="cb73-243"><a href="#cb73-243" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb73-244"><a href="#cb73-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-245"><a href="#cb73-245" aria-hidden="true" tabindex="-1"></a>où :</span>
-<span id="cb73-246"><a href="#cb73-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-247"><a href="#cb73-247" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbf{X}$ est la matrice des données centrées et réduites,</span>
-<span id="cb73-248"><a href="#cb73-248" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbf{P}$ est la matrice des vecteurs propres (charges).</span>
-<span id="cb73-249"><a href="#cb73-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-250"><a href="#cb73-250" aria-hidden="true" tabindex="-1"></a>On a déjà :</span>
-<span id="cb73-251"><a href="#cb73-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-252"><a href="#cb73-252" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb73-253"><a href="#cb73-253" aria-hidden="true" tabindex="-1"></a>\mathbf{P} = \mathbf{A} \mathbf{\Lambda}^{-1/2}</span>
-<span id="cb73-254"><a href="#cb73-254" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb73-255"><a href="#cb73-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-256"><a href="#cb73-256" aria-hidden="true" tabindex="-1"></a>où :</span>
-<span id="cb73-257"><a href="#cb73-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-258"><a href="#cb73-258" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbf{A}$ est la matrice des coordonnées des variables (charges) dans le nouvel espace des composantes principales,</span>
-<span id="cb73-259"><a href="#cb73-259" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbf{\Lambda}$ est la matrice diagonale des valeurs propres,</span>
-<span id="cb73-260"><a href="#cb73-260" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbf{\Lambda}^{-1/2}$ représente la matrice diagonale où chaque valeur propre $\lambda_i$ sur la diagonale est remplacée par son inverse de racine carrée $\frac{1}{\sqrt{\lambda_i}}$.</span>
-<span id="cb73-261"><a href="#cb73-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-262"><a href="#cb73-262" aria-hidden="true" tabindex="-1"></a>La matrice $\mathbf{\Lambda}^{-1/2}$ est donnée par :</span>
-<span id="cb73-263"><a href="#cb73-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-264"><a href="#cb73-264" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb73-265"><a href="#cb73-265" aria-hidden="true" tabindex="-1"></a>\mathbf{\Lambda}^{-1/2} = \text{diag}\left(\left<span class="co">[</span><span class="ot">\frac{1}{\sqrt{\lambda_1}}, \frac{1}{\sqrt{\lambda_2}}, \ldots, \frac{1}{\sqrt{\lambda_{\text{ncp}}}}\right</span><span class="co">]</span>\right)</span>
-<span id="cb73-266"><a href="#cb73-266" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb73-267"><a href="#cb73-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-268"><a href="#cb73-268" aria-hidden="true" tabindex="-1"></a>**Reconstruction des données centrées et réduites :**</span>
-<span id="cb73-269"><a href="#cb73-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-270"><a href="#cb73-270" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb73-271"><a href="#cb73-271" aria-hidden="true" tabindex="-1"></a>\hat{\mathbf{X}} = \mathbf{Z} \mathbf{P}^\top</span>
-<span id="cb73-272"><a href="#cb73-272" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb73-273"><a href="#cb73-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-274"><a href="#cb73-274" aria-hidden="true" tabindex="-1"></a>où :</span>
-<span id="cb73-275"><a href="#cb73-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-276"><a href="#cb73-276" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\hat{\mathbf{X}}$ est la matrice des données reconstruites,</span>
-<span id="cb73-277"><a href="#cb73-277" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbf{Z}$ est la matrice des coordonnées des individus,</span>
-<span id="cb73-278"><a href="#cb73-278" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbf{P}^\top$ est la transposée de la matrice des vecteurs propres.</span>
-<span id="cb73-279"><a href="#cb73-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-280"><a href="#cb73-280" aria-hidden="true" tabindex="-1"></a>**Retour aux unités originales :**</span>
-<span id="cb73-281"><a href="#cb73-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-282"><a href="#cb73-282" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb73-283"><a href="#cb73-283" aria-hidden="true" tabindex="-1"></a>\hat{\mathbf{X}}_{\text{original}} = (\hat{\mathbf{X}} \cdot \text{ecart.type}) + \text{centre}</span>
-<span id="cb73-284"><a href="#cb73-284" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb73-285"><a href="#cb73-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-286"><a href="#cb73-286" aria-hidden="true" tabindex="-1"></a>où :</span>
-<span id="cb73-287"><a href="#cb73-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-288"><a href="#cb73-288" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\text{ecart.type}$ est un vecteur des écarts-types des variables originales,</span>
-<span id="cb73-289"><a href="#cb73-289" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\text{centre}$ est un vecteur des moyennes des variables originales.</span>
-<span id="cb73-290"><a href="#cb73-290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-291"><a href="#cb73-291" aria-hidden="true" tabindex="-1"></a>**Ainsi, la fonction `back_to_original_data2` reconstruit les données originales en inversant les étapes de l'ACP, en utilisant les coordonnées des individus et des variables, les valeurs propres, et les paramètres de centrage et de réduction des données.**</span>
-<span id="cb73-292"><a href="#cb73-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-222"><a href="#cb73-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-225"><a href="#cb73-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-226"><a href="#cb73-226" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(pca_result<span class="sc">$</span>var<span class="sc">$</span>coord)</span>
+<span id="cb73-227"><a href="#cb73-227" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-228"><a href="#cb73-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-229"><a href="#cb73-229" aria-hidden="true" tabindex="-1"></a><span class="fu">## Les coordonnées des individues pour toutes les composantes principales</span></span>
+<span id="cb73-230"><a href="#cb73-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-233"><a href="#cb73-233" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-234"><a href="#cb73-234" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(pca_result<span class="sc">$</span>ind<span class="sc">$</span>coord)</span>
+<span id="cb73-235"><a href="#cb73-235" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-236"><a href="#cb73-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-237"><a href="#cb73-237" aria-hidden="true" tabindex="-1"></a><span class="fu"># Reconstruction de la base de donné de l'Acp</span></span>
+<span id="cb73-238"><a href="#cb73-238" aria-hidden="true" tabindex="-1"></a><span class="fu">## Explication mathématique de la fonction</span></span>
+<span id="cb73-239"><a href="#cb73-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-240"><a href="#cb73-240" aria-hidden="true" tabindex="-1"></a>**Coordonnées des individus dans les composantes principales :**</span>
+<span id="cb73-241"><a href="#cb73-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-242"><a href="#cb73-242" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb73-243"><a href="#cb73-243" aria-hidden="true" tabindex="-1"></a>\mathbf{Z} = \mathbf{X} \mathbf{P}</span>
+<span id="cb73-244"><a href="#cb73-244" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb73-245"><a href="#cb73-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-246"><a href="#cb73-246" aria-hidden="true" tabindex="-1"></a>où :</span>
+<span id="cb73-247"><a href="#cb73-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-248"><a href="#cb73-248" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbf{X}$ est la matrice des données centrées et réduites,</span>
+<span id="cb73-249"><a href="#cb73-249" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbf{P}$ est la matrice des vecteurs propres (charges).</span>
+<span id="cb73-250"><a href="#cb73-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-251"><a href="#cb73-251" aria-hidden="true" tabindex="-1"></a>On a déjà :</span>
+<span id="cb73-252"><a href="#cb73-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-253"><a href="#cb73-253" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb73-254"><a href="#cb73-254" aria-hidden="true" tabindex="-1"></a>\mathbf{P} = \mathbf{A} \mathbf{\Lambda}^{-1/2}</span>
+<span id="cb73-255"><a href="#cb73-255" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb73-256"><a href="#cb73-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-257"><a href="#cb73-257" aria-hidden="true" tabindex="-1"></a>où :</span>
+<span id="cb73-258"><a href="#cb73-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-259"><a href="#cb73-259" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbf{A}$ est la matrice des coordonnées des variables (charges) dans le nouvel espace des composantes principales,</span>
+<span id="cb73-260"><a href="#cb73-260" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbf{\Lambda}$ est la matrice diagonale des valeurs propres,</span>
+<span id="cb73-261"><a href="#cb73-261" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbf{\Lambda}^{-1/2}$ représente la matrice diagonale où chaque valeur propre $\lambda_i$ sur la diagonale est remplacée par son inverse de racine carrée $\frac{1}{\sqrt{\lambda_i}}$.</span>
+<span id="cb73-262"><a href="#cb73-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-263"><a href="#cb73-263" aria-hidden="true" tabindex="-1"></a>La matrice $\mathbf{\Lambda}^{-1/2}$ est donnée par :</span>
+<span id="cb73-264"><a href="#cb73-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-265"><a href="#cb73-265" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb73-266"><a href="#cb73-266" aria-hidden="true" tabindex="-1"></a>\mathbf{\Lambda}^{-1/2} = \text{diag}\left(\left<span class="co">[</span><span class="ot">\frac{1}{\sqrt{\lambda_1}}, \frac{1}{\sqrt{\lambda_2}}, \ldots, \frac{1}{\sqrt{\lambda_{\text{ncp}}}}\right</span><span class="co">]</span>\right)</span>
+<span id="cb73-267"><a href="#cb73-267" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb73-268"><a href="#cb73-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-269"><a href="#cb73-269" aria-hidden="true" tabindex="-1"></a>**Reconstruction des données centrées et réduites :**</span>
+<span id="cb73-270"><a href="#cb73-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-271"><a href="#cb73-271" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb73-272"><a href="#cb73-272" aria-hidden="true" tabindex="-1"></a>\hat{\mathbf{X}} = \mathbf{Z} \mathbf{P}^\top</span>
+<span id="cb73-273"><a href="#cb73-273" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb73-274"><a href="#cb73-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-275"><a href="#cb73-275" aria-hidden="true" tabindex="-1"></a>où :</span>
+<span id="cb73-276"><a href="#cb73-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-277"><a href="#cb73-277" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\hat{\mathbf{X}}$ est la matrice des données reconstruites,</span>
+<span id="cb73-278"><a href="#cb73-278" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbf{Z}$ est la matrice des coordonnées des individus,</span>
+<span id="cb73-279"><a href="#cb73-279" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbf{P}^\top$ est la transposée de la matrice des vecteurs propres.</span>
+<span id="cb73-280"><a href="#cb73-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-281"><a href="#cb73-281" aria-hidden="true" tabindex="-1"></a>**Retour aux unités originales :**</span>
+<span id="cb73-282"><a href="#cb73-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-283"><a href="#cb73-283" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb73-284"><a href="#cb73-284" aria-hidden="true" tabindex="-1"></a>\hat{\mathbf{X}}_{\text{original}} = (\hat{\mathbf{X}} \cdot \text{ecart.type}) + \text{centre}</span>
+<span id="cb73-285"><a href="#cb73-285" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb73-286"><a href="#cb73-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-287"><a href="#cb73-287" aria-hidden="true" tabindex="-1"></a>où :</span>
+<span id="cb73-288"><a href="#cb73-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-289"><a href="#cb73-289" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\text{ecart.type}$ est un vecteur des écarts-types des variables originales,</span>
+<span id="cb73-290"><a href="#cb73-290" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\text{centre}$ est un vecteur des moyennes des variables originales.</span>
+<span id="cb73-291"><a href="#cb73-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-292"><a href="#cb73-292" aria-hidden="true" tabindex="-1"></a>**Ainsi, la fonction `back_to_original_data2` reconstruit les données originales en inversant les étapes de l'ACP, en utilisant les coordonnées des individus et des variables, les valeurs propres, et les paramètres de centrage et de réduction des données.**</span>
 <span id="cb73-293"><a href="#cb73-293" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb73-294"><a href="#cb73-294" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb73-295"><a href="#cb73-295" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb73-296"><a href="#cb73-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-297"><a href="#cb73-297" aria-hidden="true" tabindex="-1"></a><span class="fu">## Progmarmation et  test de la function</span></span>
-<span id="cb73-298"><a href="#cb73-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-301"><a href="#cb73-301" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-302"><a href="#cb73-302" aria-hidden="true" tabindex="-1"></a>back_to_original_data2 <span class="ot">&lt;-</span> <span class="cf">function</span>(res, <span class="at">ncp =</span> <span class="cn">NULL</span>) {</span>
-<span id="cb73-303"><a href="#cb73-303" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(ncp)) </span>
-<span id="cb73-304"><a href="#cb73-304" aria-hidden="true" tabindex="-1"></a>    ncp <span class="ot">&lt;-</span> <span class="fu">ncol</span>(res<span class="sc">$</span>ind<span class="sc">$</span>coord)</span>
-<span id="cb73-305"><a href="#cb73-305" aria-hidden="true" tabindex="-1"></a>  ncp <span class="ot">&lt;-</span> <span class="fu">min</span>(ncp, <span class="fu">ncol</span>(res<span class="sc">$</span>ind<span class="sc">$</span>coord))</span>
-<span id="cb73-306"><a href="#cb73-306" aria-hidden="true" tabindex="-1"></a>  coord.ind <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(res<span class="sc">$</span>ind<span class="sc">$</span>coord)[, <span class="dv">1</span><span class="sc">:</span>ncp, drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
-<span id="cb73-307"><a href="#cb73-307" aria-hidden="true" tabindex="-1"></a>  hatX <span class="ot">&lt;-</span> coord.ind <span class="sc">%*%</span> <span class="fu">t</span>(<span class="fu">sweep</span>(<span class="fu">as.matrix</span>(res<span class="sc">$</span>var<span class="sc">$</span>coord)[, <span class="dv">1</span><span class="sc">:</span>ncp, <span class="at">drop =</span> <span class="cn">FALSE</span>], </span>
-<span id="cb73-308"><a href="#cb73-308" aria-hidden="true" tabindex="-1"></a>                                <span class="dv">2</span>, <span class="fu">sqrt</span>(res<span class="sc">$</span>eig[<span class="dv">1</span><span class="sc">:</span>ncp, <span class="dv">1</span>]), <span class="at">FUN =</span> <span class="st">"/"</span>))</span>
-<span id="cb73-309"><a href="#cb73-309" aria-hidden="true" tabindex="-1"></a>  hatX <span class="ot">&lt;-</span> <span class="fu">sweep</span>(hatX, <span class="dv">2</span>, res<span class="sc">$</span>call<span class="sc">$</span>ecart.type, <span class="at">FUN =</span> <span class="st">"*"</span>)</span>
-<span id="cb73-310"><a href="#cb73-310" aria-hidden="true" tabindex="-1"></a>  hatX <span class="ot">&lt;-</span> <span class="fu">sweep</span>(hatX, <span class="dv">2</span>, res<span class="sc">$</span>call<span class="sc">$</span>centre, <span class="at">FUN =</span> <span class="st">"+"</span>)</span>
-<span id="cb73-311"><a href="#cb73-311" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(hatX)</span>
-<span id="cb73-312"><a href="#cb73-312" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb73-313"><a href="#cb73-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-314"><a href="#cb73-314" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-315"><a href="#cb73-315" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-318"><a href="#cb73-318" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-319"><a href="#cb73-319" aria-hidden="true" tabindex="-1"></a>reconstruction <span class="ot">&lt;-</span> <span class="fu">back_to_original_data2</span>(pca_result,<span class="at">ncp=</span><span class="dv">12</span>)</span>
-<span id="cb73-320"><a href="#cb73-320" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-321"><a href="#cb73-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-324"><a href="#cb73-324" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-325"><a href="#cb73-325" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(reconstruction)</span>
-<span id="cb73-326"><a href="#cb73-326" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-327"><a href="#cb73-327" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-328"><a href="#cb73-328" aria-hidden="true" tabindex="-1"></a>*Le résultat obtenu après l'application de la fonction sur la matrice des vecteurs propres et les coordonnées des individus doit être identique à la base de données originale avant l'application de l'ACP. Si c'est le cas, cela signifie que la fonction d'inversion fonctionne correctement. Si, en appliquant la fonction d'inversion sur les résultats de l'ACP, on retrouve la base de données originale, alors la fonction est bien avec excelence.*</span>
-<span id="cb73-329"><a href="#cb73-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-297"><a href="#cb73-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-298"><a href="#cb73-298" aria-hidden="true" tabindex="-1"></a><span class="fu">## Progmarmation et  test de la function</span></span>
+<span id="cb73-299"><a href="#cb73-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-302"><a href="#cb73-302" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-303"><a href="#cb73-303" aria-hidden="true" tabindex="-1"></a>back_to_original_data2 <span class="ot">&lt;-</span> <span class="cf">function</span>(res, <span class="at">ncp =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb73-304"><a href="#cb73-304" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(ncp)) </span>
+<span id="cb73-305"><a href="#cb73-305" aria-hidden="true" tabindex="-1"></a>    ncp <span class="ot">&lt;-</span> <span class="fu">ncol</span>(res<span class="sc">$</span>ind<span class="sc">$</span>coord)</span>
+<span id="cb73-306"><a href="#cb73-306" aria-hidden="true" tabindex="-1"></a>  ncp <span class="ot">&lt;-</span> <span class="fu">min</span>(ncp, <span class="fu">ncol</span>(res<span class="sc">$</span>ind<span class="sc">$</span>coord))</span>
+<span id="cb73-307"><a href="#cb73-307" aria-hidden="true" tabindex="-1"></a>  coord.ind <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(res<span class="sc">$</span>ind<span class="sc">$</span>coord)[, <span class="dv">1</span><span class="sc">:</span>ncp, drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb73-308"><a href="#cb73-308" aria-hidden="true" tabindex="-1"></a>  hatX <span class="ot">&lt;-</span> coord.ind <span class="sc">%*%</span> <span class="fu">t</span>(<span class="fu">sweep</span>(<span class="fu">as.matrix</span>(res<span class="sc">$</span>var<span class="sc">$</span>coord)[, <span class="dv">1</span><span class="sc">:</span>ncp, <span class="at">drop =</span> <span class="cn">FALSE</span>], </span>
+<span id="cb73-309"><a href="#cb73-309" aria-hidden="true" tabindex="-1"></a>                                <span class="dv">2</span>, <span class="fu">sqrt</span>(res<span class="sc">$</span>eig[<span class="dv">1</span><span class="sc">:</span>ncp, <span class="dv">1</span>]), <span class="at">FUN =</span> <span class="st">"/"</span>))</span>
+<span id="cb73-310"><a href="#cb73-310" aria-hidden="true" tabindex="-1"></a>  hatX <span class="ot">&lt;-</span> <span class="fu">sweep</span>(hatX, <span class="dv">2</span>, res<span class="sc">$</span>call<span class="sc">$</span>ecart.type, <span class="at">FUN =</span> <span class="st">"*"</span>)</span>
+<span id="cb73-311"><a href="#cb73-311" aria-hidden="true" tabindex="-1"></a>  hatX <span class="ot">&lt;-</span> <span class="fu">sweep</span>(hatX, <span class="dv">2</span>, res<span class="sc">$</span>call<span class="sc">$</span>centre, <span class="at">FUN =</span> <span class="st">"+"</span>)</span>
+<span id="cb73-312"><a href="#cb73-312" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(hatX)</span>
+<span id="cb73-313"><a href="#cb73-313" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb73-314"><a href="#cb73-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-315"><a href="#cb73-315" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-316"><a href="#cb73-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-319"><a href="#cb73-319" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-320"><a href="#cb73-320" aria-hidden="true" tabindex="-1"></a>reconstruction <span class="ot">&lt;-</span> <span class="fu">back_to_original_data2</span>(pca_result,<span class="at">ncp=</span><span class="dv">12</span>)</span>
+<span id="cb73-321"><a href="#cb73-321" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-322"><a href="#cb73-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-325"><a href="#cb73-325" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-326"><a href="#cb73-326" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(reconstruction)</span>
+<span id="cb73-327"><a href="#cb73-327" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-328"><a href="#cb73-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-329"><a href="#cb73-329" aria-hidden="true" tabindex="-1"></a>*Le résultat obtenu après l'application de la fonction sur la matrice des vecteurs propres et les coordonnées des individus doit être identique à la base de données originale avant l'application de l'ACP. Si c'est le cas, cela signifie que la fonction d'inversion fonctionne correctement. Si, en appliquant la fonction d'inversion sur les résultats de l'ACP, on retrouve la base de données originale, alors la fonction est bien avec excelence.*</span>
 <span id="cb73-330"><a href="#cb73-330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-333"><a href="#cb73-333" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-334"><a href="#cb73-334" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(data)</span>
-<span id="cb73-335"><a href="#cb73-335" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-336"><a href="#cb73-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-337"><a href="#cb73-337" aria-hidden="true" tabindex="-1"></a>** La fonction fonctionne très bien ... on peut aller vers la base de données original avec succées  avec les données original ( \^ - \^ ) ,on a  obtenu les meme resulats de la base de données original.**</span>
-<span id="cb73-338"><a href="#cb73-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-331"><a href="#cb73-331" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-334"><a href="#cb73-334" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-335"><a href="#cb73-335" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(data)</span>
+<span id="cb73-336"><a href="#cb73-336" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-337"><a href="#cb73-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-338"><a href="#cb73-338" aria-hidden="true" tabindex="-1"></a>** La fonction fonctionne très bien ... on peut aller vers la base de données original avec succées  avec les données original ( \^ - \^ ) ,on a  obtenu les meme resulats de la base de données original.**</span>
 <span id="cb73-339"><a href="#cb73-339" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-340"><a href="#cb73-340" aria-hidden="true" tabindex="-1"></a><span class="fu"># ARIMA </span></span>
-<span id="cb73-341"><a href="#cb73-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-342"><a href="#cb73-342" aria-hidden="true" tabindex="-1"></a>ici cest l'application de l ARIMA sur les cordonées des indiviudes un par un .</span>
-<span id="cb73-343"><a href="#cb73-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-346"><a href="#cb73-346" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-347"><a href="#cb73-347" aria-hidden="true" tabindex="-1"></a>arimadata<span class="ot">=</span><span class="fu">data.frame</span>(pca_result<span class="sc">$</span>ind<span class="sc">$</span>coord)</span>
-<span id="cb73-348"><a href="#cb73-348" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(arimadata)</span>
-<span id="cb73-349"><a href="#cb73-349" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-350"><a href="#cb73-350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-351"><a href="#cb73-351" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.1</span></span>
-<span id="cb73-352"><a href="#cb73-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-355"><a href="#cb73-355" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-356"><a href="#cb73-356" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forecast)</span>
-<span id="cb73-357"><a href="#cb73-357" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.1</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb73-358"><a href="#cb73-358" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-359"><a href="#cb73-359" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-362"><a href="#cb73-362" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-363"><a href="#cb73-363" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.1</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.1</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1</span>),<span class="at">include.constant =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb73-364"><a href="#cb73-364" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.1</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.1</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
-<span id="cb73-365"><a href="#cb73-365" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.1</span>_previsions)</span>
-<span id="cb73-366"><a href="#cb73-366" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-367"><a href="#cb73-367" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-368"><a href="#cb73-368" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.2</span></span>
-<span id="cb73-369"><a href="#cb73-369" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-372"><a href="#cb73-372" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-373"><a href="#cb73-373" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.2</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb73-374"><a href="#cb73-374" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-375"><a href="#cb73-375" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-378"><a href="#cb73-378" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-379"><a href="#cb73-379" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.2</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.2</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="at">include.drift =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb73-380"><a href="#cb73-380" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.2</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.2</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
-<span id="cb73-381"><a href="#cb73-381" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.2</span>_previsions)</span>
-<span id="cb73-382"><a href="#cb73-382" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-383"><a href="#cb73-383" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-384"><a href="#cb73-384" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.3</span></span>
-<span id="cb73-385"><a href="#cb73-385" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-388"><a href="#cb73-388" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-389"><a href="#cb73-389" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.3</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb73-390"><a href="#cb73-390" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-391"><a href="#cb73-391" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-340"><a href="#cb73-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-341"><a href="#cb73-341" aria-hidden="true" tabindex="-1"></a><span class="fu"># ARIMA </span></span>
+<span id="cb73-342"><a href="#cb73-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-343"><a href="#cb73-343" aria-hidden="true" tabindex="-1"></a>ici cest l'application de l ARIMA sur les cordonées des indiviudes un par un .</span>
+<span id="cb73-344"><a href="#cb73-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-347"><a href="#cb73-347" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-348"><a href="#cb73-348" aria-hidden="true" tabindex="-1"></a>arimadata<span class="ot">=</span><span class="fu">data.frame</span>(pca_result<span class="sc">$</span>ind<span class="sc">$</span>coord)</span>
+<span id="cb73-349"><a href="#cb73-349" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(arimadata)</span>
+<span id="cb73-350"><a href="#cb73-350" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-351"><a href="#cb73-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-352"><a href="#cb73-352" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.1</span></span>
+<span id="cb73-353"><a href="#cb73-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-356"><a href="#cb73-356" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-357"><a href="#cb73-357" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forecast)</span>
+<span id="cb73-358"><a href="#cb73-358" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.1</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb73-359"><a href="#cb73-359" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-360"><a href="#cb73-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-363"><a href="#cb73-363" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-364"><a href="#cb73-364" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.1</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.1</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1</span>),<span class="at">include.constant =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb73-365"><a href="#cb73-365" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.1</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.1</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
+<span id="cb73-366"><a href="#cb73-366" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.1</span>_previsions)</span>
+<span id="cb73-367"><a href="#cb73-367" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-368"><a href="#cb73-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-369"><a href="#cb73-369" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.2</span></span>
+<span id="cb73-370"><a href="#cb73-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-373"><a href="#cb73-373" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-374"><a href="#cb73-374" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.2</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb73-375"><a href="#cb73-375" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-376"><a href="#cb73-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-379"><a href="#cb73-379" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-380"><a href="#cb73-380" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.2</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.2</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="at">include.drift =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb73-381"><a href="#cb73-381" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.2</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.2</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
+<span id="cb73-382"><a href="#cb73-382" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.2</span>_previsions)</span>
+<span id="cb73-383"><a href="#cb73-383" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-384"><a href="#cb73-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-385"><a href="#cb73-385" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.3</span></span>
+<span id="cb73-386"><a href="#cb73-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-389"><a href="#cb73-389" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-390"><a href="#cb73-390" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.3</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb73-391"><a href="#cb73-391" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb73-392"><a href="#cb73-392" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-395"><a href="#cb73-395" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-396"><a href="#cb73-396" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.3</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.3</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>), <span class="at">include.mean =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb73-397"><a href="#cb73-397" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.3</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.3</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
-<span id="cb73-398"><a href="#cb73-398" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.3</span>_previsions)</span>
-<span id="cb73-399"><a href="#cb73-399" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-400"><a href="#cb73-400" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-401"><a href="#cb73-401" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-393"><a href="#cb73-393" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-396"><a href="#cb73-396" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-397"><a href="#cb73-397" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.3</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.3</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>), <span class="at">include.mean =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb73-398"><a href="#cb73-398" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.3</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.3</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
+<span id="cb73-399"><a href="#cb73-399" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.3</span>_previsions)</span>
+<span id="cb73-400"><a href="#cb73-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-401"><a href="#cb73-401" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb73-402"><a href="#cb73-402" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-403"><a href="#cb73-403" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.4</span></span>
-<span id="cb73-404"><a href="#cb73-404" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-407"><a href="#cb73-407" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-408"><a href="#cb73-408" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.4</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb73-409"><a href="#cb73-409" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-410"><a href="#cb73-410" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-413"><a href="#cb73-413" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-414"><a href="#cb73-414" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.4</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.4</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">2</span>),<span class="at">include.mean=</span> <span class="cn">TRUE</span>)</span>
-<span id="cb73-415"><a href="#cb73-415" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.4</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.4</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
-<span id="cb73-416"><a href="#cb73-416" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.4</span>_previsions)</span>
-<span id="cb73-417"><a href="#cb73-417" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-418"><a href="#cb73-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-403"><a href="#cb73-403" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-404"><a href="#cb73-404" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.4</span></span>
+<span id="cb73-405"><a href="#cb73-405" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-408"><a href="#cb73-408" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-409"><a href="#cb73-409" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.4</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb73-410"><a href="#cb73-410" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-411"><a href="#cb73-411" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-414"><a href="#cb73-414" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-415"><a href="#cb73-415" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.4</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.4</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">2</span>),<span class="at">include.mean=</span> <span class="cn">TRUE</span>)</span>
+<span id="cb73-416"><a href="#cb73-416" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.4</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.4</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
+<span id="cb73-417"><a href="#cb73-417" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.4</span>_previsions)</span>
+<span id="cb73-418"><a href="#cb73-418" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb73-419"><a href="#cb73-419" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-420"><a href="#cb73-420" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.5</span></span>
-<span id="cb73-421"><a href="#cb73-421" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-424"><a href="#cb73-424" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-425"><a href="#cb73-425" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.5</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb73-426"><a href="#cb73-426" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-427"><a href="#cb73-427" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-430"><a href="#cb73-430" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-431"><a href="#cb73-431" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.5</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.5</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>),<span class="at">include.mean =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb73-432"><a href="#cb73-432" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.5</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.5</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
-<span id="cb73-433"><a href="#cb73-433" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.5</span>_previsions)</span>
-<span id="cb73-434"><a href="#cb73-434" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-435"><a href="#cb73-435" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-436"><a href="#cb73-436" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.6</span></span>
-<span id="cb73-437"><a href="#cb73-437" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-440"><a href="#cb73-440" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-441"><a href="#cb73-441" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.6</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb73-442"><a href="#cb73-442" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-443"><a href="#cb73-443" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-446"><a href="#cb73-446" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-447"><a href="#cb73-447" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.6</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.6</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>),<span class="at">include.mean =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb73-448"><a href="#cb73-448" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.6</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.6</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
-<span id="cb73-449"><a href="#cb73-449" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.6</span>_previsions)</span>
-<span id="cb73-450"><a href="#cb73-450" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-451"><a href="#cb73-451" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-452"><a href="#cb73-452" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.7</span></span>
-<span id="cb73-453"><a href="#cb73-453" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-456"><a href="#cb73-456" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-457"><a href="#cb73-457" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.7</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb73-458"><a href="#cb73-458" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-459"><a href="#cb73-459" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-462"><a href="#cb73-462" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-463"><a href="#cb73-463" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.7</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.7</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>),<span class="at">include.mean =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb73-464"><a href="#cb73-464" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.7</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.7</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
-<span id="cb73-465"><a href="#cb73-465" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.7</span>_previsions)</span>
-<span id="cb73-466"><a href="#cb73-466" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-467"><a href="#cb73-467" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-468"><a href="#cb73-468" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.8</span></span>
-<span id="cb73-469"><a href="#cb73-469" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-472"><a href="#cb73-472" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-473"><a href="#cb73-473" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.8</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb73-474"><a href="#cb73-474" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-475"><a href="#cb73-475" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-478"><a href="#cb73-478" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-479"><a href="#cb73-479" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.8</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.8</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>),<span class="at">include.mean =</span><span class="cn">TRUE</span>)</span>
-<span id="cb73-480"><a href="#cb73-480" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.8</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.8</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
-<span id="cb73-481"><a href="#cb73-481" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.8</span>_previsions)</span>
-<span id="cb73-482"><a href="#cb73-482" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-483"><a href="#cb73-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-420"><a href="#cb73-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-421"><a href="#cb73-421" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.5</span></span>
+<span id="cb73-422"><a href="#cb73-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-425"><a href="#cb73-425" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-426"><a href="#cb73-426" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.5</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb73-427"><a href="#cb73-427" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-428"><a href="#cb73-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-431"><a href="#cb73-431" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-432"><a href="#cb73-432" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.5</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.5</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>),<span class="at">include.mean =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb73-433"><a href="#cb73-433" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.5</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.5</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
+<span id="cb73-434"><a href="#cb73-434" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.5</span>_previsions)</span>
+<span id="cb73-435"><a href="#cb73-435" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-436"><a href="#cb73-436" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-437"><a href="#cb73-437" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.6</span></span>
+<span id="cb73-438"><a href="#cb73-438" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-441"><a href="#cb73-441" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-442"><a href="#cb73-442" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.6</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb73-443"><a href="#cb73-443" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-444"><a href="#cb73-444" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-447"><a href="#cb73-447" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-448"><a href="#cb73-448" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.6</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.6</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>),<span class="at">include.mean =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb73-449"><a href="#cb73-449" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.6</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.6</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
+<span id="cb73-450"><a href="#cb73-450" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.6</span>_previsions)</span>
+<span id="cb73-451"><a href="#cb73-451" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-452"><a href="#cb73-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-453"><a href="#cb73-453" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.7</span></span>
+<span id="cb73-454"><a href="#cb73-454" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-457"><a href="#cb73-457" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-458"><a href="#cb73-458" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.7</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb73-459"><a href="#cb73-459" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-460"><a href="#cb73-460" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-463"><a href="#cb73-463" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-464"><a href="#cb73-464" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.7</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.7</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>),<span class="at">include.mean =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb73-465"><a href="#cb73-465" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.7</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.7</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
+<span id="cb73-466"><a href="#cb73-466" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.7</span>_previsions)</span>
+<span id="cb73-467"><a href="#cb73-467" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-468"><a href="#cb73-468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-469"><a href="#cb73-469" aria-hidden="true" tabindex="-1"></a><span class="fu">## ARIMA Dim.8</span></span>
+<span id="cb73-470"><a href="#cb73-470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-473"><a href="#cb73-473" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-474"><a href="#cb73-474" aria-hidden="true" tabindex="-1"></a><span class="fu">auto.arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.8</span>,<span class="at">trace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb73-475"><a href="#cb73-475" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-476"><a href="#cb73-476" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-479"><a href="#cb73-479" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-480"><a href="#cb73-480" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.8</span>_model <span class="ot">&lt;-</span> <span class="fu">Arima</span>(arimadata<span class="sc">$</span>Dim<span class="fl">.8</span>, <span class="at">order=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>),<span class="at">include.mean =</span><span class="cn">TRUE</span>)</span>
+<span id="cb73-481"><a href="#cb73-481" aria-hidden="true" tabindex="-1"></a>Dim<span class="fl">.8</span>_previsions <span class="ot">&lt;-</span> <span class="fu">forecast</span>(Dim<span class="fl">.8</span>_model, <span class="at">h =</span> <span class="dv">24</span>)</span>
+<span id="cb73-482"><a href="#cb73-482" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Dim<span class="fl">.8</span>_previsions)</span>
+<span id="cb73-483"><a href="#cb73-483" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb73-484"><a href="#cb73-484" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-485"><a href="#cb73-485" aria-hidden="true" tabindex="-1"></a><span class="fu"># Reconstruction de la base de donné de l'Acp avec des nouvelles prévisions ARIMA</span></span>
-<span id="cb73-486"><a href="#cb73-486" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-485"><a href="#cb73-485" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-486"><a href="#cb73-486" aria-hidden="true" tabindex="-1"></a><span class="fu"># Reconstruction de la base de donné de l'Acp avec des nouvelles prévisions ARIMA</span></span>
 <span id="cb73-487"><a href="#cb73-487" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-490"><a href="#cb73-490" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-491"><a href="#cb73-491" aria-hidden="true" tabindex="-1"></a><span class="co"># Combiner tous les previsions </span></span>
-<span id="cb73-492"><a href="#cb73-492" aria-hidden="true" tabindex="-1"></a>all_previsions <span class="ot">&lt;-</span> <span class="fu">cbind</span>(</span>
-<span id="cb73-493"><a href="#cb73-493" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.1</span>_previsions<span class="sc">$</span>mean,</span>
-<span id="cb73-494"><a href="#cb73-494" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.2</span>_previsions<span class="sc">$</span>mean,</span>
-<span id="cb73-495"><a href="#cb73-495" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.3</span>_previsions<span class="sc">$</span>mean,</span>
-<span id="cb73-496"><a href="#cb73-496" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.4</span>_previsions<span class="sc">$</span>mean,</span>
-<span id="cb73-497"><a href="#cb73-497" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.5</span>_previsions<span class="sc">$</span>mean,</span>
-<span id="cb73-498"><a href="#cb73-498" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.6</span>_previsions<span class="sc">$</span>mean,</span>
-<span id="cb73-499"><a href="#cb73-499" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.7</span>_previsions<span class="sc">$</span>mean,</span>
-<span id="cb73-500"><a href="#cb73-500" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.8</span>_previsions<span class="sc">$</span>mean</span>
-<span id="cb73-501"><a href="#cb73-501" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb73-502"><a href="#cb73-502" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-503"><a href="#cb73-503" aria-hidden="true" tabindex="-1"></a>all_previsions <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(all_previsions)</span>
-<span id="cb73-504"><a href="#cb73-504" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(all_previsions) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Dim."</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>)</span>
-<span id="cb73-505"><a href="#cb73-505" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(all_previsions)</span>
-<span id="cb73-506"><a href="#cb73-506" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-507"><a href="#cb73-507" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-508"><a href="#cb73-508" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-511"><a href="#cb73-511" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-512"><a href="#cb73-512" aria-hidden="true" tabindex="-1"></a>back_to_original_data3 <span class="ot">&lt;-</span> <span class="cf">function</span>(res, <span class="at">ncp =</span> <span class="cn">NULL</span>, coord.ind) {</span>
-<span id="cb73-513"><a href="#cb73-513" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(ncp)) </span>
-<span id="cb73-514"><a href="#cb73-514" aria-hidden="true" tabindex="-1"></a>    ncp <span class="ot">&lt;-</span> <span class="fu">ncol</span>(res<span class="sc">$</span>ind<span class="sc">$</span>coord)</span>
-<span id="cb73-515"><a href="#cb73-515" aria-hidden="true" tabindex="-1"></a>  ncp <span class="ot">&lt;-</span> <span class="fu">min</span>(ncp, <span class="fu">ncol</span>(res<span class="sc">$</span>ind<span class="sc">$</span>coord))</span>
-<span id="cb73-516"><a href="#cb73-516" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb73-517"><a href="#cb73-517" aria-hidden="true" tabindex="-1"></a>  hatX <span class="ot">&lt;-</span> coord.ind <span class="sc">%*%</span> <span class="fu">t</span>(<span class="fu">sweep</span>(<span class="fu">as.matrix</span>(res<span class="sc">$</span>var<span class="sc">$</span>coord)[, <span class="dv">1</span><span class="sc">:</span>ncp, <span class="at">drop =</span> <span class="cn">FALSE</span>], </span>
-<span id="cb73-518"><a href="#cb73-518" aria-hidden="true" tabindex="-1"></a>                                <span class="dv">2</span>, <span class="fu">sqrt</span>(res<span class="sc">$</span>eig[<span class="dv">1</span><span class="sc">:</span>ncp, <span class="dv">1</span>]), <span class="at">FUN =</span> <span class="st">"/"</span>))</span>
-<span id="cb73-519"><a href="#cb73-519" aria-hidden="true" tabindex="-1"></a>  hatX <span class="ot">&lt;-</span> <span class="fu">sweep</span>(hatX, <span class="dv">2</span>, res<span class="sc">$</span>call<span class="sc">$</span>ecart.type, <span class="at">FUN =</span> <span class="st">"*"</span>)</span>
-<span id="cb73-520"><a href="#cb73-520" aria-hidden="true" tabindex="-1"></a>  hatX <span class="ot">&lt;-</span> <span class="fu">sweep</span>(hatX, <span class="dv">2</span>, res<span class="sc">$</span>call<span class="sc">$</span>centre, <span class="at">FUN =</span> <span class="st">"+"</span>)</span>
-<span id="cb73-521"><a href="#cb73-521" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb73-522"><a href="#cb73-522" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(hatX)</span>
-<span id="cb73-523"><a href="#cb73-523" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb73-524"><a href="#cb73-524" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-525"><a href="#cb73-525" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-526"><a href="#cb73-526" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-529"><a href="#cb73-529" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-530"><a href="#cb73-530" aria-hidden="true" tabindex="-1"></a>reconstruction <span class="ot">&lt;-</span> <span class="fu">back_to_original_data3</span>(pca_result,<span class="at">ncp=</span><span class="dv">8</span>,<span class="at">coord.ind=</span><span class="fu">as.matrix</span>(all_previsions))</span>
-<span id="cb73-531"><a href="#cb73-531" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-532"><a href="#cb73-532" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-535"><a href="#cb73-535" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-536"><a href="#cb73-536" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(reconstruction)</span>
-<span id="cb73-537"><a href="#cb73-537" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-538"><a href="#cb73-538" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-539"><a href="#cb73-539" aria-hidden="true" tabindex="-1"></a><span class="fu"># Reconstruction de l'interval de confiance des donné de l'Acp avec l'interval de confiance des ARIMA</span></span>
-<span id="cb73-540"><a href="#cb73-540" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-543"><a href="#cb73-543" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-544"><a href="#cb73-544" aria-hidden="true" tabindex="-1"></a><span class="co"># Combiner tous les interval de confiance  </span></span>
-<span id="cb73-545"><a href="#cb73-545" aria-hidden="true" tabindex="-1"></a>all_upper<span class="ot">&lt;-</span> <span class="fu">cbind</span>(</span>
-<span id="cb73-546"><a href="#cb73-546" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.1</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>],</span>
-<span id="cb73-547"><a href="#cb73-547" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.2</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>],</span>
-<span id="cb73-548"><a href="#cb73-548" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.3</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>],</span>
-<span id="cb73-549"><a href="#cb73-549" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.4</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>],</span>
-<span id="cb73-550"><a href="#cb73-550" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.5</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>],</span>
-<span id="cb73-551"><a href="#cb73-551" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.6</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>],</span>
-<span id="cb73-552"><a href="#cb73-552" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.7</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>],</span>
-<span id="cb73-553"><a href="#cb73-553" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.8</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>]</span>
-<span id="cb73-554"><a href="#cb73-554" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb73-555"><a href="#cb73-555" aria-hidden="true" tabindex="-1"></a>all_upper <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(all_upper)</span>
-<span id="cb73-556"><a href="#cb73-556" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(all_upper) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Dim."</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>)</span>
-<span id="cb73-557"><a href="#cb73-557" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-558"><a href="#cb73-558" aria-hidden="true" tabindex="-1"></a>all_lower<span class="ot">&lt;-</span> <span class="fu">cbind</span>(</span>
-<span id="cb73-559"><a href="#cb73-559" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.1</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>],</span>
-<span id="cb73-560"><a href="#cb73-560" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.2</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>],</span>
-<span id="cb73-561"><a href="#cb73-561" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.3</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>],</span>
-<span id="cb73-562"><a href="#cb73-562" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.4</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>],</span>
-<span id="cb73-563"><a href="#cb73-563" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.5</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>],</span>
-<span id="cb73-564"><a href="#cb73-564" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.6</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>],</span>
-<span id="cb73-565"><a href="#cb73-565" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.7</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>],</span>
-<span id="cb73-566"><a href="#cb73-566" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.8</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>]</span>
-<span id="cb73-567"><a href="#cb73-567" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb73-568"><a href="#cb73-568" aria-hidden="true" tabindex="-1"></a>all_lower <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(all_lower)</span>
-<span id="cb73-569"><a href="#cb73-569" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(all_lower) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Dim."</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>)</span>
-<span id="cb73-570"><a href="#cb73-570" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-571"><a href="#cb73-571" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-572"><a href="#cb73-572" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-488"><a href="#cb73-488" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-491"><a href="#cb73-491" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-492"><a href="#cb73-492" aria-hidden="true" tabindex="-1"></a><span class="co"># Combiner tous les previsions </span></span>
+<span id="cb73-493"><a href="#cb73-493" aria-hidden="true" tabindex="-1"></a>all_previsions <span class="ot">&lt;-</span> <span class="fu">cbind</span>(</span>
+<span id="cb73-494"><a href="#cb73-494" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.1</span>_previsions<span class="sc">$</span>mean,</span>
+<span id="cb73-495"><a href="#cb73-495" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.2</span>_previsions<span class="sc">$</span>mean,</span>
+<span id="cb73-496"><a href="#cb73-496" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.3</span>_previsions<span class="sc">$</span>mean,</span>
+<span id="cb73-497"><a href="#cb73-497" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.4</span>_previsions<span class="sc">$</span>mean,</span>
+<span id="cb73-498"><a href="#cb73-498" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.5</span>_previsions<span class="sc">$</span>mean,</span>
+<span id="cb73-499"><a href="#cb73-499" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.6</span>_previsions<span class="sc">$</span>mean,</span>
+<span id="cb73-500"><a href="#cb73-500" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.7</span>_previsions<span class="sc">$</span>mean,</span>
+<span id="cb73-501"><a href="#cb73-501" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.8</span>_previsions<span class="sc">$</span>mean</span>
+<span id="cb73-502"><a href="#cb73-502" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb73-503"><a href="#cb73-503" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-504"><a href="#cb73-504" aria-hidden="true" tabindex="-1"></a>all_previsions <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(all_previsions)</span>
+<span id="cb73-505"><a href="#cb73-505" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(all_previsions) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Dim."</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>)</span>
+<span id="cb73-506"><a href="#cb73-506" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(all_previsions)</span>
+<span id="cb73-507"><a href="#cb73-507" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-508"><a href="#cb73-508" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-509"><a href="#cb73-509" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-512"><a href="#cb73-512" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-513"><a href="#cb73-513" aria-hidden="true" tabindex="-1"></a>back_to_original_data3 <span class="ot">&lt;-</span> <span class="cf">function</span>(res, <span class="at">ncp =</span> <span class="cn">NULL</span>, coord.ind) {</span>
+<span id="cb73-514"><a href="#cb73-514" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(ncp)) </span>
+<span id="cb73-515"><a href="#cb73-515" aria-hidden="true" tabindex="-1"></a>    ncp <span class="ot">&lt;-</span> <span class="fu">ncol</span>(res<span class="sc">$</span>ind<span class="sc">$</span>coord)</span>
+<span id="cb73-516"><a href="#cb73-516" aria-hidden="true" tabindex="-1"></a>  ncp <span class="ot">&lt;-</span> <span class="fu">min</span>(ncp, <span class="fu">ncol</span>(res<span class="sc">$</span>ind<span class="sc">$</span>coord))</span>
+<span id="cb73-517"><a href="#cb73-517" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb73-518"><a href="#cb73-518" aria-hidden="true" tabindex="-1"></a>  hatX <span class="ot">&lt;-</span> coord.ind <span class="sc">%*%</span> <span class="fu">t</span>(<span class="fu">sweep</span>(<span class="fu">as.matrix</span>(res<span class="sc">$</span>var<span class="sc">$</span>coord)[, <span class="dv">1</span><span class="sc">:</span>ncp, <span class="at">drop =</span> <span class="cn">FALSE</span>], </span>
+<span id="cb73-519"><a href="#cb73-519" aria-hidden="true" tabindex="-1"></a>                                <span class="dv">2</span>, <span class="fu">sqrt</span>(res<span class="sc">$</span>eig[<span class="dv">1</span><span class="sc">:</span>ncp, <span class="dv">1</span>]), <span class="at">FUN =</span> <span class="st">"/"</span>))</span>
+<span id="cb73-520"><a href="#cb73-520" aria-hidden="true" tabindex="-1"></a>  hatX <span class="ot">&lt;-</span> <span class="fu">sweep</span>(hatX, <span class="dv">2</span>, res<span class="sc">$</span>call<span class="sc">$</span>ecart.type, <span class="at">FUN =</span> <span class="st">"*"</span>)</span>
+<span id="cb73-521"><a href="#cb73-521" aria-hidden="true" tabindex="-1"></a>  hatX <span class="ot">&lt;-</span> <span class="fu">sweep</span>(hatX, <span class="dv">2</span>, res<span class="sc">$</span>call<span class="sc">$</span>centre, <span class="at">FUN =</span> <span class="st">"+"</span>)</span>
+<span id="cb73-522"><a href="#cb73-522" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb73-523"><a href="#cb73-523" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(hatX)</span>
+<span id="cb73-524"><a href="#cb73-524" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb73-525"><a href="#cb73-525" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-526"><a href="#cb73-526" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-527"><a href="#cb73-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-530"><a href="#cb73-530" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-531"><a href="#cb73-531" aria-hidden="true" tabindex="-1"></a>reconstruction <span class="ot">&lt;-</span> <span class="fu">back_to_original_data3</span>(pca_result,<span class="at">ncp=</span><span class="dv">8</span>,<span class="at">coord.ind=</span><span class="fu">as.matrix</span>(all_previsions))</span>
+<span id="cb73-532"><a href="#cb73-532" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-533"><a href="#cb73-533" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-536"><a href="#cb73-536" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-537"><a href="#cb73-537" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(reconstruction)</span>
+<span id="cb73-538"><a href="#cb73-538" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-539"><a href="#cb73-539" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-540"><a href="#cb73-540" aria-hidden="true" tabindex="-1"></a><span class="fu"># Reconstruction de l'interval de confiance des donné de l'Acp avec l'interval de confiance des ARIMA</span></span>
+<span id="cb73-541"><a href="#cb73-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-544"><a href="#cb73-544" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-545"><a href="#cb73-545" aria-hidden="true" tabindex="-1"></a><span class="co"># Combiner tous les interval de confiance  </span></span>
+<span id="cb73-546"><a href="#cb73-546" aria-hidden="true" tabindex="-1"></a>all_upper<span class="ot">&lt;-</span> <span class="fu">cbind</span>(</span>
+<span id="cb73-547"><a href="#cb73-547" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.1</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>],</span>
+<span id="cb73-548"><a href="#cb73-548" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.2</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>],</span>
+<span id="cb73-549"><a href="#cb73-549" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.3</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>],</span>
+<span id="cb73-550"><a href="#cb73-550" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.4</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>],</span>
+<span id="cb73-551"><a href="#cb73-551" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.5</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>],</span>
+<span id="cb73-552"><a href="#cb73-552" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.6</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>],</span>
+<span id="cb73-553"><a href="#cb73-553" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.7</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>],</span>
+<span id="cb73-554"><a href="#cb73-554" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.8</span>_previsions<span class="sc">$</span>upper[, <span class="st">"95%"</span>]</span>
+<span id="cb73-555"><a href="#cb73-555" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb73-556"><a href="#cb73-556" aria-hidden="true" tabindex="-1"></a>all_upper <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(all_upper)</span>
+<span id="cb73-557"><a href="#cb73-557" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(all_upper) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Dim."</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>)</span>
+<span id="cb73-558"><a href="#cb73-558" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-559"><a href="#cb73-559" aria-hidden="true" tabindex="-1"></a>all_lower<span class="ot">&lt;-</span> <span class="fu">cbind</span>(</span>
+<span id="cb73-560"><a href="#cb73-560" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.1</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>],</span>
+<span id="cb73-561"><a href="#cb73-561" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.2</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>],</span>
+<span id="cb73-562"><a href="#cb73-562" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.3</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>],</span>
+<span id="cb73-563"><a href="#cb73-563" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.4</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>],</span>
+<span id="cb73-564"><a href="#cb73-564" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.5</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>],</span>
+<span id="cb73-565"><a href="#cb73-565" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.6</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>],</span>
+<span id="cb73-566"><a href="#cb73-566" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.7</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>],</span>
+<span id="cb73-567"><a href="#cb73-567" aria-hidden="true" tabindex="-1"></a>  Dim<span class="fl">.8</span>_previsions<span class="sc">$</span>lower[, <span class="st">"95%"</span>]</span>
+<span id="cb73-568"><a href="#cb73-568" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb73-569"><a href="#cb73-569" aria-hidden="true" tabindex="-1"></a>all_lower <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(all_lower)</span>
+<span id="cb73-570"><a href="#cb73-570" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(all_lower) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Dim."</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>)</span>
+<span id="cb73-571"><a href="#cb73-571" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-572"><a href="#cb73-572" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb73-573"><a href="#cb73-573" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-576"><a href="#cb73-576" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-577"><a href="#cb73-577" aria-hidden="true" tabindex="-1"></a>reconstruction_upper <span class="ot">&lt;-</span> <span class="fu">back_to_original_data3</span>(pca_result,<span class="at">ncp=</span><span class="dv">8</span>,<span class="at">coord.ind=</span><span class="fu">as.matrix</span>(all_upper))</span>
-<span id="cb73-578"><a href="#cb73-578" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-579"><a href="#cb73-579" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-582"><a href="#cb73-582" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-583"><a href="#cb73-583" aria-hidden="true" tabindex="-1"></a>reconstruction_lower <span class="ot">&lt;-</span> <span class="fu">back_to_original_data3</span>(pca_result,<span class="at">ncp=</span><span class="dv">8</span>,<span class="at">coord.ind=</span><span class="fu">as.matrix</span>(all_lower))</span>
-<span id="cb73-584"><a href="#cb73-584" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-585"><a href="#cb73-585" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-586"><a href="#cb73-586" aria-hidden="true" tabindex="-1"></a><span class="fu"># Ghraps avec interval de confiance</span></span>
-<span id="cb73-587"><a href="#cb73-587" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-590"><a href="#cb73-590" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-591"><a href="#cb73-591" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb73-592"><a href="#cb73-592" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
-<span id="cb73-593"><a href="#cb73-593" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis) </span>
-<span id="cb73-594"><a href="#cb73-594" aria-hidden="true" tabindex="-1"></a>series_names <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"G"</span>, <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(reconstruction))</span>
-<span id="cb73-595"><a href="#cb73-595" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb73-596"><a href="#cb73-596" aria-hidden="true" tabindex="-1"></a>  <span class="at">time =</span> <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">"2024-01-01"</span>), <span class="at">by =</span> <span class="st">"month"</span>, <span class="at">length.out =</span> <span class="fu">nrow</span>(reconstruction)),</span>
-<span id="cb73-597"><a href="#cb73-597" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean =</span> <span class="fu">as.vector</span>(reconstruction), </span>
-<span id="cb73-598"><a href="#cb73-598" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower =</span> <span class="fu">as.vector</span>(reconstruction_lower),</span>
-<span id="cb73-599"><a href="#cb73-599" aria-hidden="true" tabindex="-1"></a>  <span class="at">upper =</span> <span class="fu">as.vector</span>(reconstruction_upper),</span>
-<span id="cb73-600"><a href="#cb73-600" aria-hidden="true" tabindex="-1"></a>  <span class="at">series =</span> <span class="fu">rep</span>(series_names, <span class="at">each =</span> <span class="fu">nrow</span>(reconstruction))</span>
-<span id="cb73-601"><a href="#cb73-601" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb73-602"><a href="#cb73-602" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-603"><a href="#cb73-603" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data2, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">group =</span> series)) <span class="sc">+</span></span>
-<span id="cb73-604"><a href="#cb73-604" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> mean, <span class="at">color =</span> series), <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span>  <span class="co"># Mean line</span></span>
-<span id="cb73-605"><a href="#cb73-605" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper, <span class="at">fill =</span> series), <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span>  <span class="co"># Confidence interval ribbon</span></span>
-<span id="cb73-606"><a href="#cb73-606" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Evolution des Grandes Villes avec Intervals de confiance 95%"</span>,</span>
-<span id="cb73-607"><a href="#cb73-607" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Time"</span>,</span>
-<span id="cb73-608"><a href="#cb73-608" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Value"</span>,</span>
-<span id="cb73-609"><a href="#cb73-609" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Series"</span>,</span>
-<span id="cb73-610"><a href="#cb73-610" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Series"</span>) <span class="sc">+</span></span>
-<span id="cb73-611"><a href="#cb73-611" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb73-612"><a href="#cb73-612" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span> </span>
-<span id="cb73-613"><a href="#cb73-613" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>()</span>
-<span id="cb73-614"><a href="#cb73-614" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-615"><a href="#cb73-615" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-616"><a href="#cb73-616" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-574"><a href="#cb73-574" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-577"><a href="#cb73-577" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-578"><a href="#cb73-578" aria-hidden="true" tabindex="-1"></a>reconstruction_upper <span class="ot">&lt;-</span> <span class="fu">back_to_original_data3</span>(pca_result,<span class="at">ncp=</span><span class="dv">8</span>,<span class="at">coord.ind=</span><span class="fu">as.matrix</span>(all_upper))</span>
+<span id="cb73-579"><a href="#cb73-579" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-580"><a href="#cb73-580" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-583"><a href="#cb73-583" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-584"><a href="#cb73-584" aria-hidden="true" tabindex="-1"></a>reconstruction_lower <span class="ot">&lt;-</span> <span class="fu">back_to_original_data3</span>(pca_result,<span class="at">ncp=</span><span class="dv">8</span>,<span class="at">coord.ind=</span><span class="fu">as.matrix</span>(all_lower))</span>
+<span id="cb73-585"><a href="#cb73-585" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-586"><a href="#cb73-586" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-587"><a href="#cb73-587" aria-hidden="true" tabindex="-1"></a><span class="fu"># Ghraps avec interval de confiance</span></span>
+<span id="cb73-588"><a href="#cb73-588" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-591"><a href="#cb73-591" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-592"><a href="#cb73-592" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb73-593"><a href="#cb73-593" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb73-594"><a href="#cb73-594" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis) </span>
+<span id="cb73-595"><a href="#cb73-595" aria-hidden="true" tabindex="-1"></a>series_names <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"G"</span>, <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(reconstruction))</span>
+<span id="cb73-596"><a href="#cb73-596" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb73-597"><a href="#cb73-597" aria-hidden="true" tabindex="-1"></a>  <span class="at">time =</span> <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">"2024-01-01"</span>), <span class="at">by =</span> <span class="st">"month"</span>, <span class="at">length.out =</span> <span class="fu">nrow</span>(reconstruction)),</span>
+<span id="cb73-598"><a href="#cb73-598" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean =</span> <span class="fu">as.vector</span>(reconstruction), </span>
+<span id="cb73-599"><a href="#cb73-599" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower =</span> <span class="fu">as.vector</span>(reconstruction_lower),</span>
+<span id="cb73-600"><a href="#cb73-600" aria-hidden="true" tabindex="-1"></a>  <span class="at">upper =</span> <span class="fu">as.vector</span>(reconstruction_upper),</span>
+<span id="cb73-601"><a href="#cb73-601" aria-hidden="true" tabindex="-1"></a>  <span class="at">series =</span> <span class="fu">rep</span>(series_names, <span class="at">each =</span> <span class="fu">nrow</span>(reconstruction))</span>
+<span id="cb73-602"><a href="#cb73-602" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb73-603"><a href="#cb73-603" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-604"><a href="#cb73-604" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data2, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">group =</span> series)) <span class="sc">+</span></span>
+<span id="cb73-605"><a href="#cb73-605" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> mean, <span class="at">color =</span> series), <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span>  <span class="co"># Mean line</span></span>
+<span id="cb73-606"><a href="#cb73-606" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper, <span class="at">fill =</span> series), <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span>  <span class="co"># Confidence interval ribbon</span></span>
+<span id="cb73-607"><a href="#cb73-607" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Evolution des Grandes Villes avec Intervals de confiance 95%"</span>,</span>
+<span id="cb73-608"><a href="#cb73-608" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Time"</span>,</span>
+<span id="cb73-609"><a href="#cb73-609" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Value"</span>,</span>
+<span id="cb73-610"><a href="#cb73-610" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Series"</span>,</span>
+<span id="cb73-611"><a href="#cb73-611" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Series"</span>) <span class="sc">+</span></span>
+<span id="cb73-612"><a href="#cb73-612" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb73-613"><a href="#cb73-613" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span> </span>
+<span id="cb73-614"><a href="#cb73-614" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>()</span>
+<span id="cb73-615"><a href="#cb73-615" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-616"><a href="#cb73-616" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb73-617"><a href="#cb73-617" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-620"><a href="#cb73-620" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-621"><a href="#cb73-621" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data2, <span class="fu">aes</span>(<span class="at">x =</span> time)) <span class="sc">+</span></span>
-<span id="cb73-622"><a href="#cb73-622" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> mean, <span class="at">color =</span> series), <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span>                  </span>
-<span id="cb73-623"><a href="#cb73-623" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper), <span class="at">fill =</span> <span class="st">"grey80"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span>  <span class="co"># Confidence interval </span></span>
-<span id="cb73-624"><a href="#cb73-624" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Evolution  Grandes Villes avec Intervals de confiance 95% "</span>,</span>
-<span id="cb73-625"><a href="#cb73-625" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Time"</span>,</span>
-<span id="cb73-626"><a href="#cb73-626" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Value"</span>) <span class="sc">+</span></span>
-<span id="cb73-627"><a href="#cb73-627" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>series, <span class="at">scales =</span> <span class="st">"free_y"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb73-628"><a href="#cb73-628" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb73-629"><a href="#cb73-629" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb73-630"><a href="#cb73-630" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
-<span id="cb73-631"><a href="#cb73-631" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
-<span id="cb73-632"><a href="#cb73-632" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-633"><a href="#cb73-633" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-634"><a href="#cb73-634" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ghraph un par un </span></span>
-<span id="cb73-635"><a href="#cb73-635" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-638"><a href="#cb73-638" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-639"><a href="#cb73-639" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb73-640"><a href="#cb73-640" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
-<span id="cb73-641"><a href="#cb73-641" aria-hidden="true" tabindex="-1"></a>all_data<span class="ot">=</span>data[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)]</span>
-<span id="cb73-642"><a href="#cb73-642" aria-hidden="true" tabindex="-1"></a>all_data<span class="ot">=</span><span class="fu">rbind</span>(all_data,reconstruction)</span>
-<span id="cb73-643"><a href="#cb73-643" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-644"><a href="#cb73-644" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb73-645"><a href="#cb73-645" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
-<span id="cb73-646"><a href="#cb73-646" aria-hidden="true" tabindex="-1"></a>  b_data <span class="ot">&lt;-</span> all_data[, i]</span>
-<span id="cb73-647"><a href="#cb73-647" aria-hidden="true" tabindex="-1"></a>  upper <span class="ot">&lt;-</span> reconstruction_upper[, i]</span>
-<span id="cb73-648"><a href="#cb73-648" aria-hidden="true" tabindex="-1"></a>  lower <span class="ot">&lt;-</span> reconstruction_lower[, i]</span>
-<span id="cb73-649"><a href="#cb73-649" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb73-650"><a href="#cb73-650" aria-hidden="true" tabindex="-1"></a>  plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb73-651"><a href="#cb73-651" aria-hidden="true" tabindex="-1"></a>    <span class="at">time =</span> <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">"2019-01-01"</span>), <span class="at">by =</span> <span class="st">"month"</span>, <span class="at">length.out =</span> <span class="fu">nrow</span>(all_data)),</span>
-<span id="cb73-652"><a href="#cb73-652" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> b_data,</span>
-<span id="cb73-653"><a href="#cb73-653" aria-hidden="true" tabindex="-1"></a>    <span class="at">upper =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="cn">NA</span>, <span class="fu">nrow</span>(all_data) <span class="sc">-</span> <span class="fu">length</span>(upper)), upper),</span>
-<span id="cb73-654"><a href="#cb73-654" aria-hidden="true" tabindex="-1"></a>    <span class="at">lower =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="cn">NA</span>, <span class="fu">nrow</span>(all_data) <span class="sc">-</span> <span class="fu">length</span>(lower)), lower)</span>
-<span id="cb73-655"><a href="#cb73-655" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb73-656"><a href="#cb73-656" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb73-657"><a href="#cb73-657" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(plot_data, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> value)) <span class="sc">+</span></span>
-<span id="cb73-658"><a href="#cb73-658" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb73-659"><a href="#cb73-659" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper), <span class="at">fill =</span> <span class="st">"grey80"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb73-660"><a href="#cb73-660" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des Banlieues G"</span>, i, <span class="st">" avec Confidence Intervals 95%"</span>, <span class="at">sep =</span> <span class="st">""</span>),</span>
-<span id="cb73-661"><a href="#cb73-661" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Time"</span>, <span class="at">y =</span> <span class="fu">paste</span>(<span class="st">"Value of B"</span>, i, <span class="at">sep =</span> <span class="st">""</span>)) <span class="sc">+</span></span>
-<span id="cb73-662"><a href="#cb73-662" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb73-663"><a href="#cb73-663" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb73-664"><a href="#cb73-664" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
-<span id="cb73-665"><a href="#cb73-665" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb73-666"><a href="#cb73-666" aria-hidden="true" tabindex="-1"></a>  plot_list[[i]] <span class="ot">&lt;-</span> p</span>
-<span id="cb73-667"><a href="#cb73-667" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb73-668"><a href="#cb73-668" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-669"><a href="#cb73-669" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
-<span id="cb73-670"><a href="#cb73-670" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(plot_list[[i]])</span>
-<span id="cb73-671"><a href="#cb73-671" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb73-672"><a href="#cb73-672" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-618"><a href="#cb73-618" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-621"><a href="#cb73-621" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-622"><a href="#cb73-622" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data2, <span class="fu">aes</span>(<span class="at">x =</span> time)) <span class="sc">+</span></span>
+<span id="cb73-623"><a href="#cb73-623" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> mean, <span class="at">color =</span> series), <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span>                  </span>
+<span id="cb73-624"><a href="#cb73-624" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper), <span class="at">fill =</span> <span class="st">"grey80"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span>  <span class="co"># Confidence interval </span></span>
+<span id="cb73-625"><a href="#cb73-625" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Evolution  Grandes Villes avec Intervals de confiance 95% "</span>,</span>
+<span id="cb73-626"><a href="#cb73-626" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Time"</span>,</span>
+<span id="cb73-627"><a href="#cb73-627" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Value"</span>) <span class="sc">+</span></span>
+<span id="cb73-628"><a href="#cb73-628" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>series, <span class="at">scales =</span> <span class="st">"free_y"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb73-629"><a href="#cb73-629" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb73-630"><a href="#cb73-630" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb73-631"><a href="#cb73-631" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb73-632"><a href="#cb73-632" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb73-633"><a href="#cb73-633" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb73-634"><a href="#cb73-634" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-635"><a href="#cb73-635" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ghraph un par un </span></span>
+<span id="cb73-636"><a href="#cb73-636" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-639"><a href="#cb73-639" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-640"><a href="#cb73-640" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb73-641"><a href="#cb73-641" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb73-642"><a href="#cb73-642" aria-hidden="true" tabindex="-1"></a>all_data<span class="ot">=</span>data[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)]</span>
+<span id="cb73-643"><a href="#cb73-643" aria-hidden="true" tabindex="-1"></a>all_data<span class="ot">=</span><span class="fu">rbind</span>(all_data,reconstruction)</span>
+<span id="cb73-644"><a href="#cb73-644" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-645"><a href="#cb73-645" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb73-646"><a href="#cb73-646" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
+<span id="cb73-647"><a href="#cb73-647" aria-hidden="true" tabindex="-1"></a>  b_data <span class="ot">&lt;-</span> all_data[, i]</span>
+<span id="cb73-648"><a href="#cb73-648" aria-hidden="true" tabindex="-1"></a>  upper <span class="ot">&lt;-</span> reconstruction_upper[, i]</span>
+<span id="cb73-649"><a href="#cb73-649" aria-hidden="true" tabindex="-1"></a>  lower <span class="ot">&lt;-</span> reconstruction_lower[, i]</span>
+<span id="cb73-650"><a href="#cb73-650" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb73-651"><a href="#cb73-651" aria-hidden="true" tabindex="-1"></a>  plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb73-652"><a href="#cb73-652" aria-hidden="true" tabindex="-1"></a>    <span class="at">time =</span> <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">"2019-01-01"</span>), <span class="at">by =</span> <span class="st">"month"</span>, <span class="at">length.out =</span> <span class="fu">nrow</span>(all_data)),</span>
+<span id="cb73-653"><a href="#cb73-653" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> b_data,</span>
+<span id="cb73-654"><a href="#cb73-654" aria-hidden="true" tabindex="-1"></a>    <span class="at">upper =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="cn">NA</span>, <span class="fu">nrow</span>(all_data) <span class="sc">-</span> <span class="fu">length</span>(upper)), upper),</span>
+<span id="cb73-655"><a href="#cb73-655" aria-hidden="true" tabindex="-1"></a>    <span class="at">lower =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="cn">NA</span>, <span class="fu">nrow</span>(all_data) <span class="sc">-</span> <span class="fu">length</span>(lower)), lower)</span>
+<span id="cb73-656"><a href="#cb73-656" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb73-657"><a href="#cb73-657" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb73-658"><a href="#cb73-658" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(plot_data, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> value)) <span class="sc">+</span></span>
+<span id="cb73-659"><a href="#cb73-659" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb73-660"><a href="#cb73-660" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper), <span class="at">fill =</span> <span class="st">"grey80"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb73-661"><a href="#cb73-661" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Evolution des Banlieues G"</span>, i, <span class="st">" avec Confidence Intervals 95%"</span>, <span class="at">sep =</span> <span class="st">""</span>),</span>
+<span id="cb73-662"><a href="#cb73-662" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Time"</span>, <span class="at">y =</span> <span class="fu">paste</span>(<span class="st">"Value of B"</span>, i, <span class="at">sep =</span> <span class="st">""</span>)) <span class="sc">+</span></span>
+<span id="cb73-663"><a href="#cb73-663" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%b %Y"</span>, <span class="at">date_breaks =</span> <span class="st">"2 months"</span>, <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb73-664"><a href="#cb73-664" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb73-665"><a href="#cb73-665" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb73-666"><a href="#cb73-666" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb73-667"><a href="#cb73-667" aria-hidden="true" tabindex="-1"></a>  plot_list[[i]] <span class="ot">&lt;-</span> p</span>
+<span id="cb73-668"><a href="#cb73-668" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb73-669"><a href="#cb73-669" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-670"><a href="#cb73-670" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
+<span id="cb73-671"><a href="#cb73-671" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(plot_list[[i]])</span>
+<span id="cb73-672"><a href="#cb73-672" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb73-673"><a href="#cb73-673" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-674"><a href="#cb73-674" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-675"><a href="#cb73-675" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-674"><a href="#cb73-674" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-675"><a href="#cb73-675" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb73-676"><a href="#cb73-676" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-677"><a href="#cb73-677" aria-hidden="true" tabindex="-1"></a><span class="fu">## Numérique</span></span>
-<span id="cb73-678"><a href="#cb73-678" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-681"><a href="#cb73-681" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb73-682"><a href="#cb73-682" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb73-683"><a href="#cb73-683" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb73-684"><a href="#cb73-684" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-685"><a href="#cb73-685" aria-hidden="true" tabindex="-1"></a>date_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">"2019-01-01"</span>), <span class="at">by =</span> <span class="st">"month"</span>, <span class="at">length.out =</span> <span class="fu">nrow</span>(all_data))</span>
-<span id="cb73-686"><a href="#cb73-686" aria-hidden="true" tabindex="-1"></a>formatted_dates <span class="ot">&lt;-</span> <span class="fu">format</span>(date_seq, <span class="st">"%Y-%m"</span>)</span>
-<span id="cb73-687"><a href="#cb73-687" aria-hidden="true" tabindex="-1"></a>all_data_combined <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">Date =</span> formatted_dates, all_data)</span>
-<span id="cb73-688"><a href="#cb73-688" aria-hidden="true" tabindex="-1"></a>col_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Date"</span>, <span class="fu">names</span>(all_data))</span>
-<span id="cb73-689"><a href="#cb73-689" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(all_data_combined) <span class="ot">&lt;-</span> col_names</span>
-<span id="cb73-690"><a href="#cb73-690" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(all_data_combined)</span>
-<span id="cb73-691"><a href="#cb73-691" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb73-692"><a href="#cb73-692" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-677"><a href="#cb73-677" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-678"><a href="#cb73-678" aria-hidden="true" tabindex="-1"></a><span class="fu">## Numérique</span></span>
+<span id="cb73-679"><a href="#cb73-679" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-682"><a href="#cb73-682" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb73-683"><a href="#cb73-683" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb73-684"><a href="#cb73-684" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb73-685"><a href="#cb73-685" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-686"><a href="#cb73-686" aria-hidden="true" tabindex="-1"></a>date_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">"2019-01-01"</span>), <span class="at">by =</span> <span class="st">"month"</span>, <span class="at">length.out =</span> <span class="fu">nrow</span>(all_data))</span>
+<span id="cb73-687"><a href="#cb73-687" aria-hidden="true" tabindex="-1"></a>formatted_dates <span class="ot">&lt;-</span> <span class="fu">format</span>(date_seq, <span class="st">"%Y-%m"</span>)</span>
+<span id="cb73-688"><a href="#cb73-688" aria-hidden="true" tabindex="-1"></a>all_data_combined <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">Date =</span> formatted_dates, all_data)</span>
+<span id="cb73-689"><a href="#cb73-689" aria-hidden="true" tabindex="-1"></a>col_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Date"</span>, <span class="fu">names</span>(all_data))</span>
+<span id="cb73-690"><a href="#cb73-690" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(all_data_combined) <span class="ot">&lt;-</span> col_names</span>
+<span id="cb73-691"><a href="#cb73-691" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(all_data_combined)</span>
+<span id="cb73-692"><a href="#cb73-692" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb73-693"><a href="#cb73-693" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb73-694"><a href="#cb73-694" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb73-695"><a href="#cb73-695" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-696"><a href="#cb73-696" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
